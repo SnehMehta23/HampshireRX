@@ -83,5 +83,11 @@
     color: rgb(26,148,193); /* Text color */
     font-weight: bold;
   }
+
+  .drug-container :last-child {
+    margin: 0; /* Reset default margins */
+    color: rgb(26,148,193); /* Text color */
+    font-weight: bold;
+  }
   
   
