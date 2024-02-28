@@ -8,9 +8,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "gsap": "^3.12.5"
-  }
+  "license": "ISC"
 }
