@@ -1,0 +1,27 @@
+{
+    "drug": "Pantoprazole",
+    "generics": [
+      {
+        "name": "Pantoprazole",
+        "brand": "Protonix",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 25.99
+      },
+      {
+        "name": "Pantoprazole",
+        "brand": "Pantoloc",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 22.50
+      },
+      {
+        "name": "Pantoprazole",
+        "brand": "Pantecta",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 23.75
+      }
+    ]
+  }
+  
