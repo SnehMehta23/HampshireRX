@@ -1,6 +1,18 @@
 .header {
     background-color: rgb(26,148,193);
-    color: white;
+    color: #e4e4e4;
+}
+
+body {
+    background-color: #FFF5EA !important;
+}
+
+.line {
+    background-color: rgb(26,148,193) !important;
+}
+
+.primary-font-color {
+    color: rgb(5, 9, 30)
 }
 
 .header a {
@@ -12,7 +24,7 @@
 }
 
 .secondary-background {
-    background-color: rgb(225, 231, 239);
+    background-color: rgb(245, 240, 230);
 }
 
 .custom-btn {
@@ -32,6 +44,75 @@
     background-color: rgb(254, 150, 1);
     border-color: rgb(254, 150, 1);
 }
+
+.rounded-line {
+    width: 50px;
+    border: none;
+    background-color: #000; /* Change the color if needed */
+    height: 4px; /* Adjust thickness as needed */
+    border-radius: 10px; /* Adjust the rounding as needed */
+}
+
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
 
 .custom-btn:hover {
     opacity: 0.8; /* Adjusted opacity for hover effect */
@@ -109,4 +190,7 @@
     color: rgb(26,148,193); /* Text color */
     font-weight: bold;
   }
-  
+
+  .footer {
+    background-color: rgb(254, 150, 1);
+  }

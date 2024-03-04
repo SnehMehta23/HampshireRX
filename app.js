@@ -1,3 +1,12 @@
+gsap.from(".img1", {
+  y: -10,
+  opacity: 0,
+  duration: 5,
+  ease: "elastic",
+  yoyo: true,
+  repeat: -1,
+});
+
 // Load prescription drugs data from JSON file
 fetch("prescriptionDrugs.json")
   .then((response) => response.json())
