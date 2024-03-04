@@ -193,4 +193,9 @@ body {
 
   .footer {
     background-color: rgb(254, 150, 1);
+    color: #FFF5EA;
+  }
+
+  .links {
+    text-decoration: none;
   }
