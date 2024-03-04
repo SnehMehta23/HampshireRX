@@ -1,4 +1,5 @@
-{
+[
+  {
     "drug": "Pantoprazole",
     "generics": [
       {
@@ -23,5 +24,421 @@
         "price": 23.75
       }
     ]
+  },
+  {
+    "drug": "Simvastatin",
+    "generics": [
+      {
+        "name": "Simvastatin",
+        "brand": "Zocor",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 18.99
+      },
+      {
+        "name": "Simvastatin",
+        "brand": "Lipex",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 15.50
+      },
+      {
+        "name": "Simvastatin",
+        "brand": "Simvor",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 17.75
+      }
+    ]
+  },
+  {
+    "drug": "Lisinopril",
+    "generics": [
+      {
+        "name": "Lisinopril",
+        "brand": "Zestril",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 10.99
+      },
+      {
+        "name": "Lisinopril",
+        "brand": "Prinivil",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 12.50
+      },
+      {
+        "name": "Lisinopril",
+        "brand": "Lisodur",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 11.75
+      }
+    ]
+  },
+  {
+    "drug": "Metformin",
+    "generics": [
+      {
+        "name": "Metformin",
+        "brand": "Glucophage",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 9.99
+      },
+      {
+        "name": "Metformin",
+        "brand": "Gluconorm",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 8.50
+      },
+      {
+        "name": "Metformin",
+        "brand": "Diabex",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 7.75
+      }
+    ]
+  },
+  {
+    "drug": "Atorvastatin",
+    "generics": [
+      {
+        "name": "Atorvastatin",
+        "brand": "Lipitor",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 20.99
+      },
+      {
+        "name": "Atorvastatin",
+        "brand": "Sortis",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 18.50
+      },
+      {
+        "name": "Atorvastatin",
+        "brand": "Atorva",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 19.75
+      }
+    ]
+  },
+  {
+    "drug": "Omeprazole",
+    "generics": [
+      {
+        "name": "Omeprazole",
+        "brand": "Prilosec",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 15.99
+      },
+      {
+        "name": "Omeprazole",
+        "brand": "Losec",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 13.50
+      },
+      {
+        "name": "Omeprazole",
+        "brand": "Omez",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 14.75
+      }
+    ]
+  },
+  {
+    "drug": "Amlodipine",
+    "generics": [
+      {
+        "name": "Amlodipine",
+        "brand": "Norvasc",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 17.99
+      },
+      {
+        "name": "Amlodipine",
+        "brand": "Amlor",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 15.50
+      },
+      {
+        "name": "Amlodipine",
+        "brand": "Amlovas",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 16.75
+      }
+    ]
+  },
+  {
+    "drug": "Metoprolol",
+    "generics": [
+      {
+        "name": "Metoprolol",
+        "brand": "Lopressor",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 12.99
+      },
+      {
+        "name": "Metoprolol",
+        "brand": "Toprol",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 10.50
+      },
+      {
+        "name": "Metoprolol",
+        "brand": "Metol",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 11.75
+      }
+    ]
+  },
+  {
+    "drug": "Losartan",
+    "generics": [
+      {
+        "name": "Losartan",
+        "brand": "Cozaar",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 14.99
+      },
+      {
+        "name": "Losartan",
+        "brand": "Lorzaar",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 12.50
+      },
+      {
+        "name": "Losartan",
+        "brand": "Losartan",
+        "strength": "50 mg",
+        "form": "Tablet",
+        "price": 13.75
+      }
+    ]
+  },
+  {
+    "drug": "Levothyroxine",
+    "generics": [
+      {
+        "name": "Levothyroxine",
+        "brand": "Synthroid",
+        "strength": "50 mcg",
+        "form": "Tablet",
+        "price": 9.99
+      },
+      {
+        "name": "Levothyroxine",
+        "brand": "Eltroxin",
+        "strength": "50 mcg",
+        "form": "Tablet",
+        "price": 8.50
+      },
+      {
+        "name": "Levothyroxine",
+        "brand": "Levoxyl",
+        "strength": "50 mcg",
+        "form": "Tablet",
+        "price": 7.75
+      }
+    ]
+  },
+  {
+    "drug": "Metronidazole",
+    "generics": [
+      {
+        "name": "Metronidazole",
+        "brand": "Flagyl",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 11.99
+      },
+      {
+        "name": "Metronidazole",
+        "brand": "Metrocream",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 10.50
+      },
+      {
+        "name": "Metronidazole",
+        "brand": "Metrogel",
+        "strength": "500 mg",
+        "form": "Tablet",
+        "price": 9.75
+      }
+    ]
+  },
+  {
+    "drug": "Warfarin",
+    "generics": [
+      {
+        "name": "Warfarin",
+        "brand": "Coumadin",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 14.99
+      },
+      {
+        "name": "Warfarin",
+        "brand": "Jantoven",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 12.50
+      },
+      {
+        "name": "Warfarin",
+        "brand": "Marevan",
+        "strength": "5 mg",
+        "form": "Tablet",
+        "price": 13.75
+      }
+    ]
+  },
+  {
+    "drug": "Clopidogrel",
+    "generics": [
+      {
+        "name": "Clopidogrel",
+        "brand": "Plavix",
+        "strength": "75 mg",
+        "form": "Tablet",
+        "price": 21.99
+      },
+      {
+        "name": "Clopidogrel",
+        "brand": "Iscover",
+        "strength": "75 mg",
+        "form": "Tablet",
+        "price": 19.50
+      },
+      {
+        "name": "Clopidogrel",
+        "brand": "Clodian",
+        "strength": "75 mg",
+        "form": "Tablet",
+        "price": 20.75
+      }
+    ]
+  },
+  {
+    "drug": "Montelukast",
+    "generics": [
+      {
+        "name": "Montelukast",
+        "brand": "Singulair",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 18.99
+      },
+      {
+        "name": "Montelukast",
+        "brand": "Lukasm",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 16.50
+      },
+      {
+        "name": "Montelukast",
+        "brand": "Montelo",
+        "strength": "10 mg",
+        "form": "Tablet",
+        "price": 17.75
+      }
+    ]
+  },
+  {
+    "drug": "Citalopram",
+    "generics": [
+      {
+        "name": "Citalopram",
+        "brand": "Celexa",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 15.99
+      },
+      {
+        "name": "Citalopram",
+        "brand": "Cipramil",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 13.50
+      },
+      {
+        "name": "Citalopram",
+        "brand": "Citopam",
+        "strength": "20 mg",
+        "form": "Tablet",
+        "price": 14.75
+      }
+    ]
+  },
+  {
+    "drug": "Azithromycin",
+    "generics": [
+      {
+        "name": "Azithromycin",
+        "brand": "Zithromax",
+        "strength": "250 mg",
+        "form": "Tablet",
+        "price": 12.99
+      },
+      {
+        "name": "Azithromycin",
+        "brand": "Azithrocin",
+        "strength": "250 mg",
+        "form": "Tablet",
+        "price": 10.50
+      },
+      {
+        "name": "Azithromycin",
+        "brand": "Azimax",
+        "strength": "250 mg",
+        "form": "Tablet",
+        "price": 11.75
+      }
+    ]
+  },
+  {
+    "drug": "Furosemide",
+    "generics": [
+      {
+        "name": "Furosemide",
+        "brand": "Lasix",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 14.99
+      },
+      {
+        "name": "Furosemide",
+        "brand": "Frusid",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 12.50
+      },
+      {
+        "name": "Furosemide",
+        "brand": "Furosemide",
+        "strength": "40 mg",
+        "form": "Tablet",
+        "price": 13.75
+      }
+    ]
   }
-  
+]

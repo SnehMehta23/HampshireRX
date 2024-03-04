@@ -90,4 +90,23 @@
     font-weight: bold;
   }
   
+  .drug-container-error {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    width: 300px;
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding for content */
+    margin-bottom: 20px; /* Spacing between drug containers */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+
+  .drug-container-error p {
+    margin: 0;
+  }
+  
+  .drug-container-error :first-child {
+    margin: 0; /* Reset default margins */
+    color: rgb(26,148,193); /* Text color */
+    font-weight: bold;
+  }
   

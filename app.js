@@ -20,10 +20,18 @@ fetch("prescriptionDrugs.json")
       event.preventDefault();
       pulsateTimeline.pause();
       const searchTerm = searchInput.value.trim().toLowerCase();
-      const filteredDrugs = data.generics.filter(
-        (drug) =>
-          drug.name.toLowerCase().includes(searchTerm) ||
-          drug.brand.toLowerCase().includes(searchTerm)
+      console.log(data);
+      const filteredDrugs = data.flatMap(
+        (
+          drug // Using flatMap to iterate over drugs and flatten the results
+        ) =>
+          drug.generics.filter(
+            (generic) =>
+              generic.brand.toLowerCase().startsWith(searchTerm) ||
+              generic.brand.toLowerCase().includes(searchTerm) ||
+              generic.name.toLowerCase().startsWith(searchTerm) ||
+              generic.name.toLowerCase().includes(searchTerm)
+          )
       );
 
       displayResults(filteredDrugs);
