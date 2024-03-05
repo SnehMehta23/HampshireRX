@@ -4,7 +4,7 @@
   "description": "A generic prescription drugs price lookup tool acting as a portal for an online cash-pharmacy",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install && npm run build"
   },
   "repository": {
     "type": "git",
