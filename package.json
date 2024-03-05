@@ -16,5 +16,8 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
   }
 }
