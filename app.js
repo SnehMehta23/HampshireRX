@@ -1,5 +1,7 @@
 import gsap from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap"; // This imports Bootstrap JavaScript
+
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
