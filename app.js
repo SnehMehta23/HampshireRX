@@ -40,10 +40,6 @@ fetch("/prescriptionDrugs.json")
         ) =>
           drug.generics.filter(
             (generic) =>
-              // generic.brand.toLowerCase().startsWith(searchTerm) ||
-              // generic.brand.toLowerCase().includes(searchTerm) ||
-              // generic.name.toLowerCase().startsWith(searchTerm) ||
-              // generic.name.toLowerCase().includes(searchTerm)
               generic.brand.toLowerCase().startsWith(searchTerm) ||
               generic.name.toLowerCase().startsWith(searchTerm)
           )
