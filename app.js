@@ -1,3 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap"; // Import JavaScript part of Bootstrap
+import { gsap } from "gsap";
+
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
@@ -36,10 +40,12 @@ fetch("prescriptionDrugs.json")
         ) =>
           drug.generics.filter(
             (generic) =>
+              // generic.brand.toLowerCase().startsWith(searchTerm) ||
+              // generic.brand.toLowerCase().includes(searchTerm) ||
+              // generic.name.toLowerCase().startsWith(searchTerm) ||
+              // generic.name.toLowerCase().includes(searchTerm)
               generic.brand.toLowerCase().startsWith(searchTerm) ||
-              generic.brand.toLowerCase().includes(searchTerm) ||
-              generic.name.toLowerCase().startsWith(searchTerm) ||
-              generic.name.toLowerCase().includes(searchTerm)
+              generic.name.toLowerCase().startsWith(searchTerm)
           )
       );
 
