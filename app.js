@@ -8,7 +8,7 @@ gsap.from(".img1", {
 });
 
 // Load prescription drugs data from JSON file
-fetch("/prescriptionDrugs.json")
+fetch("./dist/prescriptionDrugs.json")
   .then((response) => response.json())
   .then((data) => {
     const searchInput = document.getElementById("searchInput");
