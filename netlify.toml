@@ -1,3 +1,0 @@
-[build]
-command = "node build.js" # Run your build script
-publish = "dist" # Specify the directory where the built files are located
