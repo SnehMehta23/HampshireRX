@@ -1,103 +1,13 @@
-import gsap from "gsap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap"; // This imports Bootstrap JavaScript
-
-gsap.from(".img1", {
-  y: -10,
-  opacity: 0,
-  duration: 5,
-  ease: "elastic",
-  yoyo: true,
-  repeat: -1,
-});
-
-const pulsateTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-pulsateTimeline.to(customButton, {
-  scale: 1.02, // Scale up to 110%
-  duration: 0.5, // Animation duration
-  ease: "power1.inOut", // Easing function
-});
-
-pulsateTimeline.play();
-
-// Load prescription drugs data from JSON file
-fetch("/prescriptionDrugs.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const searchInput = document.getElementById("searchInput");
-    const customButton = document.getElementById("customButton");
-    const resultsList = document.getElementById("resultsList");
-
-    customButton.addEventListener("click", () => {
-      // Pause the pulsating button because the user already searched
-      event.preventDefault();
-      pulsateTimeline.pause();
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      console.log(data);
-      const filteredDrugs = data.flatMap(
-        (
-          drug // Using flatMap to iterate over drugs and flatten the results
-        ) =>
-          drug.generics.filter(
-            (generic) =>
-              generic.brand.toLowerCase().startsWith(searchTerm) ||
-              generic.name.toLowerCase().startsWith(searchTerm)
-          )
-      );
-
-      displayResults(filteredDrugs);
-    });
-
-    // Restart the pulsating button because the user is requesting or indicating an intent of searching again
-    searchInput.addEventListener("focus", () => {
-      pulsateTimeline.restart(); // Restart the pulsating animation
-    });
-
-    function displayResults(drugs) {
-      resultsList.innerHTML = "";
-      const tl = gsap.timeline({ delay: 0.1 });
-
-      drugs.forEach((drug) => {
-        // Create a div for each drug
-        const drugDiv = document.createElement("div");
-        drugDiv.classList.add("drug-container");
-
-        // Create paragraphs for drug information
-        const nameParagraph = document.createElement("p");
-        nameParagraph.textContent = `${drug.brand}`;
-
-        const brandParagraph = document.createElement("p");
-        brandParagraph.textContent = `Generic for ${drug.name}`;
-
-        const strengthParagraph = document.createElement("p");
-        strengthParagraph.textContent = `${drug.strength}`;
-
-        const formParagraph = document.createElement("p");
-        formParagraph.textContent = `${drug.form}`;
-
-        const priceParagraph = document.createElement("p");
-        priceParagraph.textContent = `$${drug.price.toFixed(2)}`;
-
-        // Append paragraphs to drug div
-        drugDiv.appendChild(nameParagraph);
-        drugDiv.appendChild(brandParagraph);
-        drugDiv.appendChild(strengthParagraph);
-        drugDiv.appendChild(formParagraph);
-        drugDiv.appendChild(priceParagraph);
-
-        // Append drug div to results list
-        resultsList.appendChild(drugDiv);
-        tl.from(
-          drugDiv,
-          {
-            duration: 0.5, // Animation duration
-            opacity: 0, // Start opacity
-            y: -20, // Y position offset
-            ease: "power2.out", // Easing function
-          },
-          "-=0.1"
-        ); // Staggered delay
-      });
-    }
-  })
-  .catch((error) => console.error("Error fetching prescription drugs:", error));
+import e from"gsap";import"bootstrap/dist/css/bootstrap.min.css";import"bootstrap";e.from(".img1",{y:-10,opacity:0,duration:5,ease:"elastic",yoyo:!0,repeat:-1});let pulsateTimeline=e.timeline({repeat:-1,yoyo:!0});pulsateTimeline.to(customButton,{scale:1.02,duration:.5,ease:"power1.inOut"}),pulsateTimeline.play(),fetch("/prescriptionDrugs.json").then(e=>e.json()).then(t=>{let r=document.getElementById("searchInput"),i=document.getElementById("customButton"),a=document.getElementById("resultsList");function n(){let t=e.timeline({delay:.1}),r=document.createElement("div");r.classList.add("col"),r.innerHTML=`
+        <div class="drug-container-error">
+          <p>Sorry, we couldn't find any matching results for your search. Please try again with a different keyword or refine your search criteria.</p>
+        </div>
+      `,a.innerHTML="",a.appendChild(r),t.from(r,{duration:.5,opacity:0,y:-20,ease:"power2.out"},"-=0.1")}function o(t){a.innerHTML="";let r=e.timeline({delay:.1}),i=document.createElement("div");i.classList.add("row","row-cols-1","row-cols-md-3","g-2"),t.forEach(e=>{let t=document.createElement("div");t.classList.add("col"),t.innerHTML=`
+          <div class="drug-container">
+            <p>${e.brand}</p>
+            <p>Generic for ${e.name}</p>
+            <p>${e.strength}</p>
+            <p>${e.form}</p>
+            <p>$${e.price.toFixed(2)}</p>
+          </div>
+        `,i.appendChild(t),r.from(t,{duration:.5,opacity:0,y:-20,ease:"power2.out"},"-=0.1")}),a.appendChild(i)}document.getElementById("searchContainer"),i.addEventListener("click",()=>{event.preventDefault(),pulsateTimeline.pause();let e=r.value.trim().toLowerCase();if(e){let i=t.flatMap(t=>t.generics.filter(t=>t.brand.toLowerCase().startsWith(e)||t.name.toLowerCase().startsWith(e)));0===i.length?n():o(i)}}),r.addEventListener("focus",()=>{pulsateTimeline.restart()})}).catch(e=>console.error("Error fetching prescription drugs:",e));

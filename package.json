@@ -4,7 +4,8 @@
   "description": "A generic prescription drugs price lookup tool acting as a portal for an online cash-pharmacy",
   "main": "app.js",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
