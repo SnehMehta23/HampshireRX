@@ -1,6 +1,3 @@
-import { gsap } from "gsap";
-import jsonData from "./public/prescriptionDrugs.json";
-
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
@@ -11,7 +8,7 @@ gsap.from(".img1", {
 });
 
 // Load prescription drugs data from JSON file
-fetch("./public/prescriptionDrugs.json")
+fetch("/prescriptionDrugs.json")
   .then((response) => response.json())
   .then((data) => {
     const searchInput = document.getElementById("searchInput");
