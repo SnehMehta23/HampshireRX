@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A generic prescription drugs price lookup tool acting as a portal for an online cash-pharmacy",
   "main": "app.js",
-  "scripts": {
-    "build": "npm install && npm run build"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SnehMehta23/HampshireRX.git"
@@ -19,5 +16,8 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
   }
 }
