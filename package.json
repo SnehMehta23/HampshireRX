@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A generic prescription drugs price lookup tool acting as a portal for an online cash-pharmacy",
   "main": "app.js",
+  "scripts": {
+    "build": "vite build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SnehMehta23/HampshireRX.git"
@@ -15,6 +18,7 @@
   "homepage": "https://github.com/SnehMehta23/HampshireRX#readme",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "vite": "^5.1.5"
   }
 }
