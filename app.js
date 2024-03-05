@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import bootstrap from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
