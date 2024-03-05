@@ -1,3 +1,4 @@
+import gsap from "gsap";
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
