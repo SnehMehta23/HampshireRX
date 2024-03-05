@@ -18,7 +18,7 @@ pulsateTimeline.to(customButton, {
 pulsateTimeline.play();
 
 // Load prescription drugs data from JSON file
-fetch("./dist/prescriptionDrugs.json")
+fetch("/prescriptionDrugs.json")
   .then((response) => response.json())
   .then((data) => {
     const searchInput = document.getElementById("searchInput");
