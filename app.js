@@ -1,5 +1,5 @@
 import gsap from "gsap";
-
+import bootstrap from "bootstrap";
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
