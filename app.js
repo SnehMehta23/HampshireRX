@@ -1,4 +1,3 @@
-import { gsap } from "gsap";
 gsap.from(".img1", {
   y: -10,
   opacity: 0,
@@ -8,6 +7,15 @@ gsap.from(".img1", {
   repeat: -1,
 });
 
+const pulsateTimeline = gsap.timeline({ repeat: -1, yoyo: true });
+pulsateTimeline.to(customButton, {
+  scale: 1.02, // Scale up to 110%
+  duration: 0.5, // Animation duration
+  ease: "power1.inOut", // Easing function
+});
+
+pulsateTimeline.play();
+
 // Load prescription drugs data from JSON file
 fetch("./dist/prescriptionDrugs.json")
   .then((response) => response.json())
@@ -15,15 +23,6 @@ fetch("./dist/prescriptionDrugs.json")
     const searchInput = document.getElementById("searchInput");
     const customButton = document.getElementById("customButton");
     const resultsList = document.getElementById("resultsList");
-
-    const pulsateTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-    pulsateTimeline.to(customButton, {
-      scale: 1.02, // Scale up to 110%
-      duration: 0.5, // Animation duration
-      ease: "power1.inOut", // Easing function
-    });
-
-    pulsateTimeline.play();
 
     customButton.addEventListener("click", () => {
       // Pause the pulsating button because the user already searched
