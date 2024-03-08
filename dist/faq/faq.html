@@ -76,15 +76,17 @@
       href="dist/favicons/favicon-16x16.png"
     />
     <link rel="manifest" href="site.webmanifest" />
-    <script type="module" crossorigin src="/assets/app-CdqYTDx9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/app-DgmDyR-P.css">
+    <script type="module" crossorigin src="/assets/app-ByYikYhZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/app-DC5TXeLC.css">
   </head>
   <body>
     <div id="root">
       <div class="container-fluid lato-regular primary-font-color">
+        <!-- Header -->
         <header
           class="justify-content header p-2 row text-md-left text-lg-center"
         >
+          <!-- Header content -->
           <div class="col-sm">
             <a href="tel:540-490-4350">(847)-683-2244</a>
           </div>
@@ -98,6 +100,8 @@
             >
           </div>
         </header>
+
+        <!-- Logo -->
         <div class="p-4 row">
           <div class="col">
             <img
@@ -108,23 +112,23 @@
             />
           </div>
         </div>
+
+        <!-- Main content -->
         <div
           class="p-4 secondary-background justify-content-center mb-3 row"
           id="searchContainer"
         >
           <div class="col">
             <div
-              class="justify-content-center mb-md-3 mb-2 col-center text-center grouping"
+              class="justify-content-center mb-md-3 mb-2 text-left text-md-center"
             >
-              <h1 class="lato-bold">Hampshire Pharmacy</h1>
-              <hr class="rounded-line mx-auto line" />
-              <h2 class="">Affordable Medications, Trusted Service</h2>
+              <!-- <h1 class="lato-bold">Hampshire Pharmacy</h1> -->
+              <h1 class="lato-bold">Affordable Medications, Trusted Service</h1>
             </div>
             <div
-              class="justify-content-center mb-md-4 mb-3 row row-cols-auto lato-italic call"
+              class="justify-content-center mb-md-4 mb-3 text-left text-md-center lato-regular h4"
             >
-              Access reliable generic drugs at fair prices, because your health
-              matters
+              Access reliable generic drugs at fair prices, no insurance needed
             </div>
             <form id="searchForm">
               <div class="justify-content-center row row-cols-auto">
@@ -148,111 +152,255 @@
             </form>
           </div>
         </div>
+
+        <!-- Results -->
         <div class="justify-content-center align-items-center mb-4 row">
           <div id="resultsList"></div>
-          <div class="col-auto">
-            <img
-              src="./images/svg/capsule.svg"
-              height="54px"
-              width="54px"
-              alt="Pill Icon"
-              class="img1"
-            />
-          </div>
-          <div class="col-auto mt-2"><h3>Why Choose HampshireRX</h3></div>
-        </div>
-        <div class="justify-content-center gap-3 mb-5 row row-cols-1">
-          <div class="col-md-3">
-            <div class="shadow card">
-              <div class="card-body ex">
-                <div class="card-title h5">
-                  <a href="/faq/faq.html" class="primary-font-color"
-                    >How It Works</a
+          <!-- Accordion -->
+          <div class="justify-content-center align-items-center mb-4 row">
+            <div class="col-md-8 mx-auto">
+              <!-- Adjust the width as needed -->
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      How do I send my prescription?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion"
                   >
+                    <div class="accordion-body">
+                      Have your doctor send us your prescription to Hampshire
+                      Pharmacy at 262 N State St, Hampshire, IL. We will
+                      automatically apply the prices you see online.
+                    </div>
+                  </div>
                 </div>
-                <p class="card-text">
-                  At Hampshire Pharmacy, we prioritize your peace of mind. Our
-                  commitment to transparency means you'll always know our
-                  prices, where to find us, and how we serve you best. Trust us
-                  for clear, reliable service tailored to your needs.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="shadow card">
-              <div class="card-body">
-                <div class="card-title h5">
-                  <a href="/privacy/privacy.html" class="primary-font-color"
-                    >Your Health, Your Privacy</a
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Do I need insurance?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#faqAccordion"
                   >
+                    <div class="accordion-body">
+                      No! We do not use insurance for our cash prescriptions.
+                      This allows us to cut out the pharmacy middleman and give
+                      you, our patient, the best prices possible.
+                    </div>
+                  </div>
                 </div>
-                <p class="card-text">
-                  At our pharmacy, we understand the frustration with insurance
-                  complexities. That's why we operate independently, putting you
-                  in control of your health decisions. Need a year's supply of
-                  your medication hassle-free? Consider it done! Say goodbye to
-                  insurance rejections and authorizations – your doctor and our
-                  pharmacist are here to support you. Plus, your privacy matters
-                  to us. Unlike many other pharmacies, we respect your
-                  confidentiality and never sell or share your information.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="shadow card">
-              <div class="card-body">
-                <div class="card-title h5">
-                  <a href="/about/about.html" class="primary-font-color"
-                    >Getting Started</a
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Where do you get your generic medications from?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion"
                   >
+                    <div class="accordion-body">
+                      Our generic medications are sourced from vetted high
+                      quality suppliers and we fill your prescription in our
+                      community pharmacy.
+                    </div>
+                  </div>
                 </div>
-                <p class="card-text">
-                  Tired of impersonal online pharmacies? At Hampshire Pharmacy,
-                  we're breaking the mold. As a trusted community pharmacy,
-                  we're bringing our personalized care online. Fed up with the
-                  current state of healthcare, we're on a mission to change the
-                  game. Unlike anonymous assembly lines, we're your neighbors,
-                  and you'll always know who's behind your prescription. Need to
-                  talk? You can reach out directly to our team, ensuring a
-                  personal touch that other online pharmacies simply can't
-                  match.
-                </p>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Why is this better for me?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      There are many cases where our pricing may benefit you. If
+                      you have a high deductible, use specialty medication not
+                      covered by insurance, or are uninsured check our prices to
+                      save on prescriptions.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                    >
+                      Can I get all my prescriptions at cash prices?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      We currently offer many medications at competitive prices.
+                      If you can’t find what you are looking for give us a call
+                      at 847-683-2244 and we can help you out!
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                    >
+                      Can you mail my prescriptions?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingSix"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      We can currently mail prescriptions to anywhere in
+                      Illinois.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="collapseSeven"
+                    >
+                      Can I get my prescription delivered?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingSeven"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      We currently deliver to our local areas, call us at
+                      847-683-2244 to see if we can deliver to you.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseEight"
+                      aria-expanded="false"
+                      aria-controls="collapseEight"
+                    >
+                      How do I pay for my prescription?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingEight"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      If you are coming to pick up your prescription you can pay
+                      at check out. For deliveries and mailing we ask to keep a
+                      credit card on file.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseNine"
+                      aria-expanded="false"
+                      aria-controls="collapseNine"
+                    >
+                      Why are your prices better?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingNine"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      We do not use insurance, this allows us to cut out the
+                      pharmacy middleman and give you, our patient, the best
+                      prices possible.
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-4 justify-content-center row">
-          <div class="col-md-5 col-auto">
-            <div class="justify-content-center align-items-center mb-4 row">
-              <div class="col-auto">
-                <img
-                  src="./images/svg/prescription.svg"
-                  alt="An icon of a prescription bottle of medicine"
-                  width="54"
-                  height="54"
-                />
-              </div>
-              <div class="col-auto"><h3>About Us</h3></div>
-            </div>
-            <div class="row justify-content-center align-items-center">
-              <p>
-                At Hampshire Pharmacy, fostering healthier lives within our
-                communities is more than a mission—it's our unwavering
-                commitment. With every service we offer, every medication we
-                dispense, and every interaction we have, trust is our
-                cornerstone. We're dedicated to your well-being, ensuring that
-                every aspect of our care reflects our deep-rooted values of
-                integrity, compassion, and reliability. When you choose
-                Hampshire Pharmacy, you're choosing a partner in your journey to
-                a healthier, happier life.
-              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="justify-content-md-center header p-2 row footer">
       <div class="justify-content-md-center text-center secondary-color">
         &#169; Hampshire Pharmacy |
