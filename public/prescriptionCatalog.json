@@ -13087,15 +13087,6 @@
   },
   {
     "Drug Name": "Tadalafil Tablet",
-    "Size": "1 mg",
-    "Generic For": "Cialis",
-    "Count": 10,
-    "Count Unit": "Tablets",
-    "Price": 10,
-    "Cost": ""
-  },
-  {
-    "Drug Name": "Tadalafil Tablet",
     "Size": "5 mg",
     "Generic For": "Cialis",
     "Count": 10,
@@ -13114,15 +13105,6 @@
   },
   {
     "Drug Name": "Tadalafil Tablet",
-    "Size": "1 mg",
-    "Generic For": "Cialis",
-    "Count": 30,
-    "Count Unit": "Tablets",
-    "Price": 12.211,
-    "Cost": 0.0737
-  },
-  {
-    "Drug Name": "Tadalafil Tablet",
     "Size": "5 mg",
     "Generic For": "Cialis",
     "Count": 30,
@@ -13138,15 +13120,6 @@
     "Count Unit": "Tablets",
     "Price": 12.571,
     "Cost": 0.0857
-  },
-  {
-    "Drug Name": "Tadalafil Tablet",
-    "Size": "1 mg",
-    "Generic For": "Cialis",
-    "Count": 20,
-    "Count Unit": "Tablets",
-    "Price": 11.474,
-    "Cost": 0.0737
   },
   {
     "Drug Name": "Tadalafil Tablet",
