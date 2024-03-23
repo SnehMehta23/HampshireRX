@@ -9182,7 +9182,7 @@
   {
     "Drug Name": "Metformin ER Tablet",
     "Size": "500 mg",
-    "Generic For": "Glucophase XR",
+    "Generic For": "Glucophage XR",
     "Count": 30,
     "Count Unit": "Tablets",
     "Price": 11.014,
@@ -9200,7 +9200,7 @@
   {
     "Drug Name": "Metformin ER Tablet",
     "Size": "500 mg",
-    "Generic For": "Glucophase XR",
+    "Generic For": "Glucophage XR",
     "Count": 90,
     "Count Unit": "Tablets",
     "Price": 13.042,
@@ -9218,7 +9218,7 @@
   {
     "Drug Name": "Metformin ER Tablet",
     "Size": "500 mg",
-    "Generic For": "Glucophase XR",
+    "Generic For": "Glucophage XR",
     "Count": 60,
     "Count Unit": "Tablets",
     "Price": 12.028,
@@ -9252,7 +9252,7 @@
     "Cost": 0.0282
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 30,
@@ -9261,7 +9261,7 @@
     "Cost": 0.0472
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 90,
@@ -9270,7 +9270,7 @@
     "Cost": 0.0472
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 60,
@@ -9279,7 +9279,7 @@
     "Cost": 0.0472
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "500 mg",
     "Generic For": "Glucophage",
     "Count": 30,
@@ -9288,7 +9288,7 @@
     "Cost": 0.0146
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "1000 mg",
     "Generic For": "Glucophage",
     "Count": 30,
@@ -9297,7 +9297,7 @@
     "Cost": 0.023
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "500 mg",
     "Generic For": "Glucophage",
     "Count": 90,
@@ -9306,7 +9306,7 @@
     "Cost": 0.0146
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "1000 mg",
     "Generic For": "Glucophage",
     "Count": 90,
@@ -9315,7 +9315,7 @@
     "Cost": 0.023
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "500 mg",
     "Generic For": "Glucophage",
     "Count": 60,
@@ -9324,7 +9324,7 @@
     "Cost": 0.0146
   },
   {
-    "Drug Name": "Metfromin Tablet",
+    "Drug Name": "Metformin Tablet",
     "Size": "1000 mg",
     "Generic For": "Glucophage",
     "Count": 60,
