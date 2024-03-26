@@ -80,15 +80,15 @@
     <script type="module" src="app.js"></script>
   </head>
   <body>
-    <div id="root">
-      <div class="container-fluid lato-regular primary-font-color">
+    <div id="root" class="w-screen">
+      <div class="container-fluid lato-regular primary-font-color w-screen">
         <header
           class="justify-content header p-2 row text-md-left text-lg-center"
         >
           <div class="col-sm">
             <a href="tel:540-490-4350">(847)-683-2244</a>
           </div>
-          <div class="col-sm">Mon-Fri 10am-6pm</div>
+          <div class="col-sm">Mon-Fri 10am-6pm, Sat 10am-2pm</div>
           <div class="col-sm">262 N State St, Hampshire, IL</div>
           <div class="col-sm">
             <a
@@ -99,7 +99,7 @@
           </div>
         </header>
         <div class="p-4 row">
-          <a href="/">
+          <a href="/" style="display: inline-block; width: 308px">
             <div class="col">
               <img
                 src="./images/logos/HampshireRXLogo.webp"
@@ -217,8 +217,8 @@
                     class="primary-background-color custom-btn border-0"
                     id=""
                   >
-                    <a href="/privacy/privacy.html" class="primary-font-color"
-                      >View our Policy &#8594;
+                    <a href="/about/about.html" class="primary-font-color"
+                      >Learn More &#8594;
                     </a>
                   </button>
                 </div>
@@ -284,7 +284,9 @@
         </div>
       </div>
     </div>
-    <div class="justify-content-md-center header p-2 row footer">
+    <div
+      class="justify-content-md-center header p-2 row footer sticky w-screen"
+    >
       <div class="justify-content-md-center text-center secondary-color">
         &#169; Hampshire Pharmacy |
         <a href="/privacy/privacy.html">Privacy Policy</a> |
