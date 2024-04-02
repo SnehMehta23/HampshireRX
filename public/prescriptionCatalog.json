@@ -4045,7 +4045,7 @@
     "Generic For": "Nexium",
     "Count": 90,
     "Count Unit": "Capsules",
-    "Price": 23.06
+    "Price": 27.00
   },
   {
     "Drug Name": "Esomeprazole Capsule",
@@ -9141,7 +9141,7 @@
     "Generic For": "Corgard",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 45940
+    "Price": 14.00
   },
   {
     "Drug Name": "Nadolol Tablet",
@@ -9157,7 +9157,7 @@
     "Generic For": "Corgard",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 137804
+    "Price": 27.00
   },
   {
     "Drug Name": "Nadolol Tablet",
@@ -9173,7 +9173,7 @@
     "Generic For": "Corgard",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 91870
+    "Price": 19.00
   },
   {
     "Drug Name": "Nadolol Tablet",
@@ -10965,7 +10965,7 @@
     "Generic For": "Altace",
     "Count": 30,
     "Count Unit": "Capsules",
-    "Price": 11440
+    "Price": 21.00
   },
   {
     "Drug Name": "Ramipril Capsule",
@@ -10989,7 +10989,7 @@
     "Generic For": "Altace",
     "Count": 90,
     "Count Unit": "Capsules",
-    "Price": 34304
+    "Price": 48.00
   },
   {
     "Drug Name": "Ramipril Capsule",
@@ -11013,7 +11013,7 @@
     "Generic For": "Altace",
     "Count": 60,
     "Count Unit": "Capsules",
-    "Price": 22870
+    "Price":32.00
   },
   {
     "Drug Name": "Ramipril Capsule",
