@@ -59,7 +59,7 @@
     <option value="75">75</option>
     <option value="90">90</option>
     <option value="120">120</option>
-`,d.appendChild(_),c.appendChild(d);let p=document.createElement("button");p.type="button",p.classList.add("custom-btn"),p.innerHTML="<strong class='primary-font-color'>Apply</strong>",p.addEventListener("click",()=>{o()}),c.appendChild(p),e.appendChild(c);let f=Ei.timeline({delay:.1}),m=document.createElement("div");m.classList.add("row","g-2"),l.length===1?m.classList.add("row-cols-1"):l.length===2?m.classList.add("row-cols-2","two-results"):m.classList.add("row-cols-1","row-cols-md-3"),l.forEach(g=>{let E=document.createElement("div");E.classList.add("col"),E.innerHTML=`
+`,d.appendChild(_),c.appendChild(d);let p=document.createElement("button");p.type="button",p.classList.add("custom-btn"),p.innerHTML="<strong class='primary-font-color'>Apply</strong>",p.addEventListener("click",()=>{o()}),c.appendChild(p),e.style.height="auto",e.appendChild(c);let f=Ei.timeline({delay:.1}),m=document.createElement("div");m.classList.add("row","g-2"),l.length===1?m.classList.add("row-cols-1"):l.length===2?m.classList.add("row-cols-2","two-results"):m.classList.add("row-cols-1","row-cols-md-3"),l.forEach(g=>{let E=document.createElement("div");E.classList.add("col"),E.innerHTML=`
                 <div class="drug-container">
                   <p>${g["Drug Name"]}</p>
                   <p>Generic for ${g["Generic For"]}</p>
@@ -67,7 +67,7 @@
                   <p>${g.Count} ${g["Count Unit"]}</p>
                   <p>$${g.Price.toFixed(2)}</p>
                 </div>
-              `,m.appendChild(E),f.from(E,{duration:.5,opacity:0,y:-20,ease:"power2.out"},"-=0.1")}),e.appendChild(m)}function s(){let l=document.createElement("div");l.classList.add("col"),l.innerHTML=`
+              `,m.appendChild(E),f.from(E,{duration:.5,opacity:0,y:-20,ease:"power2.out"},"-=0.1")}),e.appendChild(m)}function s(){let l=document.createElement("div");e.style.height="auto",l.classList.add("col"),l.innerHTML=`
             <div class="drug-container-error">
               <p>Sorry, we couldn't find your medication, please call us at (847)-683-2244</p>
             </div>

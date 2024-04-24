@@ -147,6 +147,7 @@ pulsateAnimation.to(customButton, {
         filterContainer.appendChild(applyButton);
 
         // Add filter dropdowns container to results container
+        resultsContainer.style.height = "auto"; // Reset height to auto to fit content
         resultsContainer.appendChild(filterContainer);
 
         let animationTimeline = gsap.timeline({ delay: 0.1 }),
@@ -181,6 +182,7 @@ pulsateAnimation.to(customButton, {
 
       function renderErrorMessage() {
         let errorCol = document.createElement("div");
+        resultsContainer.style.height = "auto";
         errorCol.classList.add("col"),
           (errorCol.innerHTML = `
             <div class="drug-container-error">
