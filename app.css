@@ -17,5 +17,5 @@ html{overflow-x: hidden;}.header,.header a,.primary-font-color,.secondary-color{
 
 .filter-container.col-auto {
   margin-right: 10px;
-  display: none;
+  display: none; /* Initially hide the filter container */
 }

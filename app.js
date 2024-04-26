@@ -68,6 +68,41 @@ pulsateAnimation.to(customButton, {
           return;
         }
 
+        // console.log(results);
+        // Arrays to store count and size
+        let countArray = [];
+        let sizeArray = [];
+
+        // Iterate through the results array
+        results.forEach((result) => {
+          // Extract count and size from each result
+          let count = result.Count;
+          let size = result.Size;
+
+          // Add count and size to their respective arrays
+          countArray.push(count);
+          sizeArray.push(size);
+        });
+
+        // Remove duplicates from countArray and sizeArray
+        let uniqueCountArray = [...new Set(countArray)];
+        let uniqueSizeArray = [...new Set(sizeArray)];
+
+        // Sort the uniqueSizeArray in ascending order based on their numerical values
+        uniqueSizeArray.sort((a, b) => {
+          // Extract numeric part of size (e.g., "40 mg" -> 40)
+          const sizeA = parseInt(a);
+          const sizeB = parseInt(b);
+          return sizeA - sizeB;
+        });
+
+        // Sort the uniqueCountArray in ascending order
+        uniqueCountArray.sort((a, b) => a - b);
+
+        // Displaying the sorted arrays without duplicates (for testing)
+        // console.log("Unique Count Array (Sorted):", uniqueCountArray);
+        // console.log("Unique Size Array (Sorted):", uniqueSizeArray);
+
         // Create filter dropdowns container
         let filterContainer = document.createElement("div");
         filterContainer.classList.add("filter-container");
@@ -79,33 +114,13 @@ pulsateAnimation.to(customButton, {
         let gramsFilterSelect = document.createElement("select");
         gramsFilterSelect.id = "gramsFilter";
         gramsFilterSelect.classList.add("form-select");
-        gramsFilterSelect.innerHTML = `
-        <option value="">All Grams</option>
-        <option value="10">10 mg</option>
-        <option value="20">20 mg</option>
-        <option value="30">30 mg</option>
-        <option value="40">40 mg</option>
-    <option value="50">50 mg</option>
-    <option value="100">100 mg</option>
-    <option value="150">150 mg</option>
-    <option value="200">200 mg</option>
-    <option value="250">250 mg</option>
-    <option value="300">300 mg</option>
-    <option value="350">350 mg</option>
-    <option value="400">400 mg</option>
-    <option value="450">450 mg</option>
-    <option value="500">500 mg</option>
-    <option value="550">550 mg</option>
-    <option value="600">600 mg</option>
-    <option value="650">650 mg</option>
-    <option value="700">700 mg</option>
-    <option value="750">750 mg</option>
-    <option value="800">800 mg</option>
-    <option value="850">850 mg</option>
-    <option value="900">900 mg</option>
-    <option value="950">950 mg</option>
-    <option value="1000">1000 mg</option>
-`;
+        let innerSizeHTML = ``;
+        uniqueSizeArray.forEach((size) => {
+          innerSizeHTML += `<option value="${size}">${size}</option>`;
+        });
+        gramsFilterSelect.innerHTML =
+          `<option value="">All Grams</option>` + innerSizeHTML;
+
         gramsFilterDiv.appendChild(gramsFilterSelect);
         filterContainer.appendChild(gramsFilterDiv);
 
@@ -116,22 +131,12 @@ pulsateAnimation.to(customButton, {
         let quantityFilterSelect = document.createElement("select");
         quantityFilterSelect.id = "quantityFilter";
         quantityFilterSelect.classList.add("form-select");
-        quantityFilterSelect.innerHTML = `
-    <option value="">All Quantities</option>
-    <option value="1">1</option>
-    <option value="3">3</option>
-    <option value="5">5</option>
-    <option value="7">7</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="20">20</option>
-    <option value="30">30</option>
-    <option value="40">40</option>
-    <option value="60">60</option>
-    <option value="75">75</option>
-    <option value="90">90</option>
-    <option value="120">120</option>
-`;
+        let innerQuantityHTML = ``;
+        uniqueCountArray.forEach((count) => {
+          innerQuantityHTML += `<option value="${count}">${count}</option>`;
+        });
+        quantityFilterSelect.innerHTML =
+          `<option value="">All Quantities</option>` + innerQuantityHTML;
         quantityFilterDiv.appendChild(quantityFilterSelect);
         filterContainer.appendChild(quantityFilterDiv);
 
