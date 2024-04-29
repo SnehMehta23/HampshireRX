@@ -3592,6 +3592,14 @@
     "Price": 11.11
   },
   {
+    "Drug Name": "Dorzolamide Ophthalmic Solution 2%",
+    "Size": "10 ml",
+    "Generic For": "Trusopt",
+    "Count": 1,
+    "Count Unit": "Bottle",
+    "Price": 17.5
+  },
+  {
     "Drug Name": "Doxazosin Tablet",
     "Size": "8 mg",
     "Generic For": "Cardura",
@@ -4073,11 +4081,43 @@
   },
   {
     "Drug Name": "Enalapril Tablet",
+    "Size": "2.5 mg",
+    "Generic For": "Vasotec",
+    "Count": 30,
+    "Count Unit": "Tablets",
+    "Price": 10
+  },
+  {
+    "Drug Name": "Enalapril Tablet",
+    "Size": "2.5 mg",
+    "Generic For": "Vasotec",
+    "Count": 60,
+    "Count Unit": "Tablets",
+    "Price": 11.92
+  },
+  {
+    "Drug Name": "Enalapril Tablet",
+    "Size": "2.5 mg",
+    "Generic For": "Vasotec",
+    "Count": 90,
+    "Count Unit": "Tablets",
+    "Price": 16
+  },
+  {
+    "Drug Name": "Enalapril Tablet",
+    "Size": "2.5 mg",
+    "Generic For": "Vasotec",
+    "Count": 180,
+    "Count Unit": "Tablets",
+    "Price": 20
+  },
+  {
+    "Drug Name": "Enalapril Tablet",
     "Size": "5 mg",
     "Generic For": "Vasotec",
     "Count": 180,
     "Count Unit": "Tablets",
-    "Price": 34.5
+    "Price": 21.5
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4085,7 +4125,7 @@
     "Generic For": "Vasotec",
     "Count": 180,
     "Count Unit": "Tablets",
-    "Price": 32
+    "Price": 29
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4093,7 +4133,7 @@
     "Generic For": "Vasotec",
     "Count": 180,
     "Count Unit": "Tablets",
-    "Price": 34.5
+    "Price": 26
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4101,7 +4141,7 @@
     "Generic For": "Vasotec",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 20.27
+    "Price": 17.6
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4117,7 +4157,7 @@
     "Generic For": "Vasotec",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 19.39
+    "Price": 18.23
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4125,7 +4165,7 @@
     "Generic For": "Vasotec",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 14.18
+    "Price": 12.4
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4141,7 +4181,7 @@
     "Generic For": "Vasotec",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 13.59
+    "Price": 12.82
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4149,7 +4189,7 @@
     "Generic For": "Vasotec",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 12.09
+    "Price": 11.2
   },
   {
     "Drug Name": "Enalapril Tablet",
@@ -4165,7 +4205,7 @@
     "Generic For": "Vasotec",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 11.8
+    "Price": 11.41
   },
   {
     "Drug Name": "Entacapone Tablet",
@@ -8725,7 +8765,23 @@
     "Generic For": "Glucophage",
     "Count": 180,
     "Count Unit": "Tablets",
-    "Price": 28
+    "Price": 15
+  },
+  {
+    "Drug Name": "Metformin Tablet",
+    "Size": "500 mg",
+    "Generic For": "Glucophage",
+    "Count": 180,
+    "Count Unit": "Tablets",
+    "Price": 15
+  },
+  {
+    "Drug Name": "Metformin Tablet",
+    "Size": "850 mg",
+    "Generic For": "Glucophage",
+    "Count": 180,
+    "Count Unit": "Tablets",
+    "Price": 15
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8733,7 +8789,7 @@
     "Generic For": "Glucophage",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 16.54
+    "Price": 11
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8741,7 +8797,7 @@
     "Generic For": "Glucophage",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 16.07
+    "Price": 10
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8749,7 +8805,7 @@
     "Generic For": "Glucophage",
     "Count": 90,
     "Count Unit": "Tablets",
-    "Price": 15.31
+    "Price": 10
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8757,7 +8813,7 @@
     "Generic For": "Glucophage",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 11.69
+    "Price": 10
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8765,7 +8821,7 @@
     "Generic For": "Glucophage",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 11.38
+    "Price": 8
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8773,7 +8829,7 @@
     "Generic For": "Glucophage",
     "Count": 60,
     "Count Unit": "Tablets",
-    "Price": 10.88
+    "Price": 8
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8781,7 +8837,7 @@
     "Generic For": "Glucophage",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 10.85
+    "Price": 9
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8789,7 +8845,7 @@
     "Generic For": "Glucophage",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 10.69
+    "Price": 8
   },
   {
     "Drug Name": "Metformin Tablet",
@@ -8797,10 +8853,10 @@
     "Generic For": "Glucophage",
     "Count": 30,
     "Count Unit": "Tablets",
-    "Price": 10.44
+    "Price": 8
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 90,
@@ -8808,7 +8864,7 @@
     "Price": 18.25
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 60,
@@ -8816,7 +8872,7 @@
     "Price": 12.83
   },
   {
-    "Drug Name": "Metfromin ER Tablet",
+    "Drug Name": "Metformin ER Tablet",
     "Size": "750 mg",
     "Generic For": "Glucophage XR",
     "Count": 30,
@@ -9822,6 +9878,22 @@
     "Count": 1,
     "Count Unit": "Spray",
     "Price": 25
+  },
+  {
+    "Drug Name": "Nebivolol Tablet",
+    "Size": "10 mg",
+    "Generic For": "Bystolic",
+    "Count": 90,
+    "Count Unit": "Tablets",
+    "Price": 21
+  },
+  {
+    "Drug Name": "Nebivolol Tablet",
+    "Size": "10 mg",
+    "Generic For": "Bystolic",
+    "Count": 30,
+    "Count Unit": "Tablets",
+    "Price": 12.4
   },
   {
     "Drug Name": "Nifedipine ER Tablet",
@@ -11214,6 +11286,142 @@
     "Count": 30,
     "Count Unit": "Capsules",
     "Price": 11.9
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "25 mg",
+    "Generic For": "Lyrica",
+    "Count": 30,
+    "Count Unit": "Capsules",
+    "Price": 12.1
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "25 mg",
+    "Generic For": "Lyrica",
+    "Count": 60,
+    "Count Unit": "Capsules",
+    "Price": 14.2
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "25 mg",
+    "Generic For": "Lyrica",
+    "Count": 90,
+    "Count Unit": "Capsules",
+    "Price": 18
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "25 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 28
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "50 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "75 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "100 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "150 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "200 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "225 mg",
+    "Generic For": "Lyrica",
+    "Count": 30,
+    "Count Unit": "Capsules",
+    "Price": 12.4
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "225 mg",
+    "Generic For": "Lyrica",
+    "Count": 60,
+    "Count Unit": "Capsules",
+    "Price": 14.8
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "225 mg",
+    "Generic For": "Lyrica",
+    "Count": 90,
+    "Count Unit": "Capsules",
+    "Price": 18
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "225 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "300 mg",
+    "Generic For": "Lyrica",
+    "Count": 30,
+    "Count Unit": "Capsules",
+    "Price": 12.7
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "300 mg",
+    "Generic For": "Lyrica",
+    "Count": 60,
+    "Count Unit": "Capsules",
+    "Price": 15.4
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "300 mg",
+    "Generic For": "Lyrica",
+    "Count": 90,
+    "Count Unit": "Capsules",
+    "Price": 20
+  },
+  {
+    "Drug Name": "Pregabalin Capsule",
+    "Size": "300 mg",
+    "Generic For": "Lyrica",
+    "Count": 180,
+    "Count Unit": "Capsules",
+    "Price": 29
   },
   {
     "Drug Name": "Primidone Tablet",
@@ -12960,7 +13168,7 @@
     "Price": 35
   },
   {
-    "Drug Name": "Triamterene / HCL 2 Tablet",
+    "Drug Name": "Triamterene / HCTZ Tablet",
     "Size": "75 mg / 50 mg",
     "Generic For": "Maxide",
     "Count": 90,
@@ -12968,7 +13176,7 @@
     "Price": 21.57
   },
   {
-    "Drug Name": "Triamterene / HCL 2 Tablet",
+    "Drug Name": "Triamterene / HCTZ Tablet",
     "Size": "75 mg / 50 mg",
     "Generic For": "Maxide",
     "Count": 60,
@@ -12976,7 +13184,7 @@
     "Price": 15.05
   },
   {
-    "Drug Name": "Triamterene / HCL 2 Tablet",
+    "Drug Name": "Triamterene / HCTZ Tablet",
     "Size": "75 mg / 50 mg",
     "Generic For": "Maxide",
     "Count": 30,
