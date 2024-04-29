@@ -11,6 +11,9 @@ gsap.from(".img1", {
   repeat: -1,
 });
 
+let originalData = undefined;
+let originalGramFilter = undefined;
+let originalSizeFilter = undefined;
 let pulsateAnimation = gsap.timeline({ repeat: -1, yoyo: true });
 pulsateAnimation.to(customButton, {
   scale: 1.02,
@@ -25,7 +28,12 @@ pulsateAnimation.to(customButton, {
         searchButton = document.getElementById("customButton"),
         resultsContainer = document.getElementById("resultsList");
 
-      function filterAndSortResults(searchQuery, gramsFilter, quantityFilter) {
+      function filterAndSortResults(
+        searchQuery,
+        gramsFilter,
+        quantityFilter,
+        originalResults
+      ) {
         if (searchQuery.trim().length < 3) {
           return [];
         }
@@ -73,16 +81,21 @@ pulsateAnimation.to(customButton, {
         let countArray = [];
         let sizeArray = [];
 
-        // Iterate through the results array
-        results.forEach((result) => {
-          // Extract count and size from each result
-          let count = result.Count;
-          let size = result.Size;
+        //count and size WHY THE FUCK COUNT AND SIZE, GRAMS AND QUANTITY..............PLEASE.
 
-          // Add count and size to their respective arrays
-          countArray.push(count);
-          sizeArray.push(size);
-        });
+        if (!originalData) {
+          results.forEach((result) => {
+            const { Count: count, Size: size } = result;
+            countArray.push(count);
+            sizeArray.push(size);
+          });
+          originalGramFilter = sizeArray; // Grams
+          originalSizeFilter = countArray; // Quantity
+          originalData = results;
+        } else {
+          sizeArray = sizeArray.length ? sizeArray : originalGramFilter; // Grams
+          countArray = countArray.length ? countArray : originalSizeFilter; // Quantity
+        }
 
         // Remove duplicates from countArray and sizeArray
         let uniqueCountArray = [...new Set(countArray)];
