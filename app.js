@@ -80,9 +80,7 @@ pulsateAnimation.to(customButton, {
         // Arrays to store count and size
         let countArray = [];
         let sizeArray = [];
-
-        //count and size WHY THE FUCK COUNT AND SIZE, GRAMS AND QUANTITY..............PLEASE.
-
+        
         if (!originalData) {
           results.forEach((result) => {
             const { Count: count, Size: size } = result;
@@ -219,8 +217,12 @@ pulsateAnimation.to(customButton, {
 
       function applyFilters() {
         const searchValue = searchInput.value.trim();
-        const gramsFilter = document.getElementById("gramsFilter").value;
-        const quantityFilter = document.getElementById("quantityFilter").value;
+        const gramsFilter = document.getElementById("gramsFilter")
+          ? document.getElementById("gramsFilter").value
+          : "";
+        const quantityFilter = document.getElementById("quantityFilter")
+          ? document.getElementById("quantityFilter").value
+          : "";
         if (searchValue) {
           const results = filterAndSortResults(
             searchValue,
