@@ -10,9 +10,19 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@as-integrations/h3": "^1.2.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "graphql": "^16.9.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.16.0",
     "gsap": "^3.12.5",
     "nuxt": "^3.12.4",
+    "nuxt-graphql-server": "^3.1.4",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.14",
+    "nuxt-mongoose": "^1.0.6"
   }
 }
