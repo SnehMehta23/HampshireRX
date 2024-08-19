@@ -4,7 +4,7 @@ module.exports = {
       colors: {
         secondary: "#05091e",
         cream: {
-          100: "#fff5ea",
+          100: "#fff4ea",
           200: "#f5f0e6",
         },
         orange: {
