@@ -1,10 +1,8 @@
 <template>
     <header class="bg-pharmaBlue-400 text-secondary py-2">
-        <div class="container mx-auto px-4 flex justify-between items-center text-white text-sm">
-            <a href="tel:847-683-2244" class="hover:underline">(847)-683-2244</a>
-            <span>262 N State St, Hampshire, IL</span>
+        <div class="container mx-auto px-4 flex items-center text-white text-sm">
             <a href="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
-                class="hover:underline">
+                class="hover:underline ml-auto flex">
                 Visit us on Facebook
             </a>
         </div>

@@ -22,9 +22,9 @@
             <div class="relative" ref="heroRef">
                 <div :class="[
                     'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
-                    'transition-all duration-1000 ease-out'
+                    'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
                 ]">
-                    <div class="py-4 px-20">
+                    <div class="py-2 px-20 mb-2">
                         <NuxtLink to="/" class="">
                             <img src="~/public/images/image2.png" alt="Hampshire Pharmacy Logo" class="w-64" />
                         </NuxtLink>
@@ -44,7 +44,7 @@
                     <!-- SearchBar positioned absolutely -->
                     <div :class="[
                         'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-full rounded-br-full py-6 transform -translate-x-1/2 mt-6 w-full max-w-4xl px-12',
-                        'transition-all duration-1000 ease-out delay-500',
+                        'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
                     ]">
                         <SearchBar />
@@ -54,7 +54,7 @@
                 <!-- Spacer div to push content below the search bar -->
                 <div class="h-16"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-center mt-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-center mt-8">
                     <div
                         class="max-w-[400px] flex flex-col mx-auto text-left border border-pharmaBlue-400 shadow-lg rounded-md shadow-pharmaBlue-400">
                         <div class="bg-[#ebebeb] p-4 rounded-tl-md rounded-tr-md shadow-inner">
