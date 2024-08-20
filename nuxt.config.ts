@@ -18,7 +18,25 @@ export default defineNuxtConfig({
                     "https://www.facebook.com/HampshirePharmacy/"
                 ]
             })
-        },
+          },
+          {
+            innerHTML: `
+              (function (h, o, t, j, a, r) {
+                h.hj =
+                  h.hj ||
+                  function () {
+                    (h.hj.q = h.hj.q || []).push(arguments);
+                  };
+                h._hjSettings = { hjid: 5002732, hjsv: 6 };
+                a = o.getElementsByTagName("head")[0];
+                r = o.createElement("script");
+                r.async = 1;
+                r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+                a.appendChild(r);
+              })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+            `,
+            type: 'text/javascript',
+          },
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/public/favicon.ico'},
@@ -54,8 +72,11 @@ export default defineNuxtConfig({
             },
             {name: "twitter:image", content: "/public/images/HampshireRXMetaImage.jpg"},
         ],
+        // Disable sanitization for specific script
+        //@ts-ignore
+        __dangerouslyDisableSanitizers: ['script'],
     },
-},
+  },
   modules: ["@nuxtjs/tailwindcss", 'nuxt-mongoose', 'nuxt-graphql-server','@nuxtjs/apollo'],
   graphqlServer: {
     url: '/api/graphql',
@@ -77,11 +98,8 @@ export default defineNuxtConfig({
   //@ts-ignore
   mongoose: {
     uri: process.env.MONGODB_URI,
-    options:
-        {}
-    ,
+    options: {},
     modelsDir: 'models',
-    devtools:
-        true,
+    devtools: true,
   },
 })
