@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center mb-8">
+    <div class="flex justify-center items-center mb-8 px-4 xl:px-0">
         <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
             <div id="faqAccordion" class="space-y-4">
                 <div v-for="(faq, index) in faqs" :key="index" class="bg-white border border-gray-200 rounded-lg">
@@ -30,6 +30,10 @@ const faqs = ref([
     {
         question: 'How do I send my prescription?',
         answer: 'Have your doctor send us your prescription to Hampshire Pharmacy at 262 N State St, Hampshire, IL. We will automatically apply the prices you see online.',
+    },
+    {
+        question: 'What are the pharmacy hours and what days are you open?',
+        answer: 'We are open and available to assist with your prescription needs on Monday-Fri from 10:00 am to 6:00 pm, as well as Saturday from 10:00 am to 2:00 pm.',
     },
     {
         question: 'Do I need insurance?',

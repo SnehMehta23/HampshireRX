@@ -1,5 +1,5 @@
 <template>
-    <div class="px-36">
+    <div class="xl:px-36">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 -->
             <div class="bg-white rounded-lg shadow-md p-6">
@@ -14,7 +14,7 @@
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
                 <div @click="showForm"
-                    class="bg-orange-400 text-center cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
+                    class="bg-orange-400 text-center cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
                     Transfer my prescription</div>
             </div>
 
