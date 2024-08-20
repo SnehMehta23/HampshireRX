@@ -7,7 +7,7 @@
         ]">
             <div class="py-2 px-20 mb-2">
                 <NuxtLink to="/" class="">
-                    <img src="~/public/images/image2.png" alt="Hampshire Pharmacy Logo" class="w-64" />
+                    <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo" class="w-64" />
                 </NuxtLink>
             </div>
             <div class="flex flex-col items-center jusitfy-center">

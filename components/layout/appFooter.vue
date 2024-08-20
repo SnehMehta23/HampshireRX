@@ -8,8 +8,8 @@
             <div class="border-t border-gray-200">
                 <div class="flex flex-col md:flex-row justify-between items-center md:space-y-0">
                     <div class="flex items-center space-x-4 xl:mt-0 mt-4">
-                        <div class="w-6 h-6 flex">
-                            <img src="/public/images/svg/capsule.svg" alt="Capsule Icon">
+                        <div class="w-8 h-8 flex">
+                            <img src="/public/images/smallLogoWhite.png" alt="Hampshire Pharmacy Small Logo">
                         </div>
                         <div class="">
                             <ul class="flex space-x-4">

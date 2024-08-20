@@ -22,7 +22,7 @@
 
             <div class="flex-grow flex items-center justify-center">
                 <div class="transform rotate-[30deg]">
-                    <img src="/public/images/image3.png" alt="Medication capsule"
+                    <img src="/public/images/whitePill.png" alt="Medication capsule"
                         class="w-24 h-12 object-contain drop-shadow-xl" />
                 </div>
             </div>

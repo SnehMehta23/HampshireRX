@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-pharmaBlue-400 text-secondary py-2">
+    <header class="bg-pharmaBlue-400 text-secondary py-4">
         <div class="container mx-auto px-4 flex items-center text-white text-base">
             <nav class="ml-auto flex space-x-6">
                 <a v-if="currentRoute !== '/'" href="/"
@@ -25,6 +25,12 @@
                     FAQ
                     <span
                         class="absolute left-0 bottom-0 h-0.5 bg-orange-500 w-full scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <!-- Facebook Icon Link -->
+                <a href="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-orange-500 transition-colors duration-200">
+                    <img class="hover:opacity-75" src="/public/images/logos/Facebook_Logo_Primary.png" alt=""
+                        width="24px" height="24px">
                 </a>
             </nav>
         </div>

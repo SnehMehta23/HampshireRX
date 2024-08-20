@@ -26,7 +26,8 @@
                 ]">
                     <div class="py-2 px-20 mb-2">
                         <NuxtLink to="/" class="">
-                            <img src="~/public/images/image2.png" alt="Hampshire Pharmacy Logo" class="w-64" />
+                            <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo"
+                                class="w-64" />
                         </NuxtLink>
                     </div>
                     <div class="flex flex-col items-center jusitfy-center">
@@ -113,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div class="items-center flex">
-                                    <img src="/public/images/image1.png" alt="" class="w-24 h-8 drop-shadow-xl">
+                                    <img src="/public/images/greenWhitePill.png" alt="" class="w-24 h-8 drop-shadow-xl">
                                 </div>
                             </div>
                         </div>
@@ -146,7 +147,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
-import CardComponent from '../components/cardComponent.vue'
 import ParallaxCard from '~/components/parallaxCard.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
 
