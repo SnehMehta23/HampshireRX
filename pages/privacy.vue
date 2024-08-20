@@ -21,7 +21,9 @@
                         Steps</span></span>
             </div>
 
+            <!-- TODO if we're on the privacy/faq and about page make a toggle to reveal easy steps -->
             <!-- <HowToCards /> -->
+
             <!-- SearchBar positioned absolutely -->
             <div :class="[
                 'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-full rounded-br-full py-6 transform -translate-x-1/2 mt-6 w-full max-w-4xl px-12',

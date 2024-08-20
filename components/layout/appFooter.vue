@@ -13,9 +13,9 @@
                         </div>
                         <div class="">
                             <ul class="flex space-x-4">
-                                <NuxtLink to="/privacy" class="hover:underline cursor-pointer">Privacy Policy</NuxtLink>
+                                <NuxtLink to="/privacy" class="hover:underline cursor-pointer">Privacy</NuxtLink>
                                 <NuxtLink to="faq" class="hover:underline cursor-pointer">FAQs</NuxtLink>
-                                <NuxtLink to="about" class="hover:underline cursor-pointer">About Us</NuxtLink>
+                                <NuxtLink to="about" class="hover:underline cursor-pointer">About</NuxtLink>
                             </ul>
                         </div>
                     </div>
