@@ -5,6 +5,21 @@ export default defineNuxtConfig({
   app: {
     head: {
         title: "Hampshire Pharmacy | Low Cost Generic Alternatives",
+        script: [
+          {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Mobile Tire Pro",
+                "url": "https://www.hampshirepharmacy.com",
+                "logo": "https://www.hampshirepharmacy.com/images/logos/smallLogo.png",
+                "sameAs": [
+                    "https://www.facebook.com/HampshirePharmacy/"
+                ]
+            })
+        },
+        ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/public/favicon.ico'},
             {rel: 'canonical', href: 'https://hampshirepharmacy.com'}
