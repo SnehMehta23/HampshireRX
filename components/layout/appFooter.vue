@@ -9,7 +9,7 @@
                 <div class="flex flex-col md:flex-row justify-between items-center md:space-y-0">
                     <div class="flex items-center space-x-4 xl:mt-0 mt-4">
                         <div class="w-8 h-8 flex">
-                            <img src="/public/images/smallLogoWhite.png" alt="Hampshire Pharmacy Small Logo">
+                            <img src="~/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy Small Logo">
                         </div>
                         <div class="">
                             <ul class="flex space-x-4">
