@@ -925,6 +925,20 @@
   resolved "https://registry.npmjs.org/@graphql-typed-document-node/core/-/core-3.2.0.tgz"
   integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
 
+"@gtm-support/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/@gtm-support/core/-/core-3.0.1.tgz"
+  integrity sha512-SctcoqvvAbGAgZzOb7DZ4wjbZF3ZS7Las3qIEByv6g7mzPf4E9LpRXcQzjmywYLcUx2jys7PWJAa3s5slvj/0w==
+
+"@gtm-support/vue-gtm@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@gtm-support/vue-gtm/-/vue-gtm-3.1.0.tgz"
+  integrity sha512-kGUnCI+Z5lBeCKd7rzgU7UoFU8Q0EkJfh17SgeyAyx8cLdISqeq54BNJKZrME3WXersoigLZVJ1GLs0buYD3lA==
+  dependencies:
+    "@gtm-support/core" "^3.0.1"
+  optionalDependencies:
+    vue-router ">= 4.4.1 < 5.0.0"
+
 "@iconify-json/carbon@^1.1.27":
   version "1.1.37"
   resolved "https://registry.npmjs.org/@iconify-json/carbon/-/carbon-1.1.37.tgz"
@@ -7927,14 +7941,14 @@ vue-devtools-stub@^0.1.0:
   resolved "https://registry.npmjs.org/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz"
   integrity sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==
 
-vue-router@^4.4.0:
+vue-router@^4.4.0, "vue-router@>= 4.4.1 < 5.0.0":
   version "4.4.3"
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.4.3.tgz"
   integrity sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==
   dependencies:
     "@vue/devtools-api" "^6.6.3"
 
-"vue@^2.6.0 || ^3.1.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.1.0, vue@^3.2.0, vue@^3.2.25, vue@^3.3.4, vue@^3.4.32, "vue@>=2.7 || >=3", vue@3.4.36, vue@latest:
+"vue@^2.6.0 || ^3.1.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.1.0, vue@^3.2.0, vue@^3.2.25, vue@^3.3.4, vue@^3.4.32, "vue@>= 3.2.26 < 4.0.0", "vue@>=2.7 || >=3", vue@3.4.36, vue@latest:
   version "3.4.36"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.36.tgz"
   integrity sha512-mIFvbLgjODfx3Iy1SrxOsiPpDb8Bo3EU+87ioimOZzZTOp15IEdAels70IjBOLO3ZFlLW5AhdwY4dWbXVQKYow==

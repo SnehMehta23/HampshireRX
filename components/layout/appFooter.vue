@@ -1,5 +1,21 @@
-<script setup lang="ts">
+<script setup>
+const gtm = useGTM()
 
+const trackNavigationInteraction = (linkName, navigatingTo, navigatingFrom) => {
+    gtm.trackEvent({
+        event: 'navigation_interaction',
+        linkName: linkName,
+        navigatingTo: navigatingTo,
+        navigatingFrom: navigatingFrom
+    })
+}
+
+const route = useRoute();
+const currentRoute = route.path;
+
+const handleNavClick = (linkName, navigatingTo) => {
+    trackNavigationInteraction(linkName, navigatingTo, currentRoute)
+}
 </script>
 
 <template>
@@ -13,9 +29,12 @@
                         </div>
                         <div class="">
                             <ul class="flex space-x-4">
-                                <NuxtLink to="/privacy" class="hover:underline cursor-pointer">Privacy</NuxtLink>
-                                <NuxtLink to="faq" class="hover:underline cursor-pointer">FAQs</NuxtLink>
-                                <NuxtLink to="about" class="hover:underline cursor-pointer">About</NuxtLink>
+                                <NuxtLink @click="handleNavClick('Privacy', '/faq')" to="/privacy"
+                                    class="hover:underline cursor-pointer">Privacy</NuxtLink>
+                                <NuxtLink @click="handleNavClick('FAQs', '/faq')" to="/faq"
+                                    class="hover:underline cursor-pointer">FAQs</NuxtLink>
+                                <NuxtLink @click="handleNavClick('About', '/about')" to="/about"
+                                    class="hover:underline cursor-pointer">About</NuxtLink>
                             </ul>
                         </div>
                     </div>
@@ -36,8 +55,8 @@
                     © 2024 Hampshire Pharmacy. All rights reserved.
                 </div>
                 <div class="text-sm text-gray-500 text-center md:text-left mt-4 xl:mt-0">
-                    Built by the <a class="text-pharmaBlue-400 underline"
-                        href="https://thewebagency.app">TheWebAgency</a>
+                    Built by the <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
+                        class="text-pharmaBlue-400 underline" to="https://thewebagency.app">TheWebAgency</NuxtLink>
                 </div>
             </div>
         </div>

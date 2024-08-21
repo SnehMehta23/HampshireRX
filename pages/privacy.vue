@@ -39,7 +39,7 @@
     <!-- Spacer div to push content below the search bar -->
     <div class="h-16"></div>
 
-    <div class="flex flex-col items-center my-8">
+    <div class="flex flex-col items-center my-8 xl:px-0 px-8">
         <div class="w-full md:w-3/4 mx-auto">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-bold mb-4">PRIVACY POLICY</h1>

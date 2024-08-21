@@ -124,9 +124,9 @@
                                         <span class="opacity-50">Trusted Care</span>
                                         <span class="font-bold drop-shadow-lg">10+ Years</span>
                                     </div>
-                                    <div
+                                    <button @click="trackButtonInteraction('View Our FAQs', 'click')"
                                         class="bg-orange-400 cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
-                                        View Our FAQs &#8594;</div>
+                                        View Our FAQs &#8594;</button>
                                 </div>
                             </div>
                         </div>
@@ -184,6 +184,17 @@ import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
 import ParallaxCard from '~/components/parallaxCard.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
+
+const gtm = useGTM()
+
+const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+    gtm.trackEvent({
+        event: 'button_interaction',
+        buttonName: buttonName,
+        actionType: actionType,
+        ...additionalData
+    })
+}
 
 const isVisible = ref(false);
 const heroRef = ref(null);

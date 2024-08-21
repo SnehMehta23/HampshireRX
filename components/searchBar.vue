@@ -14,10 +14,21 @@
 <script setup>
 import { ref } from 'vue'
 
+const gtm = useGTM()
+
+const trackSearchQuery = (searchQuery) => {
+    gtm.trackEvent({
+        event: 'search_bar_input_query',
+        searchQuery: searchQuery
+    })
+}
+
 const searchValue = ref('')
 
 const handleSearch = () => {
-    // Handle search logic here
-    console.log('Searching for:', searchValue.value)
+    // Track the search query
+    trackSearchQuery(searchValue.value)
+
+    // Handle the search logic
 }
 </script>

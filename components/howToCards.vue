@@ -13,7 +13,7 @@
                 <h3 class="text-xl text-center font-semibold mb-2">Send or Transfer Prescription:</h3>
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
-                <div @click="showForm"
+                <div @click="showFormAndTrackEvent('Transfer My Prescription', 'open_form')"
                     class="bg-orange-400 text-center cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
                     Transfer my prescription</div>
             </div>
@@ -59,7 +59,17 @@ onMounted(() => {
     document.body.appendChild(script);
 });
 
-const showForm = () => {
+const showFormAndTrackEvent = () => {
+    const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+        // TODO: add the information to pass in to this function if the user did or did not complete the form
+        gtm.trackEvent({
+            event: 'button_interaction',
+            buttonName: buttonName,
+            actionType: actionType,
+            ...additionalData
+        })
+    }
+    trackButtonInteraction()
     new Hipaatizer(
         "315cf730-85cc-4e7b-90e7-e92fe6ad2c43",
         false,

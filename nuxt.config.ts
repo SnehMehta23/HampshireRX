@@ -7,6 +7,21 @@ export default defineNuxtConfig({
         title: "Hampshire Pharmacy | Low Cost Generic Alternatives",
         script: [
           {
+            async: true,
+            src: "https://www.googletagmanager.com/gtag/js?id=G-RLVJ1PBJ0E",
+          },
+          {
+            innerHTML: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+              gtag("config", "G-RLVJ1PBJ0E");
+            `,
+            type: 'text/javascript',
+          },
+          {
             type: 'application/ld+json',
             innerHTML: JSON.stringify({
                 "@context": "https://schema.org",
