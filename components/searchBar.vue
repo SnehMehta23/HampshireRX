@@ -29,6 +29,11 @@ const handleSearch = () => {
     // Track the search query
     trackSearchQuery(searchValue.value)
 
-    // Handle the search logic
+    // Handle the search logic here
+    emit('search', searchValue.value)
+    console.log(searchValue.value)
 }
+
+const emit = defineEmits(['search'])
+
 </script>
