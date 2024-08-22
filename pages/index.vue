@@ -181,8 +181,8 @@
                     <span class="font-bold drop-shadow-lg">10+ Years</span>
                   </div>
                   <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                    class="bg-orange-400 cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
-                    View Our FAQs &#8594;</NuxtLink>
+                    class="bg-orange-400 cursor-pointer p-2 px-4 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
+                    View Our FAQs</NuxtLink>
                 </div>
               </div>
             </div>
