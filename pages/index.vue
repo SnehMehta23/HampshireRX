@@ -118,7 +118,7 @@
 
             <!-- Dropdown for countUnit -->
             <div class="flex flex-col justify-start items-center">
-              <label for="">Presentation</label>
+              <label for="">Type</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
                 <option value="">All</option>
                 <option v-for="option in filteredOptions.countUnit" :key="option" :value="option">
