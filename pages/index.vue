@@ -49,8 +49,8 @@
 </style>
 <template>
     <div class="flex flex-col min-h-screen bg-cream-100">
-        <AppHeader />
-        <main class="flex-grow">
+        <LayoutAppHeader />
+        <main class="flex-grow bg-cream-100">
             <div class="relative" ref="heroRef">
                 <div :class="[
                     'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
@@ -83,12 +83,66 @@
                         'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
                     ]">
-                        <SearchBar />
+                        <SearchBar @search="(n) =>handleSubmit(n)"/>
                     </div>
                 </div>
 
                 <!-- Spacer div to push content below the search bar -->
-                <div class="h-16"></div>
+                <div class="h-16">
+
+                </div>
+              <div>
+                <div class="mt-20 w-full flex justify-center items-center gap-4" v-if="filteredMedData.length > 0">
+                  <!-- Dropdown for genericFor -->
+                  <div class="flex flex-col justify-start items-center">
+                    <label for="">Generic</label>
+                    <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
+                      <option value="">All</option>
+                      <option v-for="option in filteredOptions.genericFor" :key="option" :value="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <!-- Dropdown for count -->
+                  <div class="flex flex-col justify-start items-center">
+                    <label for="">Count</label>
+                    <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
+                      <option value="">All</option>
+                      <option v-for="option in filteredOptions.count" :key="option" :value="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <!-- Dropdown for countUnit -->
+                  <div class="flex flex-col justify-start items-center">
+                    <label for="">Presentation</label>
+                    <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
+                      <option value="">All</option>
+                      <option v-for="option in filteredOptions.countUnit" :key="option" :value="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <!-- Dropdown for size -->
+                  <div class="flex flex-col justify-start items-center">
+                    <label for="">Size</label>
+                    <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
+                      <option value="">All</option>
+                      <option v-for="option in filteredOptions.size" :key="option" :value="option">
+                        {{ option }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="grid mt-4 p-4 grid-cols-4 gap-4 justify-center place-content-center items-center">
+                <template v-if="medData">
+                  <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med"/>
+                </template>
+              </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-center mt-8">
                     <div
@@ -173,17 +227,39 @@
                 </div>
             </div>
         </main>
-        <AppFooter />
+        <LayoutAppFooter />
     </div>
 </template>
 
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import AppHeader from '../components/layout/appHeader.vue'
-import SearchBar from '../components/searchBar.vue'
+import { gql } from "graphql-tag";
 import ParallaxCard from '~/components/parallaxCard.vue'
-import AppFooter from '~/components/layout/appFooter.vue';
+
+const medData = ref([]); // Initialize as an empty array
+
+// Define the query to fetch meds
+const query = gql`
+  query getMeds($name: String) {
+    meds(name: $name) {
+      id
+      name
+      size
+      count
+      countUnit
+      genericFor
+      price
+    }
+  }
+`;
+
+async function handleSubmit(n) {
+  const variables = { name: n }; // Replace with the name you want to search for
+  const { data } = await useAsyncQuery(query, variables);
+  medData.value = data.value.meds;
+  console.log(medData.value);
+}
 
 const gtm = useGTM()
 
@@ -221,5 +297,54 @@ onUnmounted(() => {
     if (observer) {
         observer.disconnect();
     }
+});
+
+const selectedFilters = ref({
+  genericFor: "",
+  count: "",
+  countUnit: "",
+  size: ""
+});
+
+// Get unique options for each dropdown, filtered by selected filters
+const filteredOptions = computed(() => {
+  const options = {
+    genericFor: new Set(),
+    count: new Set(),
+    countUnit: new Set(),
+    size: new Set()
+  };
+
+  medData.value.forEach(med => {
+    if (
+        (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
+        (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
+        (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
+        (!selectedFilters.value.size || med.size === selectedFilters.value.size)
+    ) {
+      options.genericFor.add(med.genericFor);
+      options.count.add(med.count);
+      options.countUnit.add(med.countUnit);
+      options.size.add(med.size);
+    }
+  });
+
+  return {
+    genericFor: Array.from(options.genericFor),
+    count: Array.from(options.count),
+    countUnit: Array.from(options.countUnit),
+    size: Array.from(options.size)
+  };
+});
+
+const filteredMedData = computed(() => {
+  return medData.value.filter(med => {
+    return (
+        (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
+        (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
+        (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
+        (!selectedFilters.value.size || med.size === selectedFilters.value.size)
+    );
+  });
 });
 </script>
