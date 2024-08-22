@@ -21,9 +21,9 @@
             <!-- <HowToCards /> -->
             <!-- SearchBar positioned absolutely -->
             <div :class="[
-                'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-full rounded-br-full py-6 transform -translate-x-1/2 mt-6 w-full max-w-4xl px-12',
+                'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
                 'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
             ]">
                 <SearchBar />
             </div>
