@@ -146,71 +146,69 @@
           </template>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-center xl:mt-8 space-y-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto items-center xl:mt-8">
           <div
-            class="max-w-[400px] flex flex-col mx-auto text-left border border-pharmaBlue-400 shadow-lg rounded-md shadow-pharmaBlue-400">
+            class="flex flex-col mx-auto text-left border border-pharmaBlue-400 shadow-lg rounded-md shadow-pharmaBlue-400 w-full max-w-lg">
             <div class="bg-[#ebebeb] p-4 rounded-tl-md rounded-tr-md shadow-inner">
-              <h2 class="text-4xl font-bold leading-tight break-words">Broad Prescription Selection
-              </h2>
+              <h2 class="text-4xl font-bold leading-tight break-words">Broad Prescription Selection</h2>
             </div>
             <div class="bg-[#d9dbe1] p-4 shadow-inner">
-              <p class="text-base">Your go-to pharmacy for a wide selection of trusted
-                prescription
-                medications. From common
-                to specialty medications, we have the prescriptions you need.</p>
+              <p class="text-base">Your go-to pharmacy for a wide selection of trusted prescription medications. From
+                common to
+                specialty medications, we have the prescriptions you need.</p>
             </div>
             <div class="flex bg-[#f0f0f0] rounded-bl-md rounded-br-md p-4 shadow-inner">
               <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
-              <p class="text-pharmaBlue-400">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
+              <p class="text-pharmaBlue-400 ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
             </div>
           </div>
-          <div class="xl:px-0 px-6">
-            <div
-              class="bg-pharmaBlue-400 py-10 border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 space-y-2 px-10">
-              <span class="opacity-50">Who are we?</span>
-              <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
-              <p class="font-light">As a trusted community pharmacy for over 10 years we are fed up with
-                the current state of
-                healthcare. We're on a mission to change the game. Unlike anonymous assembly lines,
-                we're your neighbors, and you'll always know who's behind your prescription.</p>
+
+          <div
+            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 p-6 space-y-4 w-full max-w-lg">
+            <span class="opacity-50">Who are we?</span>
+            <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
+            <p class="font-light">As a trusted community pharmacy for over 10 years we are fed up with the current state
+              of
+              healthcare. We're on a mission to change the game. Unlike anonymous assembly lines, we're your neighbors,
+              and
+              you'll always know who's behind your prescription.</p>
+            <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="bg-white rounded-full w-3 h-3"></div>
-                <div class="flex items-center space-x-16">
-                  <div class="flex flex-col ml-2 mt-[6px]">
-                    <span class="opacity-50">Trusted Care</span>
-                    <span class="font-bold drop-shadow-lg">10+ Years</span>
-                  </div>
-                  <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                    class="bg-orange-400 cursor-pointer p-2 px-4 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
-                    View Our FAQs</NuxtLink>
+                <div class="flex flex-col ml-2">
+                  <span class="opacity-50">Trusted Care</span>
+                  <span class="font-bold drop-shadow-lg">10+ Years</span>
                 </div>
               </div>
+              <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
+                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
+                View Our FAQs
+              </NuxtLink>
             </div>
           </div>
-          <div class="xl:px-0 px-6">
-            <div
-              class="bg-orange-400 py-10 border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 space-y-2 px-10 h-[400px]">
-              <span class="opacity-50">Convenience</span>
-              <h3 class="text-3xl font-bold">Generic Prescription Lookup Tool</h3>
-              <p class="font-light">Enjoy the flexibility to pick up multiple months' worth of generic
-                medications without
-                long wait times. With efficient service and a streamlined process, you can easily manage
-                your prescriptions, saving time and hassle while prioritizing your health needs.</p>
-              <div class="flex justify-between">
-                <div class="items-center flex">
-                  <div class="bg-white rounded-full w-3 h-3"></div>
-                  <div class="flex flex-col ml-2">
-                    <span class="opacity-50">Prescription Experts</span>
-                    <span class="font-bold drop-shadow-lg">1000s of Generic Alts</span>
-                  </div>
-                </div>
-                <div class="items-center flex">
-                  <img src="/public/images/greenWhitePill.png" alt="" class="w-24 h-8 drop-shadow-xl">
+
+          <div
+            class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 p-6 space-y-4 w-full max-w-lg">
+            <span class="opacity-50">Convenience</span>
+            <h3 class="text-3xl font-bold">Generic Prescription Lookup Tool</h3>
+            <p class="font-light">Enjoy the flexibility to pick up multiple months' worth of generic medications without
+              long
+              wait times. With efficient service and a streamlined process, you can easily manage your prescriptions,
+              saving
+              time and hassle while prioritizing your health needs.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center">
+                <div class="bg-white rounded-full w-3 h-3"></div>
+                <div class="flex flex-col ml-2">
+                  <span class="opacity-50">Prescription Experts</span>
+                  <span class="font-bold drop-shadow-lg">1000s of Generic Alts</span>
                 </div>
               </div>
+              <img src="/public/images/greenWhitePill.png" alt="" class="w-24 h-8 drop-shadow-xl">
             </div>
           </div>
         </div>
+
 
         <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
           <!-- outer square -->

@@ -51,6 +51,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
+const gtm = useGTM();
 
 onMounted(() => {
     const script = document.createElement('script');
