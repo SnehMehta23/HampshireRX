@@ -31,7 +31,7 @@ const handleSearch = () => {
 
     // Handle the search logic here
     emit('search', searchValue.value)
-    console.log(searchValue.value)
+    // console.log(searchValue.value)
 }
 
 const emit = defineEmits(['search'])

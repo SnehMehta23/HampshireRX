@@ -19,7 +19,7 @@ const resolvers: Resolvers = {
         meds: async (_, { name }) => {
             try {
                 const filter = name ? { name: { $regex: name, $options: 'i' } } : {}; // Case-insensitive partial match
-                console.log(filter);
+                // console.log(filter);
                 return await medSchema.find(filter);
             } catch (error) {
                 throw new Error('Error fetching meds');
@@ -125,5 +125,5 @@ export default startServerAndCreateH3Handler(apollo, {
 
 // Start the HTTP server with WebSocket enabled
 httpServer.listen(4000, () => {
-    console.log('Server is now running on http://localhost:4000/graphql');
+    // console.log('Server is now running on http://localhost:4000/graphql');
 });

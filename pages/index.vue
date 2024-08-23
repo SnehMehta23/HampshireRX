@@ -266,7 +266,7 @@ async function handleSubmit(n) {
     }
   });
 
-  console.log(medData.value);
+  // console.log(medData.value);
 }
 
 const gtm = useGTM()

@@ -7,7 +7,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       defer: false,
       compatibility: false,
       enabled: true,
-      debug: false,
+      debug: true,
       loadScript: true,
       vueRouter: useRouter(),
       trackOnNextTick: false,

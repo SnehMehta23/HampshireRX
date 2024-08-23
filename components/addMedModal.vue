@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {gql} from "graphql-tag";
+import { gql } from "graphql-tag";
 
 const query = gql`
   query getMeds {
@@ -50,7 +50,7 @@ const CREATE_MED_MUTATION = gql`
 `;
 
 
-const {data} = useLazyAsyncQuery(query)
+const { data } = useLazyAsyncQuery(query)
 
 generics.value = [...new Set(data.value?.meds.map(item => item.genericFor))];
 
@@ -61,17 +61,17 @@ const filteredList = computed(() => {
   }
 
   return generics.value.filter(item =>
-      item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
+    item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
   );
 })
 
-const {mutate: createMed} = useMutation(CREATE_MED_MUTATION)
+const { mutate: createMed } = useMutation(CREATE_MED_MUTATION)
 
-async function saveMed (){
-  try{
-    const response = await createMed({...medData, count: parseInt(medData.count) });
-  } catch (e){
-    console.log(e)
+async function saveMed() {
+  try {
+    const response = await createMed({ ...medData, count: parseInt(medData.count) });
+  } catch (e) {
+    // console.log(e)
   }
 }
 
@@ -112,15 +112,16 @@ const selectGeneric = (med) => {
             <label for="">Generic For:</label>
             <div class="bg-slate-100 p-1 border border-gray-400 rounded  flex items-center">
               <div>
-                <input class="bg-slate-100" v-model="medData.genericFor " type="text">
+                <input class="bg-slate-100" v-model="medData.genericFor" type="text">
                 <ul v-if="showDropDown"
-                    class="border border-gray-400 shadow-md shadow-black overflow-auto max-h-40 absolute bg-slate-100 m-1 p-1 rounded">
+                  class="border border-gray-400 shadow-md shadow-black overflow-auto max-h-40 absolute bg-slate-100 m-1 p-1 rounded">
                   <li @click="selectGeneric(med)" class="cursor-pointer hover:bg-gray-200" v-for="med in filteredList">
                     {{ med }}
                   </li>
                 </ul>
                 <span @click="showDropDown = !showDropDown"
-                      class=" cursor-pointer text-xs bg-blue-500 px-2 py-0.5 rounded text-white shadow-md">{{ showDropDown ? "Hide" : "List" }}</span>
+                  class=" cursor-pointer text-xs bg-blue-500 px-2 py-0.5 rounded text-white shadow-md">{{ showDropDown ?
+                  "Hide" : "List" }}</span>
               </div>
             </div>
           </div>
@@ -130,19 +131,23 @@ const selectGeneric = (med) => {
           </div>
           <div class="flex gap-2 justify-between items-center">
             <label for="">Count:</label>
-            <input v-model="medData.count" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md" type="text">
+            <input v-model="medData.count" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
+              type="text">
           </div>
           <div class="flex gap-2 justify-between items-center">
             <label for="">Count Unit:</label>
-            <input v-model="medData.countUnit" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md" type="text">
+            <input v-model="medData.countUnit" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
+              type="text">
           </div>
           <div class="flex gap-2 justify-between items-center">
             <label for="">Price:</label>
-            <input v-model="medData.price" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md" type="text">
+            <input v-model="medData.price" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
+              type="text">
           </div>
         </div>
         <div class="flex mt-3 justify-end gap-2 items-center">
-          <button @click="$emit('modalClose')" class="bg-red-500 text-white px-2 py-0.5 rounded shadow-md">Cancel</button>
+          <button @click="$emit('modalClose')"
+            class="bg-red-500 text-white px-2 py-0.5 rounded shadow-md">Cancel</button>
           <button @click.prevent="saveMed" class="bg-blue-500 text-white px-2 py-0.5 rounded shadow-md">Save</button>
         </div>
       </form>
@@ -151,6 +156,4 @@ const selectGeneric = (med) => {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

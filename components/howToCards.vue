@@ -58,17 +58,17 @@ onMounted(() => {
 
 })
 
+const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+    gtm.trackEvent({
+        event: 'button_interaction',
+        buttonName: buttonName,
+        actionType: actionType,
+        ...additionalData
+    })
+}
 
-const openModal = () => {
-    const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
-        gtm.trackEvent({
-            event: 'button_interaction',
-            buttonName: buttonName,
-            actionType: actionType,
-            ...additionalData
-        })
-    }
-    trackButtonInteraction()
+const openModal = (buttonName, actionType) => {
+    trackButtonInteraction(buttonName, actionType)
     isOpen.value = true;
 }
 
