@@ -1,5 +1,5 @@
 <template>
-    <div class="xl:px-36"  :class="{ 'overflow-hidden': isOpen }">
+    <div class="xl:px-36" :class="{ 'overflow-hidden': isOpen }">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 -->
             <div class="bg-white rounded-lg shadow-md p-6">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-  <TransferModal v-if="isOpen" @close="isOpen = false" />
+    <TransferModal v-if="isOpen" @close="isOpen = false" />
 </template>
 
 <script setup>
@@ -60,17 +60,16 @@ onMounted(() => {
 
 
 const openModal = () => {
-  const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
-    // TODO: add the information to pass in to this function if the user did or did not complete the form
-    gtm.trackEvent({
-      event: 'button_interaction',
-      buttonName: buttonName,
-      actionType: actionType,
-      ...additionalData
-    })
-  }
-  trackButtonInteraction()
-  isOpen.value = true;
+    const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+        gtm.trackEvent({
+            event: 'button_interaction',
+            buttonName: buttonName,
+            actionType: actionType,
+            ...additionalData
+        })
+    }
+    trackButtonInteraction()
+    isOpen.value = true;
 }
 
 

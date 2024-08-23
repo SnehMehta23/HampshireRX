@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const gtm = useGTM();
 const form = ref(null)
 const isLoading = ref(true)
 
