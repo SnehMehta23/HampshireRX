@@ -1,5 +1,5 @@
 <template>
-    <div class="xl:px-36">
+    <div class="xl:px-36"  :class="{ 'overflow-hidden': isOpen }">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 -->
             <div class="bg-white rounded-lg shadow-md p-6">
@@ -13,7 +13,7 @@
                 <h3 class="text-xl text-center font-semibold mb-2">Send or Transfer Prescription:</h3>
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
-                <div @click="showFormAndTrackEvent('Transfer My Prescription', 'open_form')"
+                <div @click="openModal('Transfer My Prescription', 'open_form')"
                     class="bg-orange-400 text-center cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
                     Transfer my prescription</div>
             </div>
@@ -47,35 +47,32 @@
             </div>
         </div>
     </div>
+  <TransferModal v-if="isOpen" @close="isOpen = false" />
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
 const gtm = useGTM();
+const isOpen = ref(false);
 
 onMounted(() => {
-    const script = document.createElement('script');
-    script.src = "https://app.hipaatizer.com/shared/hipaatizer-form-renderer.js";
-    script.id = "315cf730-85cc-4e7b-90e7-e92fe6ad2c43-script";
-    document.body.appendChild(script);
-});
 
-const showFormAndTrackEvent = () => {
-    const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
-        // TODO: add the information to pass in to this function if the user did or did not complete the form
-        gtm.trackEvent({
-            event: 'button_interaction',
-            buttonName: buttonName,
-            actionType: actionType,
-            ...additionalData
-        })
-    }
-    trackButtonInteraction()
-    new Hipaatizer(
-        "315cf730-85cc-4e7b-90e7-e92fe6ad2c43",
-        false,
-        "",
-        false
-    ).render();
-};
+})
+
+
+const openModal = () => {
+  const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+    // TODO: add the information to pass in to this function if the user did or did not complete the form
+    gtm.trackEvent({
+      event: 'button_interaction',
+      buttonName: buttonName,
+      actionType: actionType,
+      ...additionalData
+    })
+  }
+  trackButtonInteraction()
+  isOpen.value = true;
+}
+
+
+
 </script>
