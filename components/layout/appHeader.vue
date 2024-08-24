@@ -1,6 +1,10 @@
 <template>
     <header class="bg-pharmaBlue-400 text-secondary py-4">
         <div class="container mx-auto px-4 flex items-center text-white text-base">
+            <div class="hidden sm:flex ml-2">
+                <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
+                <p class="text-white ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
+            </div>
             <nav class="ml-auto flex space-x-6">
                 <NuxtLink v-if="currentRoute !== '/'" to="/" @click="handleNavClick('Home', '/')"
                     class="hover:underline hover:text-orange-500 transition-colors duration-200 relative">

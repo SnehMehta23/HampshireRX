@@ -70,9 +70,8 @@
           </div>
           <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
             <span
-              class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">How
-              Hampshire Pharmacy Works <span class="text-orange-500">In Just Three
-                Steps</span></span>
+              class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
+              started in <span class="text-orange-500">three easy steps</span></span>
           </div>
 
           <HowToCards />
@@ -146,8 +145,8 @@
           </template>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto items-center xl:mt-8">
-          <div
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center xl:my-8 mb-12">
+          <!-- <div
             class="flex flex-col mx-auto text-left border border-pharmaBlue-400 shadow-lg rounded-md shadow-pharmaBlue-400 w-full max-w-lg">
             <div class="bg-[#ebebeb] p-4 rounded-tl-md rounded-tr-md shadow-inner">
               <h2 class="text-4xl font-bold leading-tight break-words">Broad Prescription Selection</h2>
@@ -161,8 +160,9 @@
               <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
               <p class="text-pharmaBlue-400 ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
             </div>
-          </div>
+          </div> -->
 
+          <!-- Who are we container -->
           <div
             class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 p-6 space-y-4 w-full max-w-lg">
             <span class="opacity-50">Who are we?</span>
@@ -173,13 +173,6 @@
               and
               you'll always know who's behind your prescription.</p>
             <div class="flex items-center justify-between">
-              <div class="flex items-center">
-                <div class="bg-white rounded-full w-3 h-3"></div>
-                <div class="flex flex-col ml-2">
-                  <span class="opacity-50">Trusted Care</span>
-                  <span class="font-bold drop-shadow-lg">10+ Years</span>
-                </div>
-              </div>
               <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
                 class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
                 View Our FAQs
@@ -187,6 +180,7 @@
             </div>
           </div>
 
+          <!-- Convenience Container -->
           <div
             class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 p-6 space-y-4 w-full max-w-lg">
             <span class="opacity-50">Convenience</span>
@@ -197,21 +191,20 @@
               saving
               time and hassle while prioritizing your health needs.</p>
             <div class="flex justify-between items-center">
-              <div class="flex items-center">
+              <!-- <div class="flex items-center">
                 <div class="bg-white rounded-full w-3 h-3"></div>
                 <div class="flex flex-col ml-2">
                   <span class="opacity-50">Prescription Experts</span>
                   <span class="font-bold drop-shadow-lg">1000s of Generic Alts</span>
                 </div>
               </div>
-              <img src="/public/images/greenWhitePill.png" alt="" class="w-24 h-8 drop-shadow-xl">
+              <img src="/public/images/greenWhitePill.png" alt="" class="w-24 h-8 drop-shadow-xl"> -->
             </div>
           </div>
         </div>
 
 
-        <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
-          <!-- outer square -->
+        <!-- <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
           <div class="xl:mb-0 mb-12">
             <ParallaxCard />
           </div>
@@ -224,7 +217,7 @@
               integrity, compassion, and reliability. When you choose Hampshire Pharmacy, you're choosing
               a partner in your journey to a healthier, happier life.</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
     <LayoutAppFooter />

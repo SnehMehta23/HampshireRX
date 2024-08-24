@@ -1,23 +1,3 @@
-<script setup>
-const gtm = useGTM()
-
-const trackNavigationInteraction = (linkName, navigatingTo, navigatingFrom) => {
-    gtm.trackEvent({
-        event: 'navigation_interaction',
-        linkName: linkName,
-        navigatingTo: navigatingTo,
-        navigatingFrom: navigatingFrom
-    })
-}
-
-const route = useRoute();
-const currentRoute = route.path;
-
-const handleNavClick = (linkName, navigatingTo) => {
-    trackNavigationInteraction(linkName, navigatingTo, currentRoute)
-}
-</script>
-
 <template>
     <footer class="xl:bg-pale-gray bg-orange-400 text-black py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,6 +28,12 @@ const handleNavClick = (linkName, navigatingTo) => {
                                 <li>262 N State St, Hampshire, IL</li>
                             </ul>
                         </div>
+                        <!-- Add pharmacy hours for mobile -->
+                        <div class="sm:hidden mt-4">
+                            <h4 class="font-semibold mb-2">Hours:</h4>
+                            <p>Mon-Fri 10am-6pm</p>
+                            <p>Sat 10am-2pm</p>
+                        </div>
                     </div>
                 </div>
 
@@ -62,5 +48,3 @@ const handleNavClick = (linkName, navigatingTo) => {
         </div>
     </footer>
 </template>
-
-<style scoped></style>

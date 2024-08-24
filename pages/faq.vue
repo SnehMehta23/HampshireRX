@@ -1,3 +1,53 @@
+<style scoped>
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 2.5s ease-out forwards;
+}
+
+.underline-animation {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: -7px;
+    /* Adjust this value as needed */
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    animation: underlineExpand 0.9s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes underlineExpand {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+</style>
+
 <template>
     <AppHeader />
     <div class="relative" ref="heroRef">
@@ -19,9 +69,8 @@
             </div>
             <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
                 <span
-                    class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">How
-                    Hampshire Pharmacy Works <span class="text-orange-500">In Just Three
-                        Steps</span></span>
+                    class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
+                    started in <span class="text-orange-500">three easy steps</span></span>
             </div>
 
             <HowToCards />
