@@ -54,7 +54,7 @@ export default defineNuxtConfig({
           },
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/public/favicon.ico'},
+            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
             {rel: 'canonical', href: 'https://hampshirepharmacy.com'}
         ],
         meta: [
