@@ -49,7 +49,7 @@
 </style>
 <template>
   <div class="flex flex-col min-h-screen bg-cream-100">
-    <LayoutAppHeader />
+    <LayoutAppHeader/>
     <main class="flex-grow bg-cream-100">
       <div class="relative" ref="heroRef">
         <div :class="[
@@ -58,7 +58,7 @@
         ]">
           <div class="py-2 xl:px-20 px-0 xl:flex-none flex xl:justify-normal justify-center mb-2">
             <NuxtLink to="/" class="">
-              <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo" class="w-64" />
+              <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo" class="w-64"/>
             </NuxtLink>
           </div>
           <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -70,18 +70,18 @@
           </div>
           <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
             <span
-              class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
+                class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
               started in <span class="text-orange-500">three easy steps</span></span>
           </div>
 
-          <HowToCards />
+          <HowToCards/>
           <!-- SearchBar positioned absolutely -->
           <div :class="[
             'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
             'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
             isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
           ]">
-            <SearchBar @search="(n) => handleSubmit(n)" />
+            <SearchBar @search="(n) => handleSubmit(n)"/>
           </div>
         </div>
 
@@ -91,8 +91,8 @@
         </div>
         <div>
           <div id="searchResults"
-            class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            v-if="filteredMedData.length > 0">
+               class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
+               v-if="filteredMedData.length > 0">
             <!-- Dropdown for genericFor -->
             <div class="flex flex-col justify-start items-center">
               <label for="">Generic</label>
@@ -139,13 +139,19 @@
           </div>
         </div>
         <div
-          class="grid mt-4 p-4 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-center place-content-center items-center">
+            :class="[
+    'mt-4 p-4 gap-4 w-full',
+    filteredMedData.length < 4
+      ? 'flex justify-center'
+      : 'grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4'
+  ]"
+        >
           <template v-if="medData">
             <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" />
           </template>
         </div>
 
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center xl:my-8 mb-12">
+        <div class="grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center xl:my-8 mb-12">
           <!-- <div
             class="flex flex-col mx-auto text-left border border-pharmaBlue-400 shadow-lg rounded-md shadow-pharmaBlue-400 w-full max-w-lg">
             <div class="bg-[#ebebeb] p-4 rounded-tl-md rounded-tr-md shadow-inner">
@@ -164,7 +170,7 @@
 
           <!-- Who are we container -->
           <div
-            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 p-6 space-y-4 w-full max-w-lg">
+              class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 p-6 space-y-4 w-full max-w-lg">
             <span class="opacity-50">Who are we?</span>
             <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
             <p class="font-light">As a trusted community pharmacy for over 10 years we are fed up with the current state
@@ -174,7 +180,7 @@
               you'll always know who's behind your prescription.</p>
             <div class="flex items-center justify-between">
               <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
+                        class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">
                 View Our FAQs
               </NuxtLink>
             </div>
@@ -182,7 +188,7 @@
 
           <!-- Convenience Container -->
           <div
-            class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 p-6 space-y-4 w-full max-w-lg">
+              class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 p-6 space-y-4 w-full max-w-lg">
             <span class="opacity-50">Convenience</span>
             <h3 class="text-3xl font-bold">Generic Prescription Lookup Tool</h3>
             <p class="font-light">Enjoy the flexibility to pick up multiple months' worth of generic medications without
@@ -220,16 +226,16 @@
         </div> -->
       </div>
     </main>
-    <LayoutAppFooter />
+    <LayoutAppFooter/>
   </div>
 </template>
 
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { gql } from "graphql-tag";
+import {ref, onMounted, onUnmounted} from 'vue';
+import {gql} from "graphql-tag";
 import ParallaxCard from '~/components/parallaxCard.vue'
-import { nextTick } from 'vue'
+import {nextTick} from 'vue'
 
 const medData = ref([]); // Initialize as an empty array
 
@@ -249,13 +255,19 @@ const query = gql`
 `;
 
 async function handleSubmit(n) {
-  const variables = { name: n }; // Replace with the name you want to search for
-  const { data } = await useAsyncQuery(query, variables);
+  selectedFilters.value = {
+    genericFor: "",
+    count: "",
+    countUnit: "",
+    size: ""
+  }
+  const variables = {name: n}; // Replace with the name you want to search for
+  const {data} = await useAsyncQuery(query, variables);
   medData.value = data.value.meds;
   nextTick(() => {
     const resultsElement = document.getElementById('searchResults');
     if (resultsElement) {
-      resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      resultsElement.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
   });
 
@@ -286,7 +298,7 @@ onMounted(() => {
         isVisible.value = true;
         observer.disconnect();  // Stop observing once visible
       }
-    }, { threshold: 0.1 });  // Trigger when 10% of the element is visible
+    }, {threshold: 0.1});  // Trigger when 10% of the element is visible
 
     if (heroRef.value) {
       observer.observe(heroRef.value);
@@ -318,10 +330,10 @@ const filteredOptions = computed(() => {
 
   medData.value.forEach(med => {
     if (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
+        (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
+        (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
+        (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
+        (!selectedFilters.value.size || med.size === selectedFilters.value.size)
     ) {
       options.genericFor.add(med.genericFor);
       options.count.add(med.count);
@@ -341,10 +353,10 @@ const filteredOptions = computed(() => {
 const filteredMedData = computed(() => {
   return medData.value.filter(med => {
     return (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
+        (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
+        (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
+        (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
+        (!selectedFilters.value.size || med.size === selectedFilters.value.size)
     );
   });
 });
