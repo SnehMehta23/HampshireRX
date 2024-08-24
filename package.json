@@ -1,25 +1,30 @@
 {
-  "name": "hampshirerx",
-  "version": "1.0.0",
-  "description": "A generic prescription drugs price lookup tool acting as a portal for an online cash-pharmacy",
-  "main": "app.js",
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SnehMehta23/HampshireRX.git"
-  },
-  "author": "Sneh Mehta & Neil Maniar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SnehMehta23/HampshireRX/issues"
-  },
-  "homepage": "https://github.com/SnehMehta23/HampshireRX#readme",
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "@apollo/server": "^4.11.0",
+    "@as-integrations/h3": "^1.2.1",
+    "@gtm-support/vue-gtm": "^3.1.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "graphql": "^16.9.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.16.0",
     "gsap": "^3.12.5",
-    "vite": "^5.1.5"
+    "nuxt": "^3.12.4",
+    "nuxt-graphql-server": "^3.1.4",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.14",
+    "nuxt-mongoose": "^1.0.6"
   }
 }
