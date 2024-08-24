@@ -70,11 +70,10 @@
             <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
                 <span
                     class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
-                    started in <span class="text-orange-500">three easy steps</span></span>
+                    started in three easy steps</span>
             </div>
 
             <HowToCards />
-            <!-- SearchBar positioned absolutely -->
             <div :class="[
                 'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
                 'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
