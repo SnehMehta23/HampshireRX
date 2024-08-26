@@ -77,9 +77,7 @@
         </div>
     </div>
 
-  <div class="h-16">
 
-  </div>
   <div class="w-full text-center mt-10">
     <ErrorMessage v-if="errorText" :text="errorText"/>
 
@@ -111,7 +109,7 @@
       </div>
 
       <!-- Dropdown for countUnit -->
-      <!-- <div class="flex flex-col justify-start items-center">
+      <div class="flex flex-col justify-start items-center">
         <label for="">Type</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
           <option value="">All</option>
@@ -121,7 +119,7 @@
         </select>
       </div>
 
-      <!-- Dropdown for size -->
+
       <div class="flex flex-col justify-start items-center">
         <label for="">Size</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
@@ -142,7 +140,7 @@
     <template v-if="medData">
       <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" />
     </template>
-  </div> -->
+  </div>
 
     <div class="mt-10">
         <Accordion />

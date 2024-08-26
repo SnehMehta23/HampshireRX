@@ -26,9 +26,7 @@
     </div>
 
   <!-- Spacer div to push content below the search bar -->
-  <div class="h-16">
 
-  </div>
   <div class="w-full text-center mt-10">
     <ErrorMessage v-if="errorText" :text="errorText"/>
 
