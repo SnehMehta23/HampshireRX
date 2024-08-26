@@ -44,7 +44,12 @@
                 </div>
                 <h3 class="text-xl text-center font-semibold mb-2">Delivery or Pickup:</h3>
                 <p class="text-gray-600 text-center">Choose convenient home delivery or pick up your medication at our
-                    store.</p>
+                    store.
+                <div class="flex items-center justify-center font-bold ml-2 mt-4">
+                    <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
+                    <p class="text-sm ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
+                </div>
+                </p>
             </div>
         </div>
     </div>
