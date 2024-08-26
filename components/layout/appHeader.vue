@@ -31,6 +31,12 @@
                     <span
                         class="absolute left-0 bottom-0 h-0.5 bg-orange-500 w-full scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </NuxtLink>
+                <NuxtLink v-if="currentRoute !== '/about'" to="/about" @click="handleNavClick('About', '/about')"
+                    class="hover:underline hover:text-orange-500 transition-colors duration-200 relative">
+                    Prescription Transfer
+                    <span
+                        class="absolute left-0 bottom-0 h-0.5 bg-orange-500 w-full scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </NuxtLink>
                 <!-- Facebook Icon Link -->
                 <NuxtLink to="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
                     @click="handleNavClick('Facebook', 'https://www.facebook.com/HampshirePharmacy/')"

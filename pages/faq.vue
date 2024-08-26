@@ -67,27 +67,25 @@
                     <span class="underline-animation">no insurance needed!</span>
                 </p>
             </div>
-            <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
-                <span
-                    class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
-                    started in three easy steps</span>
+            <!-- <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
+            <span
+              class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
+              started in three easy steps</span>
+          </div> -->
+            <div class="max-w-4xl px-12 mx-auto">
+                <SearchBar @search="(n) => handleSubmit(n)" />
             </div>
 
-            <HowToCards />
-            <div :class="[
-                'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
-                'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
-                isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
-            ]">
-                <SearchBar @search="(n) => handleSubmit(n)" />
+            <div class="mt-6">
+                <HowToCards />
             </div>
         </div>
     </div>
 
     <!-- Spacer div to push content below the search bar -->
-    <div class="h-16"></div>
+    <!-- <div class="h-16"></div> -->
 
-    <div class="mt-8">
+    <div class="mt-10">
         <Accordion />
     </div>
 
