@@ -34,6 +34,10 @@
   <div class="h-16">
 
   </div>
+  <div class="w-full text-center mt-10">
+    <ErrorMessage v-if="errorText" :text="errorText"/>
+
+  </div>
   <div>
     <div id="searchResults"
          class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
@@ -450,6 +454,8 @@ const query = gql`
   }
 `;
 
+const errorText = ref('')
+
 async function handleSubmit(n) {
   selectedFilters.value = {
     genericFor: "",
@@ -459,6 +465,11 @@ async function handleSubmit(n) {
   }
   const variables = { name: n }; // Replace with the name you want to search for
   const { data } = await useAsyncQuery(query, variables);
+  if (data.value.meds.length === 0) {
+    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244"
+    medData.value = [];
+    return;
+  }
   medData.value = data.value.meds;
   nextTick(() => {
     const resultsElement = document.getElementById('searchResults');
