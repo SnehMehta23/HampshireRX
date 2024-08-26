@@ -2,7 +2,7 @@
     <div class="xl:px-36 px-4" :class="{ 'overflow-hidden': isOpen }">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 -->
-            <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-white rounded-lg shadow-md p-6 space-y-2">
                 <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -13,9 +13,10 @@
                 <h3 class="text-xl text-center font-semibold mb-2">Send or Transfer Prescription:</h3>
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
-                <div @click="openModal('Transfer My Prescription', 'open_form')"
-                    class="bg-orange-400 text-center cursor-pointer p-2 ml-4 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
-                    Transfer my prescription</div>
+                <NuxtLink to="/transfer-prescription" @click.native="trackButtonClick"
+                    class="block w-full bg-orange-400 text-center cursor-pointer p-2 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
+                    Transfer my prescription
+                </NuxtLink>
             </div>
 
             <!-- Card 2 -->
@@ -43,11 +44,15 @@
                 </div>
                 <h3 class="text-xl text-center font-semibold mb-2">Delivery or Pickup:</h3>
                 <p class="text-gray-600 text-center">Choose convenient home delivery or pick up your medication at our
-                    store.</p>
+                    store.
+                <div class="flex items-center justify-center font-bold ml-2 mt-4">
+                    <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
+                    <p class="text-sm ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
+                </div>
+                </p>
             </div>
         </div>
     </div>
-    <TransferModal v-if="isOpen" @close="isOpen = false" />
 </template>
 
 <script setup>
@@ -58,20 +63,14 @@ onMounted(() => {
 
 })
 
-const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
-    gtm.trackEvent({
-        event: 'button_interaction',
-        buttonName: buttonName,
-        actionType: actionType,
-        ...additionalData
-    })
-}
-
-const openModal = (buttonName, actionType) => {
-    trackButtonInteraction(buttonName, actionType)
-    isOpen.value = true;
-}
-
+const trackButtonClick = () => {
+    gtm.event({
+        event: 'open_form',
+        action: 'click',
+        category: 'Transfer My Prescription',
+        label: 'Transfer My Prescription'
+    });
+};
 
 
 </script>
