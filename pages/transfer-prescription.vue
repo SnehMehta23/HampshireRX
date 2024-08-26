@@ -38,12 +38,6 @@ const showForm = () => {
                     'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
                     'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
                 ]">
-                    <div class="py-2 xl:px-20 px-0 xl:flex-none flex xl:justify-normal justify-center mb-2">
-                        <NuxtLink to="/" class="">
-                            <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo"
-                                class="w-64" />
-                        </NuxtLink>
-                    </div>
 
                     <!-- <div class="max-w-4xl px-12 mx-auto">
                         <SearchBar @search="(n) => handleSubmit(n)" />

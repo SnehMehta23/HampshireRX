@@ -55,11 +55,6 @@
             'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
             'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
         ]">
-            <div class="py-2 xl:px-20 px-0 xl:flex-none flex xl:justify-normal justify-center mb-2">
-                <NuxtLink to="/" class="">
-                    <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo" class="w-64" />
-                </NuxtLink>
-            </div>
             <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
                 <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
                 <p class="text-2xl mb-4">
