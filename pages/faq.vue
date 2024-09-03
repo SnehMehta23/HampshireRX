@@ -185,9 +185,11 @@ onUnmounted(() => {
 
 const medData = ref([]); // Initialize as an empty array
 
+const errorText = ref('')
+
 const query = gql`
-  query getMeds($name: String) {
-    meds(name: $name) {
+  query getMeds($searchTerm: String) {
+    meds(searchTerm: $searchTerm) {
       id
       name
       size
@@ -199,32 +201,31 @@ const query = gql`
   }
 `;
 
-const errorText = ref('')
+async function handleSubmit(searchTerm) {
+  errorText.value = '';
+  selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
 
-async function handleSubmit(n) {
-    selectedFilters.value = {
-        genericFor: "",
-        count: "",
-        countUnit: "",
-        size: ""
-    }
-    const variables = { name: n }; // Replace with the name you want to search for
-    const { data } = await useAsyncQuery(query, variables);
-    if (data.value.meds.length === 0) {
-        errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244"
-        medData.value = [];
-        return;
-    }
-    medData.value = data.value.meds;
-    nextTick(() => {
-        const resultsElement = document.getElementById('searchResults');
-        if (resultsElement) {
-            resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
+  const variables = { searchTerm: searchTerm };
+  console.log(variables);
 
-    // console.log(medData.value);
+  const { data } = await useAsyncQuery(query, variables);
+
+  if (data.value.meds.length === 0) {
+    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
+    medData.value = [];
+    return;
+  }
+
+  medData.value = data.value.meds;
+
+  nextTick(() => {
+    const resultsElement = document.getElementById('searchResults');
+    if (resultsElement) {
+      resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 }
+
 
 const selectedFilters = ref({
     genericFor: "",
