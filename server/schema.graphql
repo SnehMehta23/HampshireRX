@@ -1,42 +1,54 @@
 type Subscription {
-  medUpdated: Med
-  medCreated: Med
+    medUpdated: Med
+    medCreated: Med
 }
 
 type Med {
-  id: ID!
-  name: String!
-  size: String!
-  count: Int!
-  countUnit: String!
-  genericFor: String
-  price: String!
+    id: ID!
+    name: String!
+    size: String!
+    count: Int!
+    countUnit: String!
+    genericFor: String
+    price: String!
 }
 
+type User{
+    id: ID!,
+    email: String!
+    password: String!
+}
+
+
 type Query {
-  meds(name: String): [Med!]!
-  med(id: ID!): Med
+    meds(name: String): [Med!]!
+    med(id: ID!): Med
+    currentUser: User
 }
 
 type Mutation {
-  createMed(
-    name: String!,
-    size: String!,
-    count: Int!,
-    countUnit: String!,
-    genericFor: String,
-    price: String!
-  ): Med
+    createMed(
+        name: String!,
+        size: String!,
+        count: Int!,
+        countUnit: String!,
+        genericFor: String,
+        price: String!
+    ): Med
 
-  updateMed(
-    id: ID!,
-    name: String,
-    size: String,
-    count: Int,
-    countUnit: String,
-    genericFor: String,
-    price: String
-  ): Med
+    updateMed(
+        id: ID!,
+        name: String,
+        size: String,
+        count: Int,
+        countUnit: String,
+        genericFor: String,
+        price: String
+    ): Med
 
-  deleteMed(id: ID!): Med
+    deleteMed(id: ID!): Med
+
+    signup(email: String!, password: String!): User
+    login(email: String!, password: String!): User
+
 }
