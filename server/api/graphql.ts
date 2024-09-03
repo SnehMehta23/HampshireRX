@@ -23,10 +23,17 @@ const config = useRuntimeConfig();
 // Your existing resolvers
 const resolvers: Resolvers = {
     Query: {
-        meds: async (_, {name}) => {
+        meds: async (_, { searchTerm }) => {
             try {
-                const filter = name ? {name: {$regex: name, $options: 'i'}} : {}; // Case-insensitive partial match
-                // console.log(filter);
+                let filter = {};
+                if (searchTerm) {
+                    filter = {
+                        $or: [
+                            { name: { $regex: searchTerm, $options: 'i' } },
+                            { genericFor: { $regex: searchTerm, $options: 'i' } }
+                        ]
+                    };
+                }
                 return await medSchema.find(filter);
             } catch (error) {
                 throw new Error('Error fetching meds');

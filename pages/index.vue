@@ -196,8 +196,8 @@ const medData = ref([]); // Initialize as an empty array
 
 // Define the query to fetch meds
 const query = gql`
-  query getMeds($name: String) {
-    meds(name: $name) {
+  query getMeds($searchTerm: String) {
+    meds(searchTerm: $searchTerm) {
       id
       name
       size
@@ -209,21 +209,21 @@ const query = gql`
   }
 `;
 
-async function handleSubmit(n) {
-  errorText.value = ''
-  selectedFilters.value = {
-    genericFor: "",
-    count: "",
-    countUnit: "",
-    size: ""
-  }
-  const variables = { name: n }; // Replace with the name you want to search for
+async function handleSubmit(searchTerm) {
+  errorText.value = '';
+  selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
+
+  const variables = { searchTerm: searchTerm };
+  console.log(variables);
+
   const { data } = await useAsyncQuery(query, variables);
+
   if (data.value.meds.length === 0) {
-    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244"
+    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
     return;
   }
+
   medData.value = data.value.meds;
 
   nextTick(() => {
@@ -232,8 +232,6 @@ async function handleSubmit(n) {
       resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
-
-  // console.log(medData.value);
 }
 
 const gtm = useGTM()
