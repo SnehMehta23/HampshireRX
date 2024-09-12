@@ -74,7 +74,7 @@
               <ErrorMessage v-if="errorText" :text="errorText" />
             </div>
             <!-- Dropdown for genericFor -->
-            <div class="flex flex-col justify-start items-center">
+            <!-- <div class="flex flex-col justify-start items-center">
               <label for="">Generic</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
                 <option value="">All</option>
@@ -82,7 +82,7 @@
                   {{ option }}
                 </option>
               </select>
-            </div>
+            </div> -->
 
             <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
@@ -96,7 +96,7 @@
             </div>
 
             <!-- Dropdown for countUnit -->
-            <div class="flex flex-col justify-start items-center">
+            <!-- <div class="flex flex-col justify-start items-center">
               <label for="">Type</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
                 <option value="">All</option>
@@ -104,11 +104,11 @@
                   {{ option }}
                 </option>
               </select>
-            </div>
+            </div> -->
 
             <!-- Dropdown for size -->
             <div class="flex flex-col justify-start items-center">
-              <label for="">Size</label>
+              <label for="">Strength</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
                 <option value="">All</option>
                 <option v-for="option in filteredOptions.size" :key="option" :value="option">
@@ -118,14 +118,9 @@
             </div>
           </div>
         </div>
-        <div :class="[
-          'mt-4 p-4 gap-4 w-full',
-          filteredMedData.length < 4
-            ? 'flex justify-center'
-            : 'grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4'
-        ]">
+        <div class="mt-4 p-4 gap-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center">
           <template v-if="medData">
-            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" />
+            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" class="justify-self-center" />
           </template>
         </div>
 

@@ -25,11 +25,26 @@ export default defineNuxtConfig({
                     type: 'text/javascript',
                 },
                 {
+                  async: true,
+                  src: "https://www.googletagmanager.com/gtag/js?id=G-GPPJR3YTZW",
+                },
+                {
+                  innerHTML: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                      dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+                    gtag("config", "G-GPPJR3YTZW");
+                  `,
+                  type: 'text/javascript',
+                },
+                {
                     type: 'application/ld+json',
                     innerHTML: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": "Mobile Tire Pro",
+                        "name": "Hampshire Pharmacy",
                         "url": "https://www.hampshirepharmacy.com",
                         "logo": "https://www.hampshirepharmacy.com/images/logos/smallLogo.png",
                         "sameAs": [
