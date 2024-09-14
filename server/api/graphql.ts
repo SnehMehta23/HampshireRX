@@ -46,6 +46,13 @@ const resolvers: Resolvers = {
                 throw new Error('Error fetching med');
             }
         },
+        allMeds: async (_, {}) => {
+            try{
+                return await medSchema.find({})
+            }catch(error){
+                throw new Error('Error fetching meds');
+            }
+        },
         currentUser: async (_, __, context) => {
             console.log('Full context:', JSON.stringify(context, null, 2));
 
