@@ -23,6 +23,7 @@ type User{
 type Query {
     meds(searchTerm: String): [Med!]!
     med(id: ID!): Med
+    allMeds: [Med!]!
     currentUser: User
 }
 
