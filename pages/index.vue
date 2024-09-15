@@ -68,7 +68,7 @@
         <div>
 
           <div id="searchResults"
-            class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
+            class=" w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
             <div class="w-full text-center mt-10">
               <ErrorMessage v-if="errorText" :text="errorText" />
@@ -118,14 +118,14 @@
             </div>
           </div>
         </div>
-        <div class="mt-4 p-4 gap-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center">
+        <div class="mt-10 p-4 gap-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center">
           <template v-if="medData">
             <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" class="justify-self-center" />
           </template>
         </div>
 
         <div
-          class="grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center mb-12">
+          class="mt-10 grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center mb-12">
           <!-- Who are we container -->
           <div
             class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
