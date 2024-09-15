@@ -15,12 +15,13 @@
     <template>
       <div class="relative">
         <div class="p-3 mt-2 shadow-2xl shadow-slate-600 z-10 bg-white rounded absolute top-full left-0 w-full" v-if="medSuggestions.length > 0">
-            <span class="px-1">Suggestions based on: {{searchValue}} -- {{medSuggestions.length}} {{ medSuggestions.length === 1 ? 'match' : 'matches' }}</span>
+            <span class="px-1">Suggestions based on: {{searchValue}} - {{medSuggestions.length}} {{ medSuggestions.length === 1 ? 'match' : 'matches' }}</span>
           <div @click="handleSearch(med.name)"
-               class="text-md font-semibold w-full py-2 hover:bg-zinc-100 cursor-pointer px-1"
+               class="text-md font-semibold w-full py-2 hover:bg-zinc-200 cursor-pointer px-2 flex justify-start items-center gap-2 my-4 mx-1 rounded"
                v-for="med in medSuggestions" :key="med.id">
+            <img src="/images/svg/prescription.svg" alt="">
             {{ med.name }} - ({{ med.genericFor }})
-            <hr class="my-2">
+
           </div>
         </div>
       </div>
