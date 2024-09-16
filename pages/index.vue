@@ -4,7 +4,6 @@
   display: inline-block;
   overflow: hidden;
   margin-bottom: -7px;
-  /* Adjust this value as needed */
 }
 
 .underline-animation::after {
@@ -61,29 +60,13 @@
           </div>
         </div>
 
-        <!-- Spacer div to push content below the search bar -->
-        <!-- <div class="h-16">
-
-        </div> -->
         <div>
-
-
           <div class="w-full text-center mt-10">
             <ErrorMessage v-if="errorText" :text="errorText" />
           </div>
           <div id="searchResults"
-            class=" w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
+            class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
-            <!-- Dropdown for genericFor -->
-            <!-- <div class="flex flex-col justify-start items-center">
-              <label for="">Generic</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.genericFor" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div> -->
 
             <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
@@ -95,17 +78,6 @@
                 </option>
               </select>
             </div>
-
-            <!-- Dropdown for countUnit -->
-            <!-- <div class="flex flex-col justify-start items-center">
-              <label for="">Type</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.countUnit" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div> -->
 
             <!-- Dropdown for size -->
             <div class="flex flex-col justify-start items-center">
@@ -119,10 +91,14 @@
             </div>
           </div>
         </div>
-        <div class="mt-10 p-4 gap-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center">
-          <template v-if="medData">
-            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med" class="justify-self-center" />
-          </template>
+        <div class="mt-10 p-4 w-full">
+          <div v-if="medData" :class="[
+            'flex flex-wrap justify-center gap-4',
+            filteredMedData.length > 3 ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center' : ''
+          ]">
+            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med"
+              class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0" />
+          </div>
         </div>
 
         <div
@@ -183,7 +159,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gql } from "graphql-tag";
-import ParallaxCard from '~/components/parallaxCard.vue'
+// import ParallaxCard from '~/components/parallaxCard.vue'
 import { nextTick } from 'vue'
 
 const errorText = ref('')
@@ -210,7 +186,7 @@ async function handleSubmit(searchTerm) {
   selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
 
   const variables = { searchTerm: searchTerm };
-  console.log(variables);
+  // console.log(variables);
 
   const { data } = await useAsyncQuery(query, variables);
 

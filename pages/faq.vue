@@ -202,28 +202,28 @@ const query = gql`
 `;
 
 async function handleSubmit(searchTerm) {
-  errorText.value = '';
-  selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
+    errorText.value = '';
+    selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
 
-  const variables = { searchTerm: searchTerm };
-  console.log(variables);
+    const variables = { searchTerm: searchTerm };
+    //   console.log(variables);
 
-  const { data } = await useAsyncQuery(query, variables);
+    const { data } = await useAsyncQuery(query, variables);
 
-  if (data.value.meds.length === 0) {
-    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
-    medData.value = [];
-    return;
-  }
-
-  medData.value = data.value.meds;
-
-  nextTick(() => {
-    const resultsElement = document.getElementById('searchResults');
-    if (resultsElement) {
-      resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (data.value.meds.length === 0) {
+        errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
+        medData.value = [];
+        return;
     }
-  });
+
+    medData.value = data.value.meds;
+
+    nextTick(() => {
+        const resultsElement = document.getElementById('searchResults');
+        if (resultsElement) {
+            resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
 }
 
 
