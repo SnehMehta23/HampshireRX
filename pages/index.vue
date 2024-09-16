@@ -61,12 +61,12 @@
         </div>
 
         <div>
+          <div class="w-full text-center mt-10">
+            <ErrorMessage v-if="errorText" :text="errorText" />
+          </div>
           <div id="searchResults"
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
-            <div class="w-full text-center mt-10">
-              <ErrorMessage v-if="errorText" :text="errorText" />
-            </div>
 
             <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
