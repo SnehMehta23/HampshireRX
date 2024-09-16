@@ -191,6 +191,7 @@ async function handleSubmit(searchTerm) {
   const { data } = await useAsyncQuery(query, variables);
 
   if (data.value.meds.length === 0) {
+    console.log('lol')
     errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
     return;
