@@ -67,12 +67,13 @@
         </div> -->
         <div>
 
+
+          <div class="w-full text-center mt-10">
+            <ErrorMessage v-if="errorText" :text="errorText" />
+          </div>
           <div id="searchResults"
             class=" w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
-            <div class="w-full text-center mt-10">
-              <ErrorMessage v-if="errorText" :text="errorText" />
-            </div>
             <!-- Dropdown for genericFor -->
             <!-- <div class="flex flex-col justify-start items-center">
               <label for="">Generic</label>
@@ -214,6 +215,7 @@ async function handleSubmit(searchTerm) {
   const { data } = await useAsyncQuery(query, variables);
 
   if (data.value.meds.length === 0) {
+    console.log('lol')
     errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
     return;

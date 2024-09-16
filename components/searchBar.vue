@@ -121,10 +121,10 @@ async function queryMeds() {
 
 await queryMeds();
 
-const handleSearch = (n) => {
+const handleSearch = (n ) => {
   // Track the search query
 
-  if (n) {
+  if (typeof(n) === "string") {
     searchValue.value = n
   }
 
