@@ -13,7 +13,7 @@
     </form>
     <template>
       <div class="relative">
-        <div class="p-3 mt-2 shadow-2xl shadow-slate-600 z-10 bg-white rounded absolute top-full left-0 w-full"
+        <div class="p-3 mt-2 shadow-2xl shadow-slate-600 z-[9999] bg-white rounded absolute top-full left-0 w-full"
           v-if="medSuggestions.length > 0">
           <span class="px-1">Suggestions based on: {{ searchValue }} - {{ medSuggestions.length }} {{
             medSuggestions.length
@@ -123,10 +123,10 @@ async function queryMeds() {
 
 await queryMeds();
 
-const handleSearch = (n ) => {
+const handleSearch = (n) => {
   // Track the search query
 
-  if (typeof(n) === "string") {
+  if (typeof (n) === "string") {
     searchValue.value = n
   }
 
