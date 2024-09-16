@@ -1,7 +1,7 @@
 <template>
   <div class="w-screen h-screen flex justify-center items-center">
     <div
-        class="border border-gray-400 shadow-lg shadow-slate-400  bg-gray-50 rounded flex flex-col justify-center items-center gap-8">
+      class="border border-gray-400 shadow-lg shadow-slate-400  bg-gray-50 rounded flex flex-col justify-center items-center gap-8">
       <div class="text-2xl font-semibold text-white bg-orange-400 rounded-t p-4">
         Hampshire Pharmacy Dashboard
       </div>
@@ -12,22 +12,23 @@
         <div class="flex flex-col w-full justify-center items-center gap-6">
           <div>
             <input class="px-3 py-1 bg-slate-100 rounded shadow-md shadow-slate-50 border border-gray-700"
-                   placeholder="Email Address" type="email" v-model="email">
+              placeholder="Email Address" type="email" v-model="email">
           </div>
           <div>
             <input class="px-3 py-1 bg-slate-100 rounded shadow-md shadow-slate-50 border border-gray-700"
-                   placeholder="password" type="password" v-model="password">
+              placeholder="password" type="password" v-model="password">
           </div>
         </div>
       </form>
-      <button @click.prevent="trylog" class="bg-blue-400 text-white text-xl font-bold w-full p-4 rounded-b hover:bg-blue-600">Login</button>
+      <button @click.prevent="trylog"
+        class="bg-blue-400 text-white text-xl font-bold w-full p-4 rounded-b hover:bg-blue-600">Login</button>
     </div>
 
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue';
+import { ref } from 'vue';
 import gql from 'graphql-tag';
 
 
@@ -45,15 +46,15 @@ const LOGIN_MUTATION = gql`
     }
   }
 `;
-const {mutate: Login} = useMutation(LOGIN_MUTATION)
+const { mutate: Login } = useMutation(LOGIN_MUTATION)
 
 // Define the signup function to trigger the mutation
 async function trylog() {
   try {
-    const response = await Login({email: email.value, password: password.value});
-    console.log(response);
+    const response = await Login({ email: email.value, password: password.value });
+    // console.log(response);
     if (await response.data.login.id) {
-      console.log(response.data.login.id)
+      // console.log(response.data.login.id)
       return navigateTo('/admin/medIndex')
     }
   } catch (e) {
@@ -63,6 +64,4 @@ async function trylog() {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

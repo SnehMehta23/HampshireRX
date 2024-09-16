@@ -54,7 +54,7 @@ const resolvers: Resolvers = {
             }
         },
         currentUser: async (_, __, context) => {
-            console.log('Full context:', JSON.stringify(context, null, 2));
+            // console.log('Full context:', JSON.stringify(context, null, 2));
 
             let req;
             if (context.event && context.event.event && context.event.event.node) {
@@ -70,7 +70,7 @@ const resolvers: Resolvers = {
                 return null;
             }
 
-            console.log('Request headers:', req.headers);
+            // console.log('Request headers:', req.headers);
 
             let token;
 
@@ -128,7 +128,7 @@ const resolvers: Resolvers = {
         signup: async (_, {email, password}) => {
             const hashedPassword = await bcrypt.hash(password, 10);
             const user = new userSchema({email, password: hashedPassword});
-            console.log(email)
+            // console.log(email)
             await user.save();
             return user;
         },
