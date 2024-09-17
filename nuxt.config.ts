@@ -118,8 +118,8 @@ export default defineNuxtConfig({
     apollo: {
         clients: {
             default: {
-                httpEndpoint: 'http://hampshirepharmacy.com',
-                wsEndpoint: 'ws://hampshirepharmacy.com', // WebSocket endpoint for subscriptions
+                httpEndpoint: 'https://hampshirepharmacy.com/api/graphql',
+                wsEndpoint: 'ws://hampshirepharmacy.com/api/graphql', // WebSocket endpoint for subscriptions
                 httpLinkOptions: {
                     credentials: 'include'
                 }
