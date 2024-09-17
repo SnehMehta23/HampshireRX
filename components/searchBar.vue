@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col">
-    <form @submit.prevent="handleSearch" class="flex overflow-hidden rounded-full border border-gray-300 shadow-inner ">
+    <form @submit.prevent="handleSearch" class="flex overflow-hidden rounded-full border border-gray-300 shadow-inner">
       <div class="w-full flex flex-col">
         <input v-model="searchValue" type="text" placeholder="Look up prescription cash prices"
           class="w-full px-6 py-4 border-none rounded-l-full focus:outline-none focus:ring-2 focus:ring-pharmaBlue-400 shadow-lg" />
@@ -13,23 +13,31 @@
     </form>
     <template>
       <div class="relative">
-        <div class="p-3 mt-2 shadow-2xl shadow-slate-600 z-[9999] bg-white rounded absolute top-full left-0 w-full"
+        <div
+          class="suggestions-container p-3 mt-2 shadow-2xl shadow-slate-600 z-[9999] bg-white rounded absolute top-full left-0 w-full"
           v-if="medSuggestions.length > 0">
           <span class="px-1">Suggestions based on: {{ searchValue }} - {{ medSuggestions.length }} {{
-            medSuggestions.length
-              === 1 ? 'match' : 'matches' }}</span>
+            medSuggestions.length === 1 ? 'match' : 'matches' }}</span>
           <div @click="handleSearch(med.name)"
             class="text-md font-semibold w-full py-2 hover:bg-zinc-200 cursor-pointer px-2 flex justify-start items-center gap-2 my-4 mx-1 rounded"
             v-for="med in medSuggestions" :key="med.id">
             <img src="/images/svg/prescription.svg" alt="">
             {{ med.name }} - ({{ med.genericFor }})
-
           </div>
         </div>
       </div>
     </template>
   </div>
 </template>
+
+<style scoped>
+.suggestions-container {
+  max-height: 300px;
+  /* Adjust as needed */
+  overflow-y: auto;
+}
+</style>
+
 
 <script setup>
 import { ref } from 'vue'
