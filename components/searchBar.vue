@@ -85,11 +85,10 @@ const query = gql`
 //   if (value.length >= 3) {
 //     const variables = {searchTerm: value};
 //     const {data} = await useAsyncQuery(query, variables);
-//     console.log(data)
+//     
 //   }
 // })
-async function queryMeds() {
-  const allQuery = gql`
+const allQuery = gql`
   query{
     allMeds {
     name
@@ -97,39 +96,44 @@ async function queryMeds() {
     }
 }
 `
-  const { data } = await useLazyAsyncQuery(allQuery)
 
-  function processMedData(data) {
-    // Ensure we're working with the array of medications
-    const allMeds = data.allMeds || data;
+const temp = ref([])
 
-    // Use a Set to keep track of unique combinations
-    const uniqueCombos = new Set();
 
-    // Use map to create a new array with only name and genericFor
-    // Then filter to keep only unique combinations
-    const result = allMeds
-      .map(med => ({
-        name: med.name,
-        genericFor: med.genericFor
-      }))
-      .filter(med => {
-        const combo = `${med.name}|${med.genericFor}`;
-        if (!uniqueCombos.has(combo)) {
-          uniqueCombos.add(combo);
-          return true;
-        }
-        return false;
-      });
 
-    return result;
-  }
+const {data} = await useAsyncQuery(allQuery)
 
-  medList.value = processMedData(data.value);
+onMounted(async () =>{
+ medList.value = await processMedData(data)
+})
+
+
+
+function processMedData(data) {
+  
+  // Ensure we're working with the array of medications
+  const allMeds = Object.values(data.value)[0];
+  
+  // Use a Set to keep track of unique combinations
+  const uniqueCombos = new Set();
+
+  // Use map to create a new array with only name and genericFor
+  // Then filter to keep only unique combinations
+    return allMeds
+        .map(med => ({
+          name: med.name,
+          genericFor: med.genericFor
+        }))
+        .filter(med => {
+          const combo = `${med.name}|${med.genericFor}`;
+          if (!uniqueCombos.has(combo)) {
+            uniqueCombos.add(combo);
+            return true;
+          }
+          return false;
+        });
 
 }
-
-await queryMeds();
 
 const handleSearch = (n) => {
   // Track the search query
