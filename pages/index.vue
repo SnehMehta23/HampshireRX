@@ -188,7 +188,7 @@ async function handleSubmit(searchTerm) {
   const variables = { searchTerm: searchTerm };
   // console.log(variables);
 
-  const { data } = await useAsyncQuery(query, variables);
+  const { data } = await useLazyAsyncQuery(query, variables);
 
   if (data.value.meds.length === 0) {
     console.log('lol')
