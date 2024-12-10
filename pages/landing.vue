@@ -15,13 +15,13 @@
             </div>
         </div>
 
+        <!-- Navigation -->
         <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-pharmaBlue-400/10">
             <div class="max-w-7xl mx-auto px-4 py-3">
                 <div class="flex justify-between items-center">
                     <!-- Logo -->
-                    <div class="flex-1">
+                    <div class="flex items-center flex-1">
                         <NuxtLink to="/">
-                            <!-- Small logo for mobile, full logo for desktop -->
                             <img src="/images/logos/primaryWideLogo.webp" alt="Hampshire Pharmacy"
                                 class="hidden md:block h-10" />
                             <img src="/images/logos/smallLogo.png" alt="Hampshire Pharmacy" class="md:hidden h-10" />
@@ -29,15 +29,15 @@
                     </div>
 
                     <!-- Desktop Navigation -->
-                    <div class="hidden md:flex flex-1 justify-center items-center gap-8">
+                    <div class="hidden md:flex items-center justify-center gap-6 flex-1">
                         <NuxtLink v-for="link in navLinks" :key="link.text" :to="link.url"
-                            class="text-gray-700 hover:text-pharmaBlue-400 transition-colors duration-200">
+                            class="text-gray-700 hover:text-pharmaBlue-400 transition-colors duration-200 whitespace-nowrap">
                             {{ link.text }}
                         </NuxtLink>
                     </div>
 
                     <!-- Rx Lookup Button -->
-                    <div class="flex-1 flex justify-end">
+                    <div class="flex justify-end flex-1">
                         <button
                             class="bg-pharmaBlue-400 text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
                             Rx Lookup
@@ -59,10 +59,7 @@
                     <div class="flex justify-center gap-4">
                         <button
                             class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
-                            Transfer Your Prescription
-                        </button>
-                        <button class="bg-white text-gray-800 px-8 py-3 rounded-md hover:bg-cream-100 transition">
-                            Send Your Prescription
+                            Transfer A Prescription
                         </button>
                     </div>
                     <div class="flex justify-center gap-8 mt-8 text-white">
@@ -520,7 +517,7 @@ const navLinks = [
     { text: 'About', url: '/about' },
     { text: 'Privacy', url: '/privacy' },
     { text: 'FAQs', url: '/faq' },
-    { text: 'Prescription Transfer Form', url: '/transfer-prescription' }
+    { text: 'Prescription Transfer', url: '/transfer-prescription' }
 ]
 
 // Content Data
