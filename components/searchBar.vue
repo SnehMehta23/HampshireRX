@@ -101,7 +101,7 @@ const temp = ref([])
 
 
 
-const {data} = await useAsyncQuery(allQuery)
+const {data} = await useLazyAsyncQuery(allQuery)
 
 onMounted(async () =>{
  medList.value = await processMedData(data)

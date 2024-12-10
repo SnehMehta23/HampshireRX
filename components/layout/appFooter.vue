@@ -18,7 +18,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div
+                  <div class="mt-4 hidden md:flex">
+                    <div class="mt-4" v-html="legitScriptTag"></div>
+                  </div>
+                  <div
                         class="flex-col flex xl:flex-row xl:flex xl:space-x-6 space-y-4 text-sm md:text-black text-white text-center">
                         <div>
                             <h4 class="font-semibold mb-2 mt-4">Contact Us:</h4>
@@ -35,6 +38,9 @@
                             <p>Sat 10am-2pm</p>
                         </div>
                     </div>
+                  <div class="mt-4 md:hidden">
+                    <div class="mt-4" v-html="legitScriptTag"></div>
+                  </div>
                 </div>
 
                 <div class="text-sm text-gray-500 text-center md:text-left mt-4 xl:mt-0">
@@ -48,3 +54,9 @@
         </div>
     </footer>
 </template>
+
+<script setup>
+const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
+</script>
+
+
