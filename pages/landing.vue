@@ -54,7 +54,7 @@
                         Same ED Medication, Lower Prices
                     </h1>
                     <h2 class="text-2xl text-cream-100 mb-8">
-                        Transfer Your Prescription Today and Save Up To 80%
+                        Pay 95% less by switching to Hampshire Pharmacy
                     </h2>
                     <div class="flex justify-center gap-4">
                         <button
@@ -62,7 +62,7 @@
                             Transfer Your Prescription
                         </button>
                         <button class="bg-white text-gray-800 px-8 py-3 rounded-md hover:bg-cream-100 transition">
-                            Get Your Prescription
+                            Send Your Prescription
                         </button>
                     </div>
                     <div class="flex justify-center gap-8 mt-8 text-white">
@@ -90,52 +90,94 @@
                     </div>
                 </div>
 
-                <div class="max-w-xl mx-auto bg-white/95 rounded-xl shadow-lg p-6 backdrop-blur-sm">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-pharmaBlue-400 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                <!-- Add pill icon path here -->
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800">Sildenafil</h3>
-                            <p class="text-gray-600">Generic For: Erectile Dysfunction</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div class="border border-gray-200 rounded-lg p-4">
-                            <span class="text-sm text-gray-500">Brand Name Price</span>
-                            <div class="font-bold line-through text-gray-400">$XX.XX</div>
-                        </div>
-                        <div class="border border-gray-200 rounded-lg p-4 bg-green-50">
-                            <span class="text-sm text-gray-500">Our Generic Price</span>
-                            <div class="font-bold text-green-600">$XX.XX</div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
-                            <div class="text-center">
-                                <div class="font-bold">25mg</div>
-                                <div class="text-sm text-gray-500">$XX.XX</div>
+                <div class="flex justify-center gap-4">
+                    <div class="max-w-xl bg-white/95 rounded-xl shadow-lg p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-pharmaBlue-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                    <!-- Add pill icon path here -->
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Sildenafil</h3>
+                                <p class="text-gray-600">Generic For: Erectile Dysfunction</p>
                             </div>
                         </div>
-                        <div class="border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5">
-                            <div class="text-center">
-                                <div class="font-bold">50mg</div>
-                                <div class="text-sm text-gray-500">$XX.XX</div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="border border-gray-200 rounded-lg p-4 bg-green-50">
+                                <span class="text-sm text-gray-500">Our Generic Price</span>
+                                <div class="font-bold text-green-600">$XX.XX</div>
                             </div>
                         </div>
-                        <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
-                            <div class="text-center">
-                                <div class="font-bold">100mg</div>
-                                <div class="text-sm text-gray-500">$XX.XX</div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                <div class="text-center">
+                                    <div class="font-bold">25mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
+                            </div>
+                            <div class="border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5">
+                                <div class="text-center">
+                                    <div class="font-bold">50mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                <div class="text-center">
+                                    <div class="font-bold">100mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
                             </div>
                         </div>
+                        <button
+                            class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+                            Transfer Your Prescription Now
+                        </button>
                     </div>
-                    <button
-                        class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
-                        Transfer Your Prescription Now
-                    </button>
+
+                    <div class="max-w-xl bg-white/95 rounded-xl shadow-lg p-6 backdrop-blur-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-pharmaBlue-400 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                    <!-- Add pill icon path here -->
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Tadalafil</h3>
+                                <p class="text-gray-600">Generic For: Erectile Dysfunction</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="border border-gray-200 rounded-lg p-4 bg-green-50">
+                                <span class="text-sm text-gray-500">Our Generic Price</span>
+                                <div class="font-bold text-green-600">$XX.XX</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                <div class="text-center">
+                                    <div class="font-bold">25mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
+                            </div>
+                            <div class="border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5">
+                                <div class="text-center">
+                                    <div class="font-bold">50mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                <div class="text-center">
+                                    <div class="font-bold">100mg</div>
+                                    <div class="text-sm text-gray-500">$XX.XX</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+                            Transfer Your Prescription Now
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,6 +194,101 @@
                         <h3 class="text-xl font-bold mb-2">{{ step.title }}</h3>
                         <p class="text-gray-600">{{ step.description }}</p>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Welcome Section with Image and Benefits -->
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <!-- Left Side - Image Placeholder -->
+                <div class="w-full md:w-1/2">
+                    <div class="relative aspect-[4/3] bg-gray-100 rounded-lg">
+                        <!-- Placeholder for your image -->
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">
+                            <span>Image will be placed here</span>
+                        </div>
+
+                        <!-- Decorative curved arrow - similar to the example -->
+                        <svg class="absolute -right-16 top-1/2 transform -translate-y-1/2 text-orange-400 hidden md:block"
+                            width="150" height="100" viewBox="0 0 150 100" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Simple curved path with a more natural arc -->
+                            <path d="M0 50C50 50, 80 0, 120 50" stroke="currentColor" stroke-width="4" fill="none"
+                                stroke-linecap="round" />
+                            <!-- Simple triangular arrowhead -->
+                            <path d="M120 40L110 60Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Right Side - Benefits -->
+                <div class="w-full md:w-1/2 space-y-8">
+                    <div class="space-y-6">
+                        <!-- Benefit 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">No pharmacy visits</h3>
+                                <p class="text-gray-600">Get your prescription delivered discreetly to your door. No
+                                    waiting in line, no hassle.</p>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">FDA approved medication</h3>
+                                <p class="text-gray-600">Get generic Viagra and Cialis that's safe and reliable, fully
+                                    FDA approved.</p>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Pay 95% less</h3>
+                                <p class="text-gray-600">Order generic Sildenafil and get the same effectiveness as
+                                    Viagra®, for a fraction of the cost. From $0.50 a pill.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button
+                        class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
+                        Get started
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -192,7 +329,7 @@
             </div>
         </div>
 
-        <div class="bg-white py-16">
+        <!-- <div class="bg-white py-16">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
                 <div class="grid md:grid-cols-3 gap-8">
@@ -247,14 +384,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- FAQ Section -->
-        <div class="relative py-20">
-            <!-- Background with gradient and opacity -->
+        <!-- <div class="relative py-20">
             <div class="absolute inset-0 bg-gradient-to-r from-orange-400/5 via-orange-500/5 to-pharmaBlue-400/5"></div>
 
-            <!-- Content with backdrop blur -->
             <div class="relative max-w-3xl mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
                 <div class="space-y-4">
@@ -265,14 +400,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- CTA Section -->
         <div class="bg-gradient-to-r from-orange-400 to-pharmaBlue-400 py-20">
             <div class="max-w-3xl mx-auto px-4 text-center">
                 <h2 class="text-3xl font-bold text-white mb-4">Ready to Start Saving?</h2>
                 <p class="text-cream-100 mb-8">
-                    Join thousands of satisfied customers who trust Hampshire Pharmacy
+                    Join hundreds of satisfied customers who trust Hampshire Pharmacy
                 </p>
                 <button class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
                     Transfer Your Prescription Now
@@ -285,7 +420,9 @@
                 <div class="grid md:grid-cols-4 gap-8">
                     <div>
                         <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy" class="h-8 mb-4" />
-                        <p class="text-gray-400">Your trusted community pharmacy since XXXX</p>
+                        <p class="text-gray-400 mb-4">Your trusted community pharmacy since 2014</p>
+                        <!-- LegitScript Seal -->
+                        <div v-html="legitScriptTag"></div>
                     </div>
                     <div>
                         <h4 class="font-bold mb-4">Quick Links</h4>
@@ -300,22 +437,62 @@
                     <div>
                         <h4 class="font-bold mb-4">Contact</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li>Phone: (XXX) XXX-XXXX</li>
-                            <li>Email: info@hampshirepharmacy.com</li>
-                            <li>Address: XXX Hampshire St</li>
+                            <li>
+                                <a href="tel:+18476832244" class="flex items-center gap-2 hover:text-white">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                    (847) 683-2244
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:hampshirepharmacy@gmail.com"
+                                    class="flex items-center gap-2 hover:text-white">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                    hampshirepharmacy@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://maps.google.com/?q=262+N+State+St,+Hampshire,+IL" target="_blank"
+                                    rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    262 N State St, Hampshire, IL
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold mb-4">Hours</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li>Mon-Fri: 9am - 7pm</li>
-                            <li>Saturday: 9am - 5pm</li>
+                            <li>Mon-Fri: 10am - 6pm</li>
+                            <li>Saturday: 10am - 2pm</li>
                             <li>Sunday: Closed</li>
                         </ul>
                     </div>
                 </div>
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                    <p>&copy; 2024 Hampshire Pharmacy. All rights reserved.</p>
+                <div class="border-t border-gray-800 mt-8 pt-8 pb-20">
+                    <!-- Copyright and credits with adjusted spacing -->
+                    <div class="space-y-4">
+                        <p class="text-center text-gray-400">
+                            &copy; 2024 Hampshire Pharmacy. All rights reserved.
+                        </p>
+                        <div class="text-sm text-gray-500 text-center">
+                            Built by the
+                            <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
+                                class="text-pharmaBlue-400 underline" to="https://thewebagency.app">
+                                TheWebAgency
+                            </NuxtLink>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -324,6 +501,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+
+const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
 
 // Floating CTA State
 const showFloatingCTA = ref(false)
@@ -347,16 +526,16 @@ const navLinks = [
 // Content Data
 const steps = [
     {
-        title: 'Check Your Price',
-        description: 'Use our simple tool to see your medication savings'
+        title: 'Transfer Your Prescription',
+        description: 'Transfer or send your prescription to us'
     },
     {
-        title: 'Transfer Prescription',
-        description: "Quick online transfer or we'll contact your doctor"
+        title: 'Awaiting Confirmation',
+        description: "We will confirm the details and send you our secure payment portal"
     },
     {
-        title: 'Get Your Medication',
-        description: 'Choose convenient pickup or discreet delivery'
+        title: 'Receive Prescription',
+        description: 'Get your prescription directly to your door for'
     }
 ]
 
