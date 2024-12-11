@@ -10,7 +10,11 @@
           <!-- Hide on mobile -->
           <span class="hidden md:block text-gray-600">Transfer Your Prescription Now</span>
         </div>
-        <button class="bg-pharmaBlue-400 text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+        <button @click="navigateTo('/transfer-prescription', {
+          open: {
+            target: '_blank'
+          }
+        })" class="bg-pharmaBlue-400 text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
           Transfer Prescription
         </button>
       </div>
@@ -444,7 +448,11 @@
         <p class="text-cream-100 mb-8">
           Join hundreds of satisfied customers who trust Hampshire Pharmacy
         </p>
-        <button class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
+        <button @click="navigateTo('/transfer-prescription', {
+          open: {
+            target: '_blank'
+          }
+        })" class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
           Transfer Your Prescription Now
         </button>
       </div>
