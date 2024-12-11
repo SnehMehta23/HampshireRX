@@ -2,8 +2,8 @@
   <div class="min-h-screen">
     <!-- Floating CTA -->
     <div v-show="showFloatingCTA"
-      class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-4 transform transition-transform z-50"
-      :class="showFloatingCTA ? 'translate-y-0' : 'translate-y-full'">
+         class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-4 transform transition-transform z-50"
+         :class="showFloatingCTA ? 'translate-y-0' : 'translate-y-full'">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-4">
           <span class="font-bold text-base md:text-xl">Save Up To 95% Today</span>
@@ -23,15 +23,15 @@
           <!-- Logo -->
           <div class="flex items-center flex-1">
             <NuxtLink to="/">
-              <img src="/images/logos/primaryWideLogo.webp" alt="Hampshire Pharmacy" class="hidden md:block h-10" />
-              <img src="/images/logos/smallLogo.png" alt="Hampshire Pharmacy" class="md:hidden h-10" />
+              <img src="/images/logos/primaryWideLogo.webp" alt="Hampshire Pharmacy" class="hidden md:block h-10"/>
+              <img src="/images/logos/smallLogo.png" alt="Hampshire Pharmacy" class="md:hidden h-10"/>
             </NuxtLink>
           </div>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center justify-center gap-6 flex-1">
             <NuxtLink v-for="link in navLinks" :key="link.text" :to="link.url"
-              class="text-gray-700 hover:text-pharmaBlue-400 transition-colors duration-200 whitespace-nowrap">
+                      class="text-gray-700 hover:text-pharmaBlue-400 transition-colors duration-200 whitespace-nowrap">
               {{ link.text }}
             </NuxtLink>
           </div>
@@ -57,7 +57,7 @@
           </h2>
           <div class="flex justify-center gap-4">
             <button
-              class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
+                class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
               Transfer A Prescription
             </button>
           </div>
@@ -65,21 +65,21 @@
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
               </svg>
               <span>Licensed Pharmacy</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
               </svg>
               <span>Discreet Service</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               <span>No Insurance Needed</span>
             </div>
@@ -91,8 +91,8 @@
             <div class="flex items-center gap-4 mb-6">
               <div class="w-12 h-12 bg-pharmaBlue-400 rounded-full flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="3" y="8" width="18" height="8" rx="4" stroke-width="2" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8" />
+                  <rect x="3" y="8" width="18" height="8" rx="4" stroke-width="2"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8"/>
                 </svg>
               </div>
               <div>
@@ -107,26 +107,53 @@
               </div>
             </div>
             <div class="grid grid-cols-3 gap-4">
-              <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+              <div
+                  @click="selectedDosageMedOne = '25mg'"
+                  :class="selectedDosageMedOne === '25mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">25mg</div>
-                  <div class="text-sm text-gray-500">${{ (data.meds.find(item => item.size == '25 mg')).price }}</div>
+                  <div class="text-sm text-gray-500">
+                    ${{ (data.meds.find(item => item.size == '25 mg')).price }}
+                  </div>
                 </div>
               </div>
-              <div class="border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5">
+
+              <div
+                  @click="selectedDosageMedOne = '50mg'"
+                  :class="selectedDosageMedOne === '50mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">50mg</div>
-                  <div class="text-sm text-gray-500">${{ (data.meds.find(item => item.size == '50 mg')).price }}</div>
+                  <div class="text-sm text-gray-500">
+                    ${{ (data.meds.find(item => item.size == '50 mg')).price }}
+                  </div>
                 </div>
               </div>
-              <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+
+              <div
+                  @click="selectedDosageMedOne = '100mg'"
+                  :class="selectedDosageMedOne === '100mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">100mg</div>
-                  <div class="text-sm text-gray-500">${{ (data.meds.find(item => item.size == '100 mg')).price }}</div>
+                  <div class="text-sm text-gray-500">
+                    ${{ (data.meds.find(item => item.size == '100 mg')).price }}
+                  </div>
                 </div>
               </div>
             </div>
-            <button class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+            <button @click="navigateTo(`/transfer-prescription?input_4px4=Sildenafil ${selectedDosageMedOne}`,{
+              open:{
+                target: '_blank'
+              }
+            })" class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
               Transfer Your Prescription Now
             </button>
           </div>
@@ -135,8 +162,8 @@
             <div class="flex items-center gap-4 mb-6">
               <div class="w-12 h-12 bg-pharmaBlue-400 rounded-full flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="3" y="8" width="18" height="8" rx="4" stroke-width="2" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8" />
+                  <rect x="3" y="8" width="18" height="8" rx="4" stroke-width="2"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8"/>
                 </svg>
               </div>
               <div>
@@ -151,26 +178,46 @@
               </div>
             </div>
             <div class="grid grid-cols-3 gap-4">
-              <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+              <div
+                  @click="selectedDosageMedTwo = '5mg'"
+                  :class="selectedDosageMedTwo === '5mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">5mg</div>
                   <div class="text-sm text-gray-500">${{ (med2.meds.find(item => item.size == '5 mg'))?.price }}</div>
                 </div>
               </div>
-              <div class="border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5">
+              <div
+                  @click="selectedDosageMedTwo = '10mg'"
+                  :class="selectedDosageMedTwo === '10mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">10mg</div>
                   <div class="text-sm text-gray-500">${{ (med2.meds.find(item => item.size == '10 mg'))?.price }}</div>
                 </div>
               </div>
-              <div class="border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+              <div
+                  @click="selectedDosageMedTwo = '20mg'"
+                  :class="selectedDosageMedTwo === '20mg'
+            ? 'border border-pharmaBlue-400 rounded-lg p-3 cursor-pointer bg-pharmaBlue-400/5'
+            : 'border border-gray-200 rounded-lg p-3 cursor-pointer hover:bg-gray-50'"
+              >
                 <div class="text-center">
                   <div class="font-bold">20mg</div>
                   <div class="text-sm text-gray-500">${{ (med2.meds.find(item => item.size == '20 mg'))?.price }}</div>
                 </div>
               </div>
+
             </div>
-            <button class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+            <button @click="navigateTo(`/transfer-prescription?input_4px4=Tadalafil ${selectedDosageMedTwo}`,{
+              open:{
+                target: '_blank'
+              }
+            })" class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
               Transfer Your Prescription Now
             </button>
           </div>
@@ -206,12 +253,12 @@
 
             <!-- Decorative curved arrow - similar to the example -->
             <svg class="absolute -right-16 top-1/2 transform -translate-y-1/2 text-orange-400 hidden md:block"
-              width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 width="150" height="100" viewBox="0 0 150 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Simple curved path with a more natural arc -->
               <path d="M0 50C50 50, 80 0, 120 50" stroke="currentColor" stroke-width="4" fill="none"
-                stroke-linecap="round" />
+                    stroke-linecap="round"/>
               <!-- Simple triangular arrowhead -->
-              <path d="M120 40L110 60Z" fill="currentColor" />
+              <path d="M120 40L110 60Z" fill="currentColor"/>
             </svg>
           </div>
         </div>
@@ -225,7 +272,7 @@
                 <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
                   <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                   </svg>
                 </div>
               </div>
@@ -242,7 +289,7 @@
                 <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
                   <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                   </svg>
                 </div>
               </div>
@@ -259,7 +306,7 @@
                 <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
                   <svg class="w-6 h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
               </div>
@@ -273,11 +320,11 @@
 
           <!-- CTA Button -->
           <button
-            class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
+              class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
             Get started
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+                    stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
@@ -297,7 +344,7 @@
               <div v-for="benefit in benefits" :key="benefit.title" class="flex items-start gap-3">
                 <div class="w-5 h-5 mt-1 text-pharmaBlue-400">
                   <svg class="w-5 h-5 text-pharmaBlue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
                 <div>
@@ -407,7 +454,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8">
           <div>
-            <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy" class="h-8 mb-4" />
+            <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy" class="h-8 mb-4"/>
             <p class="text-gray-400 mb-4">Your trusted community pharmacy since 2014</p>
             <!-- LegitScript Seal -->
             <div v-html="legitScriptTag"></div>
@@ -429,7 +476,7 @@
                 <a href="tel:+18476832244" class="flex items-center gap-2 hover:text-white">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                   (847) 683-2244
                 </a>
@@ -438,19 +485,19 @@
                 <a href="mailto:hampshirepharmacy@gmail.com" class="flex items-center gap-2 hover:text-white">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
                   hampshirepharmacy@gmail.com
                 </a>
               </li>
               <li>
                 <a href="https://maps.google.com/?q=262+N+State+St,+Hampshire,+IL" target="_blank"
-                  rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white">
+                   rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
                   262 N State St, Hampshire, IL
                 </a>
@@ -475,7 +522,7 @@
             <div class="text-sm text-gray-500 text-center">
               Built by the
               <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
-                class="text-pharmaBlue-400 underline" to="https://thewebagency.app">
+                        class="text-pharmaBlue-400 underline" to="https://thewebagency.app">
                 TheWebAgency
               </NuxtLink>
             </div>
@@ -487,7 +534,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import {ref, onMounted} from 'vue'
 
 const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
 
@@ -501,13 +548,17 @@ onMounted(() => {
   })
 })
 
+// State
+const selectedDosageMedOne = ref('50mg')
+const selectedDosageMedTwo = ref('10mg')
+
 // Navigation Links
 const navLinks = [
-  { text: 'Home', url: '/' },
-  { text: 'About', url: '/about' },
-  { text: 'Privacy', url: '/privacy' },
-  { text: 'FAQs', url: '/faq' },
-  { text: 'Prescription Transfer', url: '/transfer-prescription' }
+  {text: 'Home', url: '/'},
+  {text: 'About', url: '/about'},
+  {text: 'Privacy', url: '/privacy'},
+  {text: 'FAQs', url: '/faq'},
+  {text: 'Prescription Transfer', url: '/transfer-prescription'}
 ]
 
 // Content Data
@@ -546,10 +597,10 @@ const benefits = [
 ]
 
 const stats = [
-  { title: 'Satisfied Customers', value: '100+' },
-  { title: 'Years of Service', value: '10+' },
-  { title: 'Medications Available', value: '1000+' },
-  { title: 'Google Rating', value: '4.7★' }
+  {title: 'Satisfied Customers', value: '100+'},
+  {title: 'Years of Service', value: '10+'},
+  {title: 'Medications Available', value: '1000+'},
+  {title: 'Google Rating', value: '4.7★'}
 ]
 
 const faqs = [
@@ -564,10 +615,10 @@ const faqs = [
 ]
 
 const footerLinks = [
-  { text: 'Home', url: '/' },
-  { text: 'About Us', url: '/about' },
-  { text: 'Privacy Policy', url: '/privacy' },
-  { text: 'FAQs', url: '/faq' }
+  {text: 'Home', url: '/'},
+  {text: 'About Us', url: '/about'},
+  {text: 'Privacy Policy', url: '/privacy'},
+  {text: 'FAQs', url: '/faq'}
 ]
 
 // Define the query to fetch meds
@@ -585,8 +636,8 @@ const query = gql`
   }
 `;
 
-const { data } = await useLazyAsyncQuery(query, { searchTerm: 'Sildenafil' });
-const { data: med2 } = await useLazyAsyncQuery(query, { searchTerm: 'Tadalafil' });
+const {data} = await useLazyAsyncQuery(query, {searchTerm: 'Sildenafil'});
+const {data: med2} = await useLazyAsyncQuery(query, {searchTerm: 'Tadalafil'});
 console.log(med2.value)
 
 
