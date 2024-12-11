@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-pharmaBlue-400 text-secondary py-4">
+    <header class="bg-[#105670] text-secondary py-4">
         <div class="mx-auto px-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
@@ -39,7 +39,7 @@
                         @click="handleNavClick('Facebook', 'https://www.facebook.com/HampshirePharmacy/')"
                         class="text-white hover:text-orange-500 transition-colors duration-200">
                         <img class="hover:opacity-75" src="/public/images/logos/Facebook_Logo_Primary.png"
-                            alt="Facebook" width="24" height="24">
+                            alt="Facebook Icon" width="24" height="24">
                     </NuxtLink>
                 </nav>
 

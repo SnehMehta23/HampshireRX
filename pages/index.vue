@@ -36,7 +36,7 @@
     <main class="flex-grow bg-cream-100">
       <div class="relative" ref="heroRef">
         <div :class="[
-          'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+          'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
           'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
         ]">
           <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -105,7 +105,7 @@
           class="mt-10 grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center mb-12">
           <!-- Who are we container -->
           <div
-            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
+            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-[#46c0ec] bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
             <span class="opacity-75 font-semibold">Who are we?</span>
             <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
             <p class="font-medium">As a trusted community pharmacy for over 10 years we are fed up with the current
@@ -115,7 +115,7 @@
               you'll always know who's behind your prescription.</p>
             <div class="flex items-center justify-between">
               <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-500 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 font-bold text-white">
+                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-500 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 font-bold text-[#0d3d4f]">
                 View Our FAQs
               </NuxtLink>
             </div>

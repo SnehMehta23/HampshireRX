@@ -46,7 +46,7 @@
                 <p class="text-gray-600 text-center">Choose convenient home delivery or pick up your medication at our
                     store.
                 <div class="flex items-center justify-center font-bold ml-2 mt-4">
-                    <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="">
+                    <img class="w-6 h-6" src="/public/images/svg/prescription.svg" alt="Prescription pill bottle icon">
                     <p class="text-sm ml-2">Hours: Mon-Fri 10am-6pm, Sat 10am-2pm</p>
                 </div>
                 </p>

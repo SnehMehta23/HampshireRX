@@ -52,7 +52,7 @@
     <AppHeader />
     <div class="relative" ref="heroRef">
         <div :class="[
-            'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+            'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
             'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
         ]">
             <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
