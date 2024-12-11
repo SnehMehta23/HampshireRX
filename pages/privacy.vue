@@ -2,7 +2,7 @@
     <AppHeader />
     <div class="relative" ref="heroRef">
         <div :class="[
-            'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+            'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
             'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
         ]">
             <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -16,9 +16,10 @@
             <!-- <HowToCards /> -->
             <!-- SearchBar positioned absolutely -->
             <div :class="[
-                'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
-                'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
-                isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
+                'mx-auto bg-gradient-to-b from-[#105670] to-pharmaBlue-400 rounded-2xl py-4 w-full max-w-4xl px-8',
+                'transition-all duration-1000 ease-out shadow-lg',
+                'relative z-10 -mb-8 translate-y-6',  // Adjust these values to position the search bar
+                isVisible ? 'opacity-100 translate-y-6' : 'opacity-0 translate-y-0'
             ]">
                 <SearchBar @search="args => handleSubmit(args)" />
             </div>
@@ -138,28 +139,29 @@
                     <div class="text-sm mb-4">
                         <h6 class="text-lg font-semibold">TABLE OF CONTENTS</h6>
                         <ol class="list-none pl-0">
-                            <li><a href="#section1" class="text-blue-500 hover:underline">Collecting Your Information
+                            <li><a href="#section1" class="text-[#0d3d4f] hover:underline">Collecting Your Information
                                 </a></li>
-                            <li><a href="#section9" class="text-blue-500 hover:underline">Using Your Information
+                            <li><a href="#section9" class="text-[#0d3d4f] hover:underline">Using Your Information
                                 </a></li>
-                            <li><a href="#section16" class="text-blue-500 hover:underline">Sharing Your Information
+                            <li><a href="#section16" class="text-[#0d3d4f] hover:underline">Sharing Your Information
                                 </a></li>
-                            <li><a href="#section3" class="text-blue-500 hover:underline">How We Use Cookies</a></li>
-                            <li><a href="#section17" class="text-blue-500 hover:underline">Security of Your Information
+                            <li><a href="#section3" class="text-[#0d3d4f] hover:underline">How We Use Cookies</a></li>
+                            <li><a href="#section17" class="text-[#0d3d4f] hover:underline">Security of Your Information
                                 </a></li>
-                            <li><a href="#section18" class="text-blue-500 hover:underline">Policy for Children
+                            <li><a href="#section18" class="text-[#0d3d4f] hover:underline">Policy for Children
                                 </a></li>
-                            <li><a href="#section19" class="text-blue-500 hover:underline">Links to Other Websites and
+                            <li><a href="#section19" class="text-[#0d3d4f] hover:underline">Links to Other Websites and
                                     Third
                                     Party Practices
                                 </a></li>
-                            <li><a href="#section20" class="text-blue-500 hover:underline">Submitting Information From
+                            <li><a href="#section20" class="text-[#0d3d4f] hover:underline">Submitting Information From
                                     Outside The United States</a></li>
-                            <li><a href="#section21" class="text-blue-500 hover:underline">Exercise Your Privacy Rights.
+                            <li><a href="#section21" class="text-[#0d3d4f] hover:underline">Exercise Your Privacy
+                                    Rights.
                                 </a></li>
-                            <li><a href="#section22" class="text-blue-500 hover:underline">Retention Period
+                            <li><a href="#section22" class="text-[#0d3d4f] hover:underline">Retention Period
                                 </a></li>
-                            <li><a href="#section23" class="text-blue-500 hover:underline">Contacting Us
+                            <li><a href="#section23" class="text-[#0d3d4f] hover:underline">Contacting Us
                                 </a></li>
                         </ol>
                     </div>

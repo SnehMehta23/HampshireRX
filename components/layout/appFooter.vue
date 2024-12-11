@@ -1,10 +1,11 @@
 <template>
-    <footer class="bg-orange-400 text-white py-12">
+    <footer class="bg-orange-400 text-[#1f1f1f] py-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy" class="h-8 mb-4" />
-                    <p class="text-white mb-4">Your trusted community pharmacy since 2014</p>
+                    <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy small white logo"
+                        class="h-8 mb-4" />
+                    <p class="text-[#1f1f1f] mb-4">Your trusted community pharmacy since 2014</p>
                     <!-- LegitScript Seal -->
                     <div v-html="legitScriptTag"></div>
                 </div>
@@ -12,7 +13,7 @@
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li v-for="link in footerLinks" :key="link.text">
-                            <NuxtLink :to="link.url" class="text-white hover:text-white">
+                            <NuxtLink :to="link.url" class="text-[#1f1f1f] hover:text-white">
                                 {{ link.text }}
                             </NuxtLink>
                         </li>
@@ -20,7 +21,7 @@
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-white">
+                    <ul class="space-y-2 text-[#1f1f1f]">
                         <li>
                             <a href="tel:+18476832244" class="flex items-center gap-2 hover:text-white">
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,7 +57,7 @@
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Hours</h4>
-                    <ul class="space-y-2 text-white">
+                    <ul class="space-y-2 text-[#1f1f1f]">
                         <li>Mon-Fri: 10am - 6pm</li>
                         <li>Saturday: 10am - 2pm</li>
                         <li>Sunday: Closed</li>
@@ -66,13 +67,13 @@
             <div class="border-t border-gray-800 mt-8 pt-8">
                 <!-- Copyright and credits with adjusted spacing -->
                 <div class="">
-                    <p class="text-center text-white">
+                    <p class="text-center text-[#1f1f1f]">
                         &copy; 2024 Hampshire Pharmacy. All rights reserved.
                     </p>
-                    <div class="text-sm text-white text-center">
+                    <div class="text-sm text-[#1f1f1f] text-center">
                         Built by the
                         <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
-                            class="text-pharmaBlue-400 underline" to="https://thewebagency.app">
+                            class="text-[#0d3d4f] underline" to="https://thewebagency.app">
                             TheWebAgency
                         </NuxtLink>
                     </div>

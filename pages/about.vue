@@ -2,7 +2,7 @@
   <AppHeader />
   <div class="relative" ref="heroRef">
     <div :class="[
-      'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+      'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
       'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
     ]">
       <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -16,9 +16,10 @@
       <!-- <HowToCards /> -->
       <!-- SearchBar positioned absolutely -->
       <div :class="[
-        'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 w-full max-w-4xl px-12',
-        'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
-        isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
+        'mx-auto bg-gradient-to-b from-[#105670] to-pharmaBlue-400 rounded-2xl py-4 w-full max-w-4xl px-8',
+        'transition-all duration-1000 ease-out shadow-lg',
+        'relative z-10 -mb-8 translate-y-6',  // Adjust these values to position the search bar
+        isVisible ? 'opacity-100 translate-y-6' : 'opacity-0 translate-y-0'
       ]">
         <SearchBar @search="args => handleSubmit(args)" />
       </div>
@@ -107,7 +108,7 @@
             swiftly identify affordable generic alternatives to brand-name medications. With just a few
             clicks, you can access cost-effective options without compromising quality or efficacy. At our
             Hampshire Pharmacy, we believe everyone deserves access to affordable healthcare solutions, and
-            we're committed to making that a new normal for our valued customers. <span class="text-pharmaBlue-400">Come
+            we're committed to making that a new normal for our valued customers. <span class="text-[#0d3d4f]">Come
               visit Hampshire
               Pharmacy open Monday through Friday from 10:00 am to 6:00 pm.</span>
           </p>

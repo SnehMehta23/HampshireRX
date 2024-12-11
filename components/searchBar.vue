@@ -6,9 +6,9 @@
           class="w-full px-6 py-4 border-none rounded-l-full focus:outline-none focus:ring-2 focus:ring-pharmaBlue-400 shadow-lg" />
       </div>
       <button type="submit"
-        class="w-1/3 xl:text-sm bg-orange-400 whitespace-nowrap text-black font-semibold py-4 rounded-r-full hover:bg-orange-500">
-        <span class="hidden sm:inline">Save on prescriptions</span>
-        <span class="sm:hidden">Search</span>
+        class="w-1/3 text-black xl:text-sm bg-orange-400 whitespace-nowrap font-semibold py-4 rounded-r-full">
+        <span class="hidden sm:inline text-black">Save on prescriptions</span>
+        <span class="text-black sm:hidden">Search</span>
       </button>
     </form>
     <template>
@@ -101,37 +101,37 @@ const temp = ref([])
 
 
 
-const {data} = await useLazyAsyncQuery(allQuery)
+const { data } = await useLazyAsyncQuery(allQuery)
 
-onMounted(async () =>{
- medList.value = await processMedData(data)
+onMounted(async () => {
+  medList.value = await processMedData(data)
 })
 
 
 
 function processMedData(data) {
-  
+
   // Ensure we're working with the array of medications
   const allMeds = Object.values(data.value)[0];
-  
+
   // Use a Set to keep track of unique combinations
   const uniqueCombos = new Set();
 
   // Use map to create a new array with only name and genericFor
   // Then filter to keep only unique combinations
-    return allMeds
-        .map(med => ({
-          name: med.name,
-          genericFor: med.genericFor
-        }))
-        .filter(med => {
-          const combo = `${med.name}|${med.genericFor}`;
-          if (!uniqueCombos.has(combo)) {
-            uniqueCombos.add(combo);
-            return true;
-          }
-          return false;
-        });
+  return allMeds
+    .map(med => ({
+      name: med.name,
+      genericFor: med.genericFor
+    }))
+    .filter(med => {
+      const combo = `${med.name}|${med.genericFor}`;
+      if (!uniqueCombos.has(combo)) {
+        uniqueCombos.add(combo);
+        return true;
+      }
+      return false;
+    });
 
 }
 
