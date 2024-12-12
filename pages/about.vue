@@ -2,7 +2,7 @@
   <AppHeader />
   <div class="relative" ref="heroRef">
     <div :class="[
-      'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+      'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
       'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
     ]">
       <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -16,10 +16,9 @@
       <!-- <HowToCards /> -->
       <!-- SearchBar positioned absolutely -->
       <div :class="[
-        'mx-auto bg-gradient-to-b from-[#105670] to-pharmaBlue-400 rounded-2xl py-4 w-full max-w-4xl px-8',
-        'transition-all duration-1000 ease-out shadow-lg',
-        'relative z-10 -mb-8 translate-y-6',  // Adjust these values to position the search bar
-        isVisible ? 'opacity-100 translate-y-6' : 'opacity-0 translate-y-0'
+        'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 w-full max-w-4xl px-12',
+        'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
+        isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
       ]">
         <SearchBar @search="args => handleSubmit(args)" />
       </div>
@@ -131,6 +130,38 @@ import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
 import { gql } from "graphql-tag";
+
+useHead({
+  title: 'About Hampshire Pharmacy | Making Healthcare Affordable',
+  meta: [
+    {
+      name: 'description',
+      content: 'Hampshire Pharmacy is committed to making healthcare accessible with affordable generic alternatives to brand-name medications. Our user-friendly platform helps you find cost-effective prescriptions without compromising quality.'
+    },
+    {
+      name: 'keywords',
+      content: 'affordable pharmacy, Hampshire IL pharmacy, generic medications, cost-effective prescriptions, local pharmacy, healthcare solutions, prescription savings, affordable healthcare, generic alternatives, community pharmacy, Hampshire Pharmacy mission'
+    },
+    // Open Graph
+    {
+      property: 'og:title',
+      content: 'About Hampshire Pharmacy | Making Healthcare Affordable'
+    },
+    {
+      property: 'og:description',
+      content: 'Hampshire Pharmacy is committed to making healthcare accessible with affordable generic alternatives to brand-name medications. Our user-friendly platform helps you find cost-effective prescriptions without compromising quality.'
+    },
+    // Twitter
+    {
+      name: 'twitter:title',
+      content: 'About Hampshire Pharmacy | Making Healthcare Affordable'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Hampshire Pharmacy is committed to making healthcare accessible with affordable generic alternatives to brand-name medications. Our user-friendly platform helps you find cost-effective prescriptions without compromising quality.'
+    }
+  ]
+})
 
 const medData = ref([]); // Initialize as an empty array
 

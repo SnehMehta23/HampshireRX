@@ -52,7 +52,7 @@
     <AppHeader />
     <div class="relative" ref="heroRef">
         <div :class="[
-            'mx-auto px-4 bg-gradient-to-b from-[#105670] via-[#105670] to-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
+            'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
             'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
         ]">
             <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
@@ -155,6 +155,38 @@ import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
 import { gql } from "graphql-tag";
+
+useHead({
+    title: 'Frequently Asked Questions | Hampshire Pharmacy',
+    meta: [
+        {
+            name: 'description',
+            content: 'Find answers about prescription transfers, insurance-free pricing, delivery options, pharmacy hours, and medication pricing at Hampshire Pharmacy. Learn how to save on prescriptions with our reliable generic alternatives.'
+        },
+        {
+            name: 'keywords',
+            content: 'pharmacy FAQ, prescription transfer process, cash pharmacy prices, medication delivery, pharmacy hours Hampshire IL, no insurance needed pharmacy, generic medication pricing, prescription pickup, pharmacy questions, Hampshire Pharmacy help'
+        },
+        // Open Graph
+        {
+            property: 'og:title',
+            content: 'Frequently Asked Questions | Hampshire Pharmacy'
+        },
+        {
+            property: 'og:description',
+            content: 'Find answers about prescription transfers, insurance-free pricing, delivery options, pharmacy hours, and medication pricing at Hampshire Pharmacy. Learn how to save on prescriptions with our reliable generic alternatives.'
+        },
+        // Twitter
+        {
+            name: 'twitter:title',
+            content: 'Frequently Asked Questions | Hampshire Pharmacy'
+        },
+        {
+            name: 'twitter:description',
+            content: "Find answers about prescription transfers, insurance-free pricing, delivery options, pharmacy hours, and medication pricing at Hampshire Pharmacy. Learn how to save on prescriptions with our reliable generic alternatives."
+        }
+    ]
+})
 
 const isVisible = ref(false);
 const heroRef = ref(null);
