@@ -87,6 +87,7 @@
 const footerLinks = [
     { text: 'Home', url: '/' },
     { text: 'About Us', url: '/about' },
+    { text: 'Mens Healh', url: '/mens-health' },
     { text: 'Privacy Policy', url: '/privacy' },
     { text: 'FAQs', url: '/faq' }
 ]

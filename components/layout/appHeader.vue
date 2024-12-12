@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-[#105670] text-secondary py-4">
+    <header class="bg-pharmaBlue-400 text-secondary py-4">
         <div class="mx-auto px-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
