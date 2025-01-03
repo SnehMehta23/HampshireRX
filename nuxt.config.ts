@@ -36,7 +36,7 @@ export default defineNuxtConfig({
         clients: {
             default: {
                 httpEndpoint: 'https://hampshirepharmacy.com/api/graphql',
-                wsEndpoint: 'ws://hampshirepharmacy.com/api/graphql', // WebSocket endpoint for subscriptions
+                wsEndpoint: 'wss://hampshirepharmacy.com/api/graphql', // WebSocket endpoint for subscriptions
                 httpLinkOptions: {
                     credentials: 'include'
                 }
