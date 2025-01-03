@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {gql} from 'graphql-tag';
 import {useSubscription} from "@vue/apollo-composable";
+import {aws4} from "mongodb/src/deps";
 
 const count = ref(0)
 
@@ -18,9 +19,23 @@ onBeforeMount(async () => {
 const medData = ref([]); // Initialize as an empty array
 
 // Define the query to fetch meds
+// const query = gql`
+//   query getMeds($name: String) {
+//     meds(name: $name) {
+//       id
+//       name
+//       size
+//       count
+//       countUnit
+//       genericFor
+//       price
+//     }
+//   }
+// `;
+
 const query = gql`
-  query getMeds($name: String) {
-    meds(name: $name) {
+  query getMeds($searchTerm: String) {
+    meds(searchTerm: $searchTerm) {
       id
       name
       size
@@ -32,61 +47,78 @@ const query = gql`
   }
 `;
 
-// Define the subscription for updated meds
-const MED_UPDATED_SUBSCRIPTION = gql`
-  subscription OnMedUpdated {
-    medUpdated {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
-
-// Define the subscription for created meds
-const MED_CREATED_SUBSCRIPTION = gql`
-  subscription OnMedCreated {
-    medCreated {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
+// // Define the subscription for updated meds
+// const MED_UPDATED_SUBSCRIPTION = gql`
+//   subscription OnMedUpdated {
+//     medUpdated {
+//       id
+//       name
+//       size
+//       count
+//       countUnit
+//       genericFor
+//       price
+//     }
+//   }
+// `;
+//
+// // Define the subscription for created meds
+// const MED_CREATED_SUBSCRIPTION = gql`
+//   subscription OnMedCreated {
+//     medCreated {
+//       id
+//       name
+//       size
+//       count
+//       countUnit
+//       genericFor
+//       price
+//     }
+//   }
+// `;
 
 // Reactive variable to filter meds
 const filter = ref('');
 
+const allQuery = gql`
+  query{
+    allMeds {
+       id
+       name
+       size
+       count
+       countUnit
+       genericFor
+       price
+    }
+}
+`
+const {data: meds} = await useAsyncQuery(allQuery)
+medData.value = meds.value.allMeds
+
+
 // Function to handle searching meds
 async function handleSubmit() {
-  const variables = {name: filter.value}; // Replace with the name you want to search for
+  const variables = {searchTerm: filter.value}; // Replace with the name you want to search for
   const {data} = await useAsyncQuery(query, variables);
   medData.value = data.value.meds;
   // console.log(medData.value);
 }
 
-// Listen to the subscription for med updates
-const {result: medUpdated} = useSubscription(MED_UPDATED_SUBSCRIPTION);
-const {result: medCreated} = useSubscription(MED_CREATED_SUBSCRIPTION);
+// // Listen to the subscription for med updates
+// const {result: medUpdated} = useSubscription(MED_UPDATED_SUBSCRIPTION);
+// const {result: medCreated} = useSubscription(MED_CREATED_SUBSCRIPTION);
 
 
-watch(medUpdated, async (updated, oldMed) => {
-  const index = medData.value.findIndex(med => med.id === updated.medUpdated.id);
-  if (index !== -1) {
-    const newArray = [...medData.value]; // Create a new array
-    newArray.splice(index, 1, updated.medUpdated); // Modify the new array
-    medData.value = newArray; // Assign the new array back to the ref
-    count.value++;
-  }
-})
+// watch(medUpdated, async (updated, oldMed) => {
+//   const index = medData.value.findIndex(med => med.id === updated.medUpdated.id);
+//   if (index !== -1) {
+//     const newArray = [...medData.value]; // Create a new array
+//     newArray.splice(index, 1, updated.medUpdated); // Modify the new array
+//     medData.value = newArray; // Assign the new array back to the ref
+//     count.value++;
+//   }
+// })
 
 const showModal = ref(false)
 
@@ -106,7 +138,7 @@ const showModal = ref(false)
       </div>
     </div>
     <div v-if="medData.length"> Displaying {{ medData.length }} results</div>
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-3 gap-4">
       <template v-if="medData.length">
         <MedCard v-for="med in medData" :key="med.id" :data="med"/>
       </template>
