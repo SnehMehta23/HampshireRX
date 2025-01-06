@@ -7,7 +7,6 @@ const count = ref(0)
 
 definePageMeta({
   layout: 'admin',
-  middleware: 'auth',
 })
 
 
@@ -121,6 +120,18 @@ async function handleSubmit() {
 // })
 
 const showModal = ref(false)
+const filterText = ref('')
+
+const filteredMeds = computed(() => {
+  const searchTerm = filterText.value.trim().toLowerCase()
+
+  if (!searchTerm) return medData.value
+
+  return medData.value.filter((med) => {
+    // Ensure the 'name' property exists and is a string
+    return med.name && med.name.toLowerCase().includes(searchTerm)
+  })
+})
 
 </script>
 
@@ -129,7 +140,7 @@ const showModal = ref(false)
   <div :key="count" class="flex flex-col justify-center items-center gap-2 mt-10">
     <div class="w-full flex justify-center items-center gap-2">
       <div class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded">
-        <input class="p-2" placeholder="Medication Name..." v-model="filter" type="text">
+        <input class="p-2" placeholder="Medication Name..." v-model="filterText" type="text">
         <button class="p-2 text-white font-bold" @click="handleSubmit">Search</button>
       </div>
       <div @click="showModal = true"
@@ -137,10 +148,10 @@ const showModal = ref(false)
         Add Medication
       </div>
     </div>
-    <div v-if="medData.length"> Displaying {{ medData.length }} results</div>
+    <div v-if="filteredMeds.length"> Displaying {{ filteredMeds.length }} results</div>
     <div class="grid grid-cols-3 gap-4">
-      <template v-if="medData.length">
-        <MedCard v-for="med in medData" :key="med.id" :data="med"/>
+      <template v-if="filteredMeds.length">
+        <MedCard v-for="med in filteredMeds" :key="med.id" :data="med"/>
       </template>
     </div>
   </div>
