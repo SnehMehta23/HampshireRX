@@ -133,10 +133,17 @@ const filteredMeds = computed(() => {
   })
 })
 
+const reloadData = () => {
+  console.log('ping from reloadData()')
+const {result} =  useQuery(allQuery)
+  console.log(result)
+  medData.value = result.value.allMeds
+}
+
 </script>
 
 <template>
-  <AddMedModal v-if="showModal" @modal-close="showModal = false"/>
+  <AddMedModal @submit="reloadData" v-if="showModal" @modal-close="showModal = false"/>
   <div :key="count" class="flex flex-col justify-center items-center gap-2 mt-10">
     <div class="w-full flex justify-center items-center gap-2">
       <div class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded">
@@ -151,7 +158,7 @@ const filteredMeds = computed(() => {
     <div v-if="filteredMeds.length"> Displaying {{ filteredMeds.length }} results</div>
     <div class="grid grid-cols-3 gap-4">
       <template v-if="filteredMeds.length">
-        <MedCard v-for="med in filteredMeds" :key="med.id" :data="med"/>
+        <MedCard @submit="reloadData" v-for="med in filteredMeds" :key="med.id" :data="med"/>
       </template>
     </div>
   </div>

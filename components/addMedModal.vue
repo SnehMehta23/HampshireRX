@@ -9,6 +9,10 @@ const query = gql`
   }
 `;
 
+const emit = defineEmits('submit')
+
+
+
 const generics = ref([])
 const filterText = ref('')
 
@@ -70,6 +74,7 @@ const { mutate: createMed } = useMutation(CREATE_MED_MUTATION)
 async function saveMed() {
   try {
     const response = await createMed({ ...medData, count: parseInt(medData.count) });
+    emit('submit')
   } catch (e) {
     // console.log(e)
   }

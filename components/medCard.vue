@@ -1,5 +1,6 @@
 <script setup lang="js">
 
+const emit = defineEmits(['submit'])
 const { data } = defineProps(['data'])
 const { name, genericFor, count, countUnit, price, size, id } = data;
 
@@ -61,6 +62,7 @@ const saveChanges = async () => {
     });
     // console.log('Updated Med:', response.data.updateMed);
     isBeingEdited.value = false; // Exit edit mode after saving
+    emit('submit')
   } catch (error) {
     console.error('Error updating med:', error);
   }
