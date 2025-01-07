@@ -49,6 +49,7 @@
         </div>
       </div>
     </nav>
+    <div class="w-full text-center p-2 bg-pharmaBlue-400 text-xl font-semibold text-white "> Free shipping on all ED medications </div>
 
     <div class="bg-gradient-to-br from-orange-400 via-orange-500 to-pharmaBlue-400 pt-20 pb-32">
       <div class="max-w-7xl mx-auto px-4">
