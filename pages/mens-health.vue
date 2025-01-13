@@ -51,7 +51,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
           <h1 class="text-5xl font-bold text-white mb-4">
-            Same ED Medication, Lower Prices
+            FDA approved Sildenafil & Tadalafil right to your door
           </h1>
           <h2 class="text-2xl text-cream-100 mb-8">
             Pay 95% less by switching to Hampshire Pharmacy
@@ -98,7 +98,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold text-gray-800">Sildenafil</h3>
-                <p class="text-gray-600">Generic For: Erectile Dysfunction</p>
+                <p class="text-gray-600">Generic For: Viagra</p>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-4 mb-4">
@@ -157,7 +157,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold text-gray-800">Tadalafil</h3>
-                <p class="text-gray-600">Generic For: Erectile Dysfunction</p>
+                <p class="text-gray-600">Generic For: Cialis</p>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-4 mb-4">
@@ -634,8 +634,8 @@ const benefits = [
 ]
 
 const stats = [
-  { title: 'Satisfied Customers', value: '100+' },
-  { title: 'Years of Service', value: '10+' },
+  { title: 'Satisfied Customers', value: '10,000+' },
+  { title: 'Years of Service', value: '14+' },
   { title: 'Medications Available', value: '1000+' },
   { title: 'Google Rating', value: '4.7★' }
 ]
