@@ -10,13 +10,8 @@
           <!-- Hide on mobile -->
           <span class="hidden md:block text-gray-600">Transfer Your Prescription Now</span>
         </div>
-        <button @click="navigateTo('/transfer-prescription', {
-          open: {
-            target: '_blank'
-          }
-        })" class="bg-pharmaBlue-400 text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
-          Transfer Prescription
-        </button>
+        <button @click="handleFloatingCTA"
+          class="bg-pharmaBlue-400 text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition"></button>
       </div>
     </div>
 
@@ -49,7 +44,8 @@
         </div>
       </div>
     </nav>
-    <div class="w-full text-center p-2 bg-pharmaBlue-400 text-xl font-semibold text-white "> Free shipping on all ED medications </div>
+    <div class="w-full text-center p-2 bg-pharmaBlue-400 text-xl font-semibold text-white "> Free shipping on all ED
+      medications </div>
 
     <div class="bg-gradient-to-br from-orange-400 via-orange-500 to-pharmaBlue-400 pt-20 pb-32">
       <div class="max-w-7xl mx-auto px-4">
@@ -61,7 +57,7 @@
             Pay 95% less by switching to Hampshire Pharmacy
           </h2>
           <div class="flex justify-center gap-4">
-            <button
+            <button @click="handlePrescriptionTransfer"
               class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
               Transfer A Prescription
             </button>
@@ -145,11 +141,8 @@
                 </div>
               </div>
             </div>
-            <button @click="navigateTo(`/transfer-prescription?input_4px4=Sildenafil ${selectedDosageMedOne}`, {
-              open: {
-                target: '_blank'
-              }
-            })" class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+            <button @click="handlePrescriptionTransfer(`Sildenafil ${selectedDosageMedOne}`)"
+              class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
               Transfer Your Prescription Now
             </button>
           </div>
@@ -200,11 +193,8 @@
               </div>
 
             </div>
-            <button @click="navigateTo(`/transfer-prescription?input_4px4=Tadalafil ${selectedDosageMedTwo}`, {
-              open: {
-                target: '_blank'
-              }
-            })" class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+            <button @click="handlePrescriptionTransfer(`Sildenafil ${selectedDosageMedOne}`)"
+              class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
               Transfer Your Prescription Now
             </button>
           </div>
@@ -306,14 +296,14 @@
           </div>
 
           <!-- CTA Button -->
-          <NuxtLink to="/transfer-prescription"
+          <button @click="handlePrescriptionTransfer"
             class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
             Get started
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-          </NuxtLink>
+          </button>
         </div>
       </div>
     </div>
@@ -431,11 +421,8 @@
         <p class="text-cream-100 mb-8">
           Join hundreds of satisfied customers who trust Hampshire Pharmacy
         </p>
-        <button @click="navigateTo('/transfer-prescription', {
-          open: {
-            target: '_blank'
-          }
-        })" class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
+        <button @click="handlePrescriptionTransfer"
+          class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
           Transfer Your Prescription Now
         </button>
       </div>
@@ -527,6 +514,23 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+// Add the prescription transfer handler
+const handlePrescriptionTransfer = (medication = '') => {
+  // Navigate to transfer-prescription-start
+  router.push({
+    path: '/transfer-prescription-start',
+    query: medication ? { medication } : undefined
+  })
+}
+
+// Update the floating CTA click handler
+const handleFloatingCTA = () => {
+  handlePrescriptionTransfer()
+}
+
 useHead({
   title: "Men's Health Solutions | Hampshire Pharmacy",
   meta: [
@@ -591,7 +595,7 @@ const navLinks = [
   { text: 'About', url: '/about' },
   { text: 'Privacy', url: '/privacy' },
   { text: 'FAQs', url: '/faq' },
-  { text: 'Prescription Transfer', url: '/transfer-prescription' }
+  { text: 'Prescription Transfer', url: '/transfer-prescription-start' }
 ]
 
 // Content Data
