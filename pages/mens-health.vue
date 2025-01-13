@@ -289,8 +289,7 @@
               </div>
               <div>
                 <h3 class="text-xl font-bold">Pay 95% less</h3>
-                <p class="text-gray-600">Order generic Sildenafil and get the same effectiveness as
-                  Viagra®, for a fraction of the cost.</p>
+                <p class="text-gray-600">Order your Sildenafil and Tadalafil for a fraction of the cost.</p>
               </div>
             </div>
           </div>
