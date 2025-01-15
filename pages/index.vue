@@ -54,6 +54,9 @@
           <div class="max-w-4xl px-12 mx-auto">
             <SearchBar @search="(n) => handleSubmit(n)" />
           </div>
+          <div>
+            <MedicationGrid @med-selected="(n) => handleSubmit(n)"/>
+          </div>
 
           <div class="mt-6">
             <HowToCards />
