@@ -30,9 +30,11 @@ const { name, price, count, countUnit, size, genericFor } = data
       </div>
     </div>
     <div class="bg-gray-300 w-full rounded-b-lg flex justify-center items-center px-2 pb-2">
-      <div @click="() => navigateTo('/transfer-prescription')"
-        class="py-2 shadow-md shadow-black/10 bg-gray-200 hover:bg-gray-400 cursor-pointer w-full text-center rounded-lg font-semibold">
-        Transfer prescription</div>
+      <a class="w-full" href="/transfer-prescription">
+        <div
+             class="py-2 shadow-md shadow-black/10 bg-gray-200 hover:bg-gray-400 cursor-pointer w-full text-center rounded-lg font-semibold">
+          Transfer prescription</div>
+      </a>
     </div>
   </div>
 </template>

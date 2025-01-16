@@ -1,70 +1,11 @@
 <!-- pages/transfer-prescription.vue -->
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-
-const form = ref(null)
-const isLoading = ref(true)
-const hasStartedFilling = ref(false)
-const workflowId = "315cf730-85cc-4e7b-90e7-e92fe6ad2c43"
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-// Function to update URL without page navigation
-const updateURL = (path: string) => {
-    window.history.replaceState(null, '', path)
-}
-
-// Listen for messages from the iframe
-const handleMessage = (event) => {
-    const data = event.data
-
-    // Only process messages from our workflow
-    if (data?.workflowId === workflowId) {
-        // console.log('Received message from form:', data)
-
-        // Track height changes as they indicate form interaction
-        if (data.type === 'heightChange' && !hasStartedFilling.value) {
-            hasStartedFilling.value = true
-            updateURL('/transfer-prescription-start')
-        }
-
-        // Track form submission
-        if (data.type === 'submitSuccess') {
-            updateURL('/transfer-prescription-complete')
-        }
-    }
-}
-
+const scriptTag = '<script src="https://form.jotform.com/jsform/250128695343156"><\/script>'
 onMounted(async () => {
-    // Add message listener
-    window.addEventListener('message', handleMessage)
-
     const script = document.createElement('script')
-    script.src = "https://app.hipaatizer.com/shared/hipaatizer-form-renderer.js"
-    script.id = `${workflowId}-script`
-    form.value.appendChild(script)
-
-    await sleep(2000)
-    showForm()
+    script.src = "https://form.jotform.com/jsform/250128695343156"
 })
-
-onUnmounted(() => {
-    window.removeEventListener('message', handleMessage)
-})
-
-const showForm = () => {
-    const formInstance = new Hipaatizer(
-        workflowId,
-        false,
-        "",
-        false
-    )
-
-    formInstance.render()
-    isLoading.value = false
-}
 </script>
 
 <template>
@@ -77,14 +18,17 @@ const showForm = () => {
                     'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
                 ]">
                 </div>
+                <div v-html="scriptTag">
 
-                <div v-if="isLoading" class="flex justify-center items-center h-64">
-                    <div class="spinner"></div>
                 </div>
 
-                <div ref="form" class="w-full outline-none border-none mt-4" :class="{ 'hidden': isLoading }">
-                    <!-- Dynamically injected form will appear here -->
-                </div>
+<!--                <div v-if="isLoading" class="flex justify-center items-center h-64">-->
+<!--                    <div class="spinner"></div>-->
+<!--                </div>-->
+
+<!--                <div ref="form" class="w-full outline-none border-none mt-4" :class="{ 'hidden': isLoading }">-->
+<!--                    &lt;!&ndash; Dynamically injected form will appear here &ndash;&gt;-->
+<!--                </div>-->
             </div>
         </main>
     </div>

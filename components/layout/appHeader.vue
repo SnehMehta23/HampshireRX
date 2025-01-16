@@ -29,11 +29,11 @@
                         class="text-white hover:text-orange-500 transition-colors duration-200 relative">
                         FAQ
                     </NuxtLink>
-                    <NuxtLink v-if="currentRoute !== '/transfer-prescription'" to="/transfer-prescription"
+                    <a  v-if="currentRoute !== '/transfer-prescription'" href="/transfer-prescription"
                         @click="handleNavClick('Prescription Transfer', '/transfer-prescription')"
                         class="text-white hover:text-orange-500 transition-colors duration-200 relative">
                         Prescription Transfer
-                    </NuxtLink>
+                    </a>
                     <!-- Facebook Icon Link -->
                     <NuxtLink to="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
                         @click="handleNavClick('Facebook', 'https://www.facebook.com/HampshirePharmacy/')"
@@ -81,11 +81,11 @@
                         class="text-white hover:text-orange-500 transition-colors duration-200">
                         FAQ
                     </NuxtLink>
-                    <NuxtLink to="/transfer-prescription"
+                    <a href="/transfer-prescription"
                         @click="handleNavClick('Prescription Transfer', '/transfer-prescription')"
                         class="text-white hover:text-orange-500 transition-colors duration-200">
                         Prescription Transfer
-                    </NuxtLink>
+                    </a>
                     <NuxtLink to="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
                         @click="handleNavClick('Facebook', 'https://www.facebook.com/HampshirePharmacy/')"
                         class="text-white hover:text-orange-500 transition-colors duration-200">

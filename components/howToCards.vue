@@ -13,10 +13,10 @@
                 <h3 class="text-xl text-center font-semibold mb-2">Send or Transfer Prescription:</h3>
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
-                <NuxtLink to="/transfer-prescription" @click.native="trackButtonClick"
+                <a href="/transfer-prescription"
                     class="block w-full bg-orange-400 text-center cursor-pointer p-2 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
                     Transfer my prescription
-                </NuxtLink>
+                </a>
             </div>
 
             <!-- Card 2 -->
