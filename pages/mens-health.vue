@@ -57,10 +57,13 @@
             Pay 95% less by switching to Hampshire Pharmacy
           </h2>
           <div class="flex justify-center gap-4">
-            <button @click="handlePrescriptionTransfer"
-              class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
-              Transfer A Prescription
-            </button>
+            <a href="/transfer-prescription">
+              <button
+                      class="bg-pharmaBlue-400 text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition text-lg font-semibold">
+                Transfer A Prescription
+              </button>
+            </a>
+
           </div>
           <div class="flex justify-center gap-8 mt-8 text-white">
             <div class="flex items-center gap-2">
@@ -141,10 +144,12 @@
                 </div>
               </div>
             </div>
-            <button @click="handlePrescriptionTransfer(`Sildenafil ${selectedDosageMedOne}`)"
-              class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
-              Transfer Your Prescription Now
-            </button>
+            <a href="/transfer-prescription">
+              <button
+                  class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+                Transfer Your Prescription Now
+              </button>
+            </a>
           </div>
 
           <div class="w-full md:max-w-xl bg-white/95 rounded-xl shadow-lg p-6 backdrop-blur-sm">
@@ -191,12 +196,13 @@
                   <div class="text-sm text-gray-500">${{ (med2.meds.find(item => item.size == '20 mg'))?.price }}</div>
                 </div>
               </div>
-
             </div>
-            <button @click="handlePrescriptionTransfer(`Sildenafil ${selectedDosageMedOne}`)"
-              class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
-              Transfer Your Prescription Now
-            </button>
+            <a href="/transfer-prescription">
+              <button
+                  class="w-full mt-4 bg-pharmaBlue-400 text-white py-3 rounded-md hover:bg-opacity-90 transition">
+                Transfer Your Prescription Now
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -295,14 +301,17 @@
           </div>
 
           <!-- CTA Button -->
-          <button @click="handlePrescriptionTransfer"
-            class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
-            Get started
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
+          <a href="/transfer-prescription">
+            <button
+                    class="bg-pharmaBlue-400 text-white px-8 py-4 rounded-md hover:bg-opacity-90 transition text-lg font-semibold w-full md:w-auto inline-flex items-center justify-center gap-2">
+              Get started
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </button>
+          </a>
+
         </div>
       </div>
     </div>
