@@ -429,10 +429,12 @@
         <p class="text-cream-100 mb-8">
           Join hundreds of satisfied customers who trust Hampshire Pharmacy
         </p>
-        <button @click="handlePrescriptionTransfer"
-          class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
-          Transfer Your Prescription Now
-        </button>
+        <a href="/transfer-prescription">
+          <button
+              class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
+            Transfer Your Prescription Now
+          </button>
+        </a>
       </div>
     </div>
 
