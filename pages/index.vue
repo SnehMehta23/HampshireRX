@@ -55,7 +55,7 @@
             <SearchBar @search="(n) => handleSubmit(n)" />
           </div>
           <div>
-            <MedicationGrid @med-selected="(n) => handleSubmit(n)"/>
+            <MedicationGrid @med-selected="(n) => handleSubmit(n)" />
           </div>
 
           <div class="mt-6">
@@ -137,6 +137,39 @@
           </div>
         </div>
 
+        <div class="bg-gray-900 py-20">
+          <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+              <div>
+                <h2 class="text-3xl text-white font-bold mb-6">Your Trusted Community Pharmacy</h2>
+                <p class="text-gray-300 mb-8">
+                  As Hampshire's local pharmacy for over 10 years, we understand that managing your health
+                  shouldn't mean choosing between quality and affordability.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                  <div v-for="benefit in benefits" :key="benefit.title" class="flex items-start gap-3">
+                    <div class="w-5 h-5 mt-1 text-pharmaBlue-400">
+                      <svg class="w-5 h-5 text-pharmaBlue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-white">{{ benefit.title }}</h4>
+                      <p class="text-sm text-gray-300">{{ benefit.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div v-for="stat in stats" :key="stat.title" class="bg-white p-6 rounded-lg shadow-sm text-center">
+                  <div class="text-3xl font-bold text-pharmaBlue-400">{{ stat.value }}</div>
+                  <div class="text-sm text-gray-600">{{ stat.title }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <!-- <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
           <div class="xl:mb-0 mb-12">
@@ -162,6 +195,33 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gql } from "graphql-tag";
+
+const benefits = [
+  {
+    title: 'No Insurance Needed',
+    description: 'Access affordable medications without insurance'
+  },
+  {
+    title: 'Licensed Pharmacy',
+    description: 'Full-service, state-licensed pharmacy'
+  },
+  {
+    title: 'Competitive Pricing',
+    description: 'Save up to 95% on generic medications'
+  },
+  {
+    title: 'Discreet Service',
+    description: 'Private consultations and discrete packaging'
+  }
+]
+
+const stats = [
+  { title: 'Satisfied Customers', value: '100+' },
+  { title: 'Years of Service', value: '10+' },
+  { title: 'Medications Available', value: '1000+' },
+  { title: 'Google Rating', value: '4.7★' }
+]
+
 // import ParallaxCard from '~/components/parallaxCard.vue'
 import { nextTick } from 'vue'
 
