@@ -185,8 +185,8 @@ const benefits = [
 ]
 
 const stats = [
-  { title: 'Satisfied Customers', value: '100+' },
-  { title: 'Years of Service', value: '10+' },
+  { title: 'Satisfied Customers', value: '10,000+' },
+  { title: 'Years of Service', value: '14+' },
   { title: 'Medications Available', value: '1000+' },
   { title: 'Google Rating', value: '4.7★' }
 ]
