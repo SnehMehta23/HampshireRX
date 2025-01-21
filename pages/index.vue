@@ -1,35 +1,3 @@
-<style scoped>
-.underline-animation {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  margin-bottom: -7px;
-}
-
-.underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom left;
-  animation: underlineExpand 0.9s ease-out forwards;
-  animation-delay: 1s;
-}
-
-@keyframes underlineExpand {
-  0% {
-    transform: scaleX(0);
-  }
-
-  100% {
-    transform: scaleX(1);
-  }
-}
-</style>
 <template>
   <div class="flex flex-col min-h-screen bg-cream-100">
     <LayoutAppHeader />
@@ -41,9 +9,9 @@
         ]">
           <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
             <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
-            <p class="text-2xl mb-4">
-              Access reliable generic drugs at fair prices,
-              <span class="underline-animation">no insurance needed!</span>
+            <p class="text-2xl mb-4 relative">
+              Compare our prices to your copays
+              <CurvedArrow />
             </p>
           </div>
           <!-- <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
@@ -195,6 +163,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gql } from "graphql-tag";
+import CurvedArrow from '~/components/CurvedArrow.vue';
 
 const benefits = [
   {
