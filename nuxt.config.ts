@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.js
 import { analyticsConfig } from './config/analytics'
 import { schemaConfig } from './config/schema'
 import { hotjarConfig } from './config/hotjar'
@@ -7,31 +7,30 @@ import { metaPixelConfig } from './config/meta-pixel'
 
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
-    devtools: {enabled: true},
-    runtimeConfig:{
-      jwtSecret: ''
+    devtools: { enabled: true },
+    runtimeConfig: {
+        jwtSecret: '' // Make sure this is set via env or directly here
     },
     app: {
         head: {
-          title: metaConfig.title,
-          link: metaConfig.link,
-          meta: metaConfig.meta,
-          script: [
-            ...metaPixelConfig.script,
-            ...analyticsConfig.script,
-            ...schemaConfig.script,
-            ...hotjarConfig.script,
-          ],
-          noscript: [
-            ...metaPixelConfig.noscript
-          ],
+            title: metaConfig.title,
+            link: metaConfig.link,
+            meta: metaConfig.meta,
+            script: [
+                ...metaPixelConfig.script,
+                ...analyticsConfig.script,
+                ...schemaConfig.script,
+                ...hotjarConfig.script,
+            ],
+            noscript: [
+                ...metaPixelConfig.noscript
+            ],
         },
     },
     modules: ["@nuxtjs/tailwindcss", 'nuxt-mongoose', 'nuxt-graphql-server', '@nuxtjs/apollo'],
     graphqlServer: {
         url: '/api/graphql',
     },
-    //@ts-ignore
     apollo: {
         clients: {
             default: {
@@ -40,7 +39,7 @@ export default defineNuxtConfig({
                     : 'http://localhost:3000/api/graphql',
                 wsEndpoint: 'wss://hampshirepharmacy.com/api/graphql', // WebSocket endpoint for subscriptions
                 httpLinkOptions: {
-                    credentials: 'include'
+                    credentials: 'include' // Ensures cookies are sent on every request.
                 }
             },
         },
@@ -50,7 +49,6 @@ export default defineNuxtConfig({
             websocket: true,
         },
     },
-    //@ts-ignore
     mongoose: {
         uri: process.env.MONGODB_URI,
         options: {},

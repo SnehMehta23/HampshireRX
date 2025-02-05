@@ -7,6 +7,7 @@ const count = ref(0)
 
 definePageMeta({
   layout: 'admin',
+  middleware: 'auth',
 })
 
 

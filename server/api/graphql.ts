@@ -151,7 +151,11 @@ const resolvers: Resolvers = {
             }
 
             if (res && typeof res.setHeader === 'function') {
-                res.setHeader('Set-Cookie', `auth-token=${token}; HttpOnly; ${process.env.NODE_ENV === 'production' ? 'Secure;' : ''} Path=/`);
+                res.setHeader(
+                    'Set-Cookie',
+                    `auth-token=${token}; HttpOnly; Path=/; SameSite=Lax; Max-Age=${7 * 24 * 60 * 60}${process.env.NODE_ENV === 'production' ? '; Secure' : ''}`
+                );
+
             } else {
                 console.warn('Unable to set cookie: Response object not available');
             }
