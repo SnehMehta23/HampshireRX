@@ -1,4 +1,3 @@
-<!-- pages/transfer-prescription.vue -->
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 const scriptTag = '<script src="https://form.jotform.com/jsform/250128695343156"><\/script>'
@@ -19,16 +18,7 @@ onMounted(async () => {
                 ]">
                 </div>
                 <div v-html="scriptTag">
-
                 </div>
-
-<!--                <div v-if="isLoading" class="flex justify-center items-center h-64">-->
-<!--                    <div class="spinner"></div>-->
-<!--                </div>-->
-
-<!--                <div ref="form" class="w-full outline-none border-none mt-4" :class="{ 'hidden': isLoading }">-->
-<!--                    &lt;!&ndash; Dynamically injected form will appear here &ndash;&gt;-->
-<!--                </div>-->
             </div>
         </main>
     </div>

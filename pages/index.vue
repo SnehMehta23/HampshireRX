@@ -14,11 +14,6 @@
               <CurvedArrow />
             </p>
           </div>
-          <!-- <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
-            <span
-                class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
-              started in three easy steps</span>
-          </div> -->
           <div class="max-w-4xl px-12 mx-auto">
             <SearchBar @search="(n) => handleSubmit(n)" />
           </div>
@@ -39,7 +34,6 @@
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
 
-            <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
               <label for="">Count</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
@@ -50,7 +44,6 @@
               </select>
             </div>
 
-            <!-- Dropdown for size -->
             <div class="flex flex-col justify-start items-center">
               <label for="">Strength</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
@@ -72,87 +65,8 @@
           </div>
         </div>
 
-        <div
-          class="mt-10 grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center mb-12">
-          <!-- Who are we container -->
-          <div
-            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
-            <span class="opacity-75 font-semibold">Who are we?</span>
-            <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
-            <p class="font-medium">As a trusted community pharmacy for over 10 years we are fed up with the current
-              state of
-              healthcare. We're on a mission to change the game. Unlike anonymous assembly lines, we're your neighbors,
-              and
-              you'll always know who's behind your prescription.</p>
-            <div class="flex items-center justify-between">
-              <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-500 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 font-bold text-white">
-                View Our FAQs
-              </NuxtLink>
-            </div>
-          </div>
-
-          <!-- Convenience Container -->
-          <div
-            class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
-            <span class="opacity-75 font-semibold">Convenience</span>
-            <h3 class="text-3xl font-bold">Generic Prescription Lookup Tool</h3>
-            <p class="font-medium">Enjoy the flexibility to pick up multiple months' worth of generic medications
-              without long
-              wait times. With efficient service and a streamlined process, you can easily manage your prescriptions,
-              saving
-              time and hassle while prioritizing your health needs.</p>
-          </div>
-        </div>
-
-        <div class="bg-gray-900 py-20">
-          <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 class="text-3xl text-white font-bold mb-6">Your Trusted Community Pharmacy</h2>
-                <p class="text-gray-300 mb-8">
-                  As Hampshire's local pharmacy for over 10 years, we understand that managing your health
-                  shouldn't mean choosing between quality and affordability.
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                  <div v-for="benefit in benefits" :key="benefit.title" class="flex items-start gap-3">
-                    <div class="w-5 h-5 mt-1 text-pharmaBlue-400">
-                      <svg class="w-5 h-5 text-pharmaBlue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-white">{{ benefit.title }}</h4>
-                      <p class="text-sm text-gray-300">{{ benefit.description }}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div v-for="stat in stats" :key="stat.title" class="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <div class="text-3xl font-bold text-pharmaBlue-400">{{ stat.value }}</div>
-                  <div class="text-sm text-gray-600">{{ stat.title }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
-          <div class="xl:mb-0 mb-12">
-            <ParallaxCard />
-          </div>
-
-          <div class="p-2 text-center xl:px-0 px-4">
-            <p>At Hampshire Pharmacy, fostering healthier lives within our communities is more than a
-              mission—it's our unwavering commitment. With every service we offer, every medication we
-              dispense, and every interaction we have, trust is our cornerstone. We're dedicated to your
-              well-being, ensuring that every aspect of our care reflects our deep-rooted values of
-              integrity, compassion, and reliability. When you choose Hampshire Pharmacy, you're choosing
-              a partner in your journey to a healthier, happier life.</p>
-          </div>
-        </div> -->
+        <HomeContentSection />
+        <SocialProofContainer />
       </div>
     </main>
     <LayoutAppFooter />
@@ -164,49 +78,33 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gql } from "graphql-tag";
 import CurvedArrow from '~/components/CurvedArrow.vue';
-
-const benefits = [
-  {
-    title: 'No Insurance Needed',
-    description: 'Access affordable medications without insurance'
-  },
-  {
-    title: 'Licensed Pharmacy',
-    description: 'Full-service, state-licensed pharmacy'
-  },
-  {
-    title: 'Competitive Pricing',
-    description: 'Save up to 95% on generic medications'
-  },
-  {
-    title: 'Discreet Service',
-    description: 'Private consultations and discrete packaging'
-  }
-]
-
-const stats = [
-  { title: 'Satisfied Customers', value: '10,000+' },
-  { title: 'Years of Service', value: '14+' },
-  { title: 'Medications Available', value: '1000+' },
-  { title: 'Google Rating', value: '4.7★' }
-]
-
-// import ParallaxCard from '~/components/parallaxCard.vue'
 import { nextTick } from 'vue'
+import SocialProofContainer from '~/components/layout/socialProofContainer.vue';
+import HomeContentSection from '~/components/layout/homeContentSection.vue';
 
 const errorText = ref('')
-
 const medData = ref([]); // Initialize as an empty array
 
+const query = gql`
+  query getMeds($searchTerm: String) {
+    meds(searchTerm: $searchTerm) {
+      id
+      name
+      size
+      count
+      countUnit
+      genericFor
+      price
+    }
+  }
+`;
 async function handleSubmit(searchTerm) {
   errorText.value = '';
   selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
+  const variables = { searchTerm: searchTerm };
+  const { data } = await useLazyAsyncQuery(query, variables);
 
-  const res = await $fetch('/api/meds/findMed', {
-    query: { searchTerm: searchTerm }}
-    )
-
-  if(res.length === 0) {
+  if (data.value.meds.length === 0) {
     errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
     return
@@ -221,7 +119,6 @@ async function handleSubmit(searchTerm) {
 }
 
 const gtm = useGTM()
-
 const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
   gtm.trackEvent({
     event: 'button_interaction',
@@ -235,7 +132,6 @@ const isVisible = ref(false);
 const heroRef = ref(null);
 
 let observer = null;
-
 onMounted(() => {
   // Delay the animation start by 1 second
   setTimeout(() => {
@@ -265,7 +161,6 @@ const selectedFilters = ref({
   size: ""
 });
 
-// Get unique options for each dropdown, filtered by selected filters
 const filteredOptions = computed(() => {
   const options = {
     genericFor: new Set(),

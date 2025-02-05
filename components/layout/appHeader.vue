@@ -2,7 +2,6 @@
     <header class="bg-pharmaBlue-400 text-secondary py-4">
         <div class="mx-auto px-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
                 <div class="">
                     <NuxtLink to="/" class="">
                         <img src="~/public/images/logos/secondaryWideLogo.png" alt="Hampshire Pharmacy Logo"
@@ -10,7 +9,6 @@
                     </NuxtLink>
                 </div>
 
-                <!-- Navigation -->
                 <nav class="hidden sm:flex items-center space-x-6 sm:hidden xl:inline-flex">
                     <NuxtLink v-if="currentRoute !== '/'" to="/" @click="handleNavClick('Home', '/')"
                         class="text-white hover:text-orange-500 transition-colors duration-200 relative">
@@ -29,12 +27,11 @@
                         class="text-white hover:text-orange-500 transition-colors duration-200 relative">
                         FAQ
                     </NuxtLink>
-                    <a  v-if="currentRoute !== '/transfer-prescription'" href="/transfer-prescription"
+                    <a v-if="currentRoute !== '/transfer-prescription'" href="/transfer-prescription"
                         @click="handleNavClick('Prescription Transfer', '/transfer-prescription')"
                         class="text-white hover:text-orange-500 transition-colors duration-200 relative">
                         Prescription Transfer
                     </a>
-                    <!-- Facebook Icon Link -->
                     <NuxtLink to="https://www.facebook.com/HampshirePharmacy/" target="_blank" rel="noopener noreferrer"
                         @click="handleNavClick('Facebook', 'https://www.facebook.com/HampshirePharmacy/')"
                         class="text-white hover:text-orange-500 transition-colors duration-200">
@@ -43,7 +40,6 @@
                     </NuxtLink>
                 </nav>
 
-                <!-- Hamburger Menu Icon for Mobile -->
                 <button @click="toggleMobileMenu" class="sm:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -54,7 +50,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
         <div v-if="isMobileMenuOpen" class="fixed inset-0 bg-pharmaBlue-400 z-50">
             <div class="flex flex-col items-center justify-center h-full">
                 <button @click="toggleMobileMenu" class="absolute top-4 right-4 text-white">
@@ -102,7 +97,6 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const gtm = useGTM()
-
 const route = useRoute();
 const currentRoute = route.path;
 const isMobileMenuOpen = ref(false);

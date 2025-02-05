@@ -13,8 +13,6 @@
         </p>
       </div>
 
-      <!-- <HowToCards /> -->
-      <!-- SearchBar positioned absolutely -->
       <div :class="[
         'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 w-full max-w-4xl px-12',
         'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
@@ -24,9 +22,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Spacer div to push content below the search bar -->
-
   <div class="w-full text-center mt-10">
     <ErrorMessage v-if="errorText" :text="errorText" />
 
@@ -35,7 +30,6 @@
     <div id="searchResults"
       class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
       v-if="filteredMedData.length > 0">
-      <!-- Dropdown for genericFor -->
       <div class="flex flex-col justify-start items-center">
         <label for="">Generic</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
@@ -46,7 +40,6 @@
         </select>
       </div>
 
-      <!-- Dropdown for count -->
       <div class="flex flex-col justify-start items-center">
         <label for="">Count</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
@@ -57,7 +50,6 @@
         </select>
       </div>
 
-      <!-- Dropdown for countUnit -->
       <div class="flex flex-col justify-start items-center">
         <label for="">Type</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
@@ -68,7 +60,6 @@
         </select>
       </div>
 
-      <!-- Dropdown for size -->
       <div class="flex flex-col justify-start items-center">
         <label for="">Size</label>
         <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
@@ -91,104 +82,19 @@
     </template>
   </div>
 
-  <div class="p-4 flex justify-center max-w-7xl mx-auto">
-    <div class="w-full md:w-10/12">
-      <div class="flex flex-wrap items-center">
-        <!-- Text Content -->
-        <div class="w-full md:w-1/2 p-4">
-          <strong class="block text-lg font-bold mb-2">Our Mission</strong>
-          <h2 class="text-2xl font-semibold mb-4">
-            Empowering Affordable Healthcare: Your Trusted Online Pharmacy
-          </h2>
-          <p class="text-base leading-relaxed">
-            We understand the challenges of navigating the complexities of healthcare costs, which is why
-            we've streamlined the process for you. We believe the future of your health should not be
-            reliant on your wealth. Our innovative platform features a user-friendly lookup tool designed to
-            swiftly identify affordable generic alternatives to brand-name medications. With just a few
-            clicks, you can access cost-effective options without compromising quality or efficacy. At our
-            Hampshire Pharmacy, we believe everyone deserves access to affordable healthcare solutions, and
-            we're committed to making that a new normal for our valued customers. <span class="text-[#0d3d4f]">Come
-              visit Hampshire
-              Pharmacy open Monday through Friday from 10:00 am to 6:00 pm.</span>
-          </p>
-        </div>
-        <!-- Image -->
-        <div class="w-full md:w-1/2 p-4 flex justify-center">
-          <img src="../public/images/Tiny_pharmacists_with_prescription_drugs_for_patients-removebg-preview.png"
-            alt="Pharmacists with prescription drugs" class="w-full h-auto object-contain" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-gray-900 py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 class="text-3xl text-white font-bold mb-6">Your Trusted Community Pharmacy</h2>
-          <p class="text-gray-300 mb-8">
-            As Hampshire's local pharmacy for over 10 years, we understand that managing your health
-            shouldn't mean choosing between quality and affordability.
-          </p>
-          <div class="grid grid-cols-2 gap-4">
-            <div v-for="benefit in benefits" :key="benefit.title" class="flex items-start gap-3">
-              <div class="w-5 h-5 mt-1 text-pharmaBlue-400">
-                <svg class="w-5 h-5 text-pharmaBlue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-bold text-white">{{ benefit.title }}</h4>
-                <p class="text-sm text-gray-300">{{ benefit.description }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div v-for="stat in stats" :key="stat.title" class="bg-white p-6 rounded-lg shadow-sm text-center">
-            <div class="text-3xl font-bold text-pharmaBlue-400">{{ stat.value }}</div>
-            <div class="text-sm text-gray-600">{{ stat.title }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <AboutUsContainer />
+  <SocialProofContainer />
   <AppFooter />
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { gql } from "graphql-tag";
 import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
-import { gql } from "graphql-tag";
-
-const benefits = [
-  {
-    title: 'No Insurance Needed',
-    description: 'Access affordable medications without insurance'
-  },
-  {
-    title: 'Licensed Pharmacy',
-    description: 'Full-service, state-licensed pharmacy'
-  },
-  {
-    title: 'Competitive Pricing',
-    description: 'Save up to 95% on generic medications'
-  },
-  {
-    title: 'Discreet Service',
-    description: 'Private consultations and discrete packaging'
-  }
-]
-
-const stats = [
-  { title: 'Satisfied Customers', value: '100+' },
-  { title: 'Years of Service', value: '10+' },
-  { title: 'Medications Available', value: '1000+' },
-  { title: 'Google Rating', value: '4.7★' }
-]
+import SocialProofContainer from '~/components/layout/socialProofContainer.vue';
+import AboutUsContainer from '~/components/layout/aboutUsContainer.vue';
 
 useHead({
   title: 'About Hampshire Pharmacy | Making Healthcare Affordable',
@@ -222,9 +128,8 @@ useHead({
   ]
 })
 
-const medData = ref([]); // Initialize as an empty array
+const medData = ref([]);
 
-// Define the query to fetch meds
 const errorText = ref('')
 const query = gql`
   query getMeds($searchTerm: String) {
@@ -243,10 +148,7 @@ const query = gql`
 async function handleSubmit(searchTerm) {
   errorText.value = '';
   selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
-
   const variables = { searchTerm: searchTerm };
-  // console.log(variables);
-
   const { data } = await useAsyncQuery(query, variables);
 
   if (data.value.meds.length === 0) {
@@ -256,7 +158,6 @@ async function handleSubmit(searchTerm) {
   }
 
   medData.value = data.value.meds;
-
   nextTick(() => {
     const resultsElement = document.getElementById('searchResults');
     if (resultsElement) {
@@ -265,7 +166,6 @@ async function handleSubmit(searchTerm) {
   });
 }
 
-
 const selectedFilters = ref({
   genericFor: "",
   count: "",
@@ -273,7 +173,6 @@ const selectedFilters = ref({
   size: ""
 });
 
-// Get unique options for each dropdown, filtered by selected filters
 const filteredOptions = computed(() => {
   const options = {
     genericFor: new Set(),
@@ -315,14 +214,10 @@ const filteredMedData = computed(() => {
   });
 });
 
-
-
-
 const isVisible = ref(false);
 const heroRef = ref(null);
 
 let observer = null;
-
 onMounted(() => {
   // Delay the animation start by 1 second
   setTimeout(() => {

@@ -13,8 +13,6 @@
                 </p>
             </div>
 
-            <!-- <HowToCards /> -->
-            <!-- SearchBar positioned absolutely -->
             <div :class="[
                 'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
                 'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
@@ -25,17 +23,13 @@
         </div>
     </div>
 
-    <!-- Spacer div to push content below the search bar -->
-
     <div class="w-full text-center mt-10">
         <ErrorMessage v-if="errorText" :text="errorText" />
-
     </div>
     <div>
         <div id="searchResults"
             class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
-            <!-- Dropdown for genericFor -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Generic</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
@@ -46,7 +40,6 @@
                 </select>
             </div>
 
-            <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Count</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
@@ -57,7 +50,6 @@
                 </select>
             </div>
 
-            <!-- Dropdown for countUnit -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Type</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
@@ -68,7 +60,6 @@
                 </select>
             </div>
 
-            <!-- Dropdown for size -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Size</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
