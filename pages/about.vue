@@ -1,5 +1,5 @@
 <template>
-  <AppHeader />
+  <AppHeader  />
   <div class="relative" ref="heroRef">
     <div :class="[
       'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
