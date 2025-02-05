@@ -37,25 +37,22 @@ const email = ref('');
 const password = ref('');
 const errorMessage = ref('');
 
-// Define the SIGNUP mutation
-const LOGIN_MUTATION = gql`
-  mutation Login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      id
-      email
-    }
-  }
-`;
-const { mutate: Login } = useMutation(LOGIN_MUTATION)
+
+
 
 // Define the signup function to trigger the mutation
 async function trylog() {
   try {
-    const response = await Login({ email: email.value, password: password.value });
-    // console.log(response);
-    if (await response.data.login.id) {
-      // console.log(response.data.login.id)
-      return navigateTo('/admin/medIndex')
+    const res = await $fetch('/api/auth/login', {
+      method: 'POST',
+      body:{
+        email: email.value,
+        password: password.value,
+      }
+    })
+    console.log(res)
+    if(res.loggedIn){
+      navigateTo('/admin/medIndex')
     }
   } catch (e) {
     errorMessage.value = 'Wrong Username and Password combination'

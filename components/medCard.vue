@@ -2,7 +2,7 @@
 
 const emit = defineEmits(['submit'])
 const { data } = defineProps(['data'])
-const { name, genericFor, count, countUnit, price, size, id } = data;
+const {_id, name, genericFor, count, countUnit, price, size, } = data;
 
 const isBeingEdited = ref(false);
 const newMedData = reactive({
@@ -12,41 +12,10 @@ const newMedData = reactive({
   countUnit: countUnit,
   price: price,
   size: size,
-  id: id
+  id: _id
 })
 
-const UPDATE_MED_MUTATION = gql`
-  mutation updateMed(
-    $id: ID!,
-    $name: String,
-    $size: String,
-    $count: Int,
-    $countUnit: String,
-    $genericFor: String,
-    $price: String
-  ) {
-    updateMed(
-      id: $id,
-      name: $name,
-      size: $size,
-      count: $count,
-      countUnit: $countUnit,
-      genericFor: $genericFor,
-      price: $price
-    ) {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
 
-// Use Mutation Hook
-const { mutate: updateMed } = useMutation(UPDATE_MED_MUTATION);
 
 // Save Changes Function
 const saveChanges = async () => {
@@ -123,7 +92,7 @@ const saveChanges = async () => {
       </div>
     </div>
     <div class="p-2 bg-blue-500 flex items-center justify-end gap-1">
-      <div class="text-xs text-blue-900">Database ID: {{ id }}</div>
+      <div class="text-xs text-blue-900">Database ID: {{_id}}</div>
       <div v-if="isBeingEdited === false" @click="isBeingEdited = !isBeingEdited"
         class="bg-slate-100 border-2 border-blue-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">Edit
       </div>

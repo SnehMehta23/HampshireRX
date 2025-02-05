@@ -198,39 +198,20 @@ const errorText = ref('')
 
 const medData = ref([]); // Initialize as an empty array
 
-// Define the query to fetch meds
-const query = gql`
-  query getMeds($searchTerm: String) {
-    meds(searchTerm: $searchTerm) {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
-
 async function handleSubmit(searchTerm) {
   errorText.value = '';
   selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
 
-  const variables = { searchTerm: searchTerm };
-  // console.log(variables);
+  const res = await $fetch('/api/meds/findMed', {
+    query: { searchTerm: searchTerm }}
+    )
 
-  const { data } = await useLazyAsyncQuery(query, variables);
-
-  if (data.value.meds.length === 0) {
-    console.log('lol')
+  if(res.length === 0) {
     errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
-    return;
+    return
   }
-
-  medData.value = data.value.meds;
-
+  medData.value = res;
   nextTick(() => {
     const resultsElement = document.getElementById('searchResults');
     if (resultsElement) {
