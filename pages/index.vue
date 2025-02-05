@@ -83,7 +83,8 @@ import SocialProofContainer from '~/components/layout/socialProofContainer.vue';
 import HomeContentSection from '~/components/layout/homeContentSection.vue';
 
 const errorText = ref('')
-const medData = ref([]);
+const medData = ref([]); // Initialize as an empty array
+
 const query = gql`
   query getMeds($searchTerm: String) {
     meds(searchTerm: $searchTerm) {
@@ -97,7 +98,6 @@ const query = gql`
     }
   }
 `;
-
 async function handleSubmit(searchTerm) {
   errorText.value = '';
   selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
@@ -107,10 +107,9 @@ async function handleSubmit(searchTerm) {
   if (data.value.meds.length === 0) {
     errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
     medData.value = [];
-    return;
+    return
   }
-
-  medData.value = data.value.meds;
+  medData.value = res;
   nextTick(() => {
     const resultsElement = document.getElementById('searchResults');
     if (resultsElement) {

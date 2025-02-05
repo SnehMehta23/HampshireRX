@@ -27,7 +27,7 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ["@nuxtjs/tailwindcss", 'nuxt-mongoose', 'nuxt-graphql-server', '@nuxtjs/apollo'],
+    modules: ["@nuxtjs/tailwindcss", 'nuxt-mongoose', 'nuxt-graphql-server', '@nuxtjs/apollo','./modules/auth.module'],
     graphqlServer: {
         url: '/api/graphql',
     },

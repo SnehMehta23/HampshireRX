@@ -71,49 +71,24 @@ watch(searchValue, async (newValue, oldValue) => {
 
 })
 
-const query = gql`
-  query getMeds($searchTerm: String) {
-    meds(searchTerm: $searchTerm) {
-      name
-      genericFor
-    }
-  }
-`;
-
-// Bro I was about to increase our cost tenfold with this jesus christ.
-// watch(searchValue, async (value) => {
-//   if (value.length >= 3) {
-//     const variables = {searchTerm: value};
-//     const {data} = await useAsyncQuery(query, variables);
-//     
-//   }
-// })
-const allQuery = gql`
-  query{
-    allMeds {
-    name
-    genericFor
-    }
-}
-`
-
 const temp = ref([])
 
 
+const {data} = useFetch('/api/meds/all', {server: false})
 
-const { data } = await useLazyAsyncQuery(allQuery)
-
-onMounted(async () => {
-  medList.value = await processMedData(data)
+watch(data, async (newValue, oldValue) => {
+  medList.value = processMedData(data)
 })
+
+
+
 
 
 
 function processMedData(data) {
 
   // Ensure we're working with the array of medications
-  const allMeds = Object.values(data.value)[0];
-
+  const allMeds = data.value;
   // Use a Set to keep track of unique combinations
   const uniqueCombos = new Set();
 

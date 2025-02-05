@@ -1,168 +1,84 @@
 <script setup lang="ts">
-import {gql} from 'graphql-tag';
-import {useSubscription} from "@vue/apollo-composable";
-import {aws4} from "mongodb/src/deps";
-
-const count = ref(0)
-
 definePageMeta({
   layout: 'admin',
-  middleware: 'auth',
+  middleware: 'auth'
+})
+
+const count = ref(0)
+const medData = ref<any[]>([])
+
+const {data} = await useFetch('/api/meds/all', {
+  server: false,
+})
+
+watch(data, async (newData) => {
+  console.log(data)
+  medData.value = data.value
 })
 
 
-onBeforeMount(async () => {
+
+const filterText = ref('')
 
 
+// async function handleSubmit() {
+//   const variables = { searchTerm: filterText.value }
+//   const { data } = await useAsyncQuery(query, variables)
+//   medData.value = data.value.meds
+// }
+
+const handleSubmit = () => {
+  const term = filterText.value.trim().toLowerCase()
+  if (!term) return medData.value
+  medData.value = medData.value.filter(med => med.name && med.name.toLowerCase().includes(term))
+}
+
+const filteredMeds = computed(() => {
+  const term = filterText.value.trim().toLowerCase()
+  if (!term) return medData.value
+  return medData.value.filter(med => med.name && med.name.toLowerCase().includes(term))
 })
 
-const medData = ref([]); // Initialize as an empty array
-
-// Define the query to fetch meds
-// const query = gql`
-//   query getMeds($name: String) {
-//     meds(name: $name) {
-//       id
-//       name
-//       size
-//       count
-//       countUnit
-//       genericFor
-//       price
-//     }
-//   }
-// `;
-
-const query = gql`
-  query getMeds($searchTerm: String) {
-    meds(searchTerm: $searchTerm) {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
-
-// // Define the subscription for updated meds
-// const MED_UPDATED_SUBSCRIPTION = gql`
-//   subscription OnMedUpdated {
-//     medUpdated {
-//       id
-//       name
-//       size
-//       count
-//       countUnit
-//       genericFor
-//       price
-//     }
-//   }
-// `;
-//
-// // Define the subscription for created meds
-// const MED_CREATED_SUBSCRIPTION = gql`
-//   subscription OnMedCreated {
-//     medCreated {
-//       id
-//       name
-//       size
-//       count
-//       countUnit
-//       genericFor
-//       price
-//     }
-//   }
-// `;
-
-// Reactive variable to filter meds
-const filter = ref('');
-
-const allQuery = gql`
-  query{
-    allMeds {
-       id
-       name
-       size
-       count
-       countUnit
-       genericFor
-       price
-    }
-}
-`
-const {data: meds} = await useAsyncQuery(allQuery)
-medData.value = meds.value.allMeds
-
-
-// Function to handle searching meds
-async function handleSubmit() {
-  const variables = {searchTerm: filter.value}; // Replace with the name you want to search for
-  const {data} = await useAsyncQuery(query, variables);
-  medData.value = data.value.meds;
-  // console.log(medData.value);
-}
-
-// // Listen to the subscription for med updates
-// const {result: medUpdated} = useSubscription(MED_UPDATED_SUBSCRIPTION);
-// const {result: medCreated} = useSubscription(MED_CREATED_SUBSCRIPTION);
-
-
-// watch(medUpdated, async (updated, oldMed) => {
-//   const index = medData.value.findIndex(med => med.id === updated.medUpdated.id);
-//   if (index !== -1) {
-//     const newArray = [...medData.value]; // Create a new array
-//     newArray.splice(index, 1, updated.medUpdated); // Modify the new array
-//     medData.value = newArray; // Assign the new array back to the ref
-//     count.value++;
+// watch(filterText, async(newText, oldText) => {
+//   if(newText){
+//     let term = newText.trim().toLowerCase()
+//     medData.value = medData.value.filter(med => med.name && med.name.toLowerCase().includes(term))
 //   }
 // })
 
+
+
+
 const showModal = ref(false)
-const filterText = ref('')
 
-const filteredMeds = computed(() => {
-  const searchTerm = filterText.value.trim().toLowerCase()
-
-  if (!searchTerm) return medData.value
-
-  return medData.value.filter((med) => {
-    // Ensure the 'name' property exists and is a string
-    return med.name && med.name.toLowerCase().includes(searchTerm)
-  })
-})
-
-const reloadData = () => {
-  console.log('ping from reloadData()')
-const {result} =  useQuery(allQuery)
-  console.log(result)
-  medData.value = result.value.allMeds
+function reloadData() {
+  (async () => {
+    const res = await $fetch('/api/meds/all', { method: 'GET' })
+    medData.value = res
+  })()
 }
-
 </script>
 
 <template>
-  <AddMedModal @submit="reloadData" v-if="showModal" @modal-close="showModal = false"/>
-  <div :key="count" class="flex flex-col justify-center items-center gap-2 mt-10">
+  <AddMedModal v-if="showModal" @submit="reloadData" @modal-close="showModal = false" />
+  <div :key="medData.length" class="flex flex-col justify-center items-center gap-2 mt-10">
     <div class="w-full flex justify-center items-center gap-2">
       <div class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded">
-        <input class="p-2" placeholder="Medication Name..." v-model="filterText" type="text">
+        <input class="p-2" placeholder="Medication Name..." v-model="filterText" type="text" />
         <button class="p-2 text-white font-bold" @click="handleSubmit">Search</button>
       </div>
-      <div @click="showModal = true"
-           class="bg-blue-500 text-white text-center px-3 py-2.5 rounded shadow-md cursor-pointer hover:bg-blue-600">
+      <div @click="showModal = true" class="bg-blue-500 text-white text-center px-3 py-2.5 rounded shadow-md cursor-pointer hover:bg-blue-600">
         Add Medication
       </div>
     </div>
-    <div v-if="filteredMeds.length"> Displaying {{ filteredMeds.length }} results</div>
+    <div v-if="filteredMeds.length">Displaying {{ filteredMeds.length }} results</div>
     <div class="grid grid-cols-3 gap-4">
-      <template v-if="filteredMeds.length">
-        <MedCard @submit="reloadData" v-for="med in filteredMeds" :key="med.id" :data="med"/>
-      </template>
+
+        <MedCard v-for="med in filteredMeds" :data="med" @submit="reloadData" :key="med" />
+
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
