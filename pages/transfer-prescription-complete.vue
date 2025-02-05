@@ -1,10 +1,8 @@
-<!-- pages/transfer-prescription-complete.vue -->
 <script setup>
 import { onMounted } from 'vue'
 import { navigateTo } from '#imports'
 
 onMounted(() => {
-    // Wait 3 seconds before redirecting
     setTimeout(async () => {
         await navigateTo('/')
     }, 3000)

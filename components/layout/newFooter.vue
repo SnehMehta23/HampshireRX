@@ -1,22 +1,17 @@
 <template>
-    <div class="max-w-7xl mx-auto px-8 py-16 rounded-lg">
-        <div class="ctct-inline-form w-full" data-form-id="2554ab37-4cb2-4dcf-8d35-3fc99da11655"></div>
-    </div>
-
-    <footer class="bg-orange-400 text-[#1f1f1f] py-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-5 gap-8">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy small white logo"
-                        class="h-8 mb-4" />
-                    <p class="text-[#1f1f1f] mb-4">Your trusted community pharmacy since 2014</p>
+                    <img src="/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy" class="h-8 mb-4" />
+                    <p class="text-gray-400 mb-4">Your trusted community pharmacy since 2014</p>
                     <div v-html="legitScriptTag"></div>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li v-for="link in footerLinks" :key="link.text">
-                            <NuxtLink :to="link.url" class="text-[#1f1f1f] hover:text-white">
+                            <NuxtLink :to="link.url" class="text-gray-400 hover:text-white">
                                 {{ link.text }}
                             </NuxtLink>
                         </li>
@@ -24,7 +19,7 @@
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-[#1f1f1f]">
+                    <ul class="space-y-2 text-gray-400">
                         <li>
                             <a href="tel:+18476832244" class="flex items-center gap-2 hover:text-white">
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,54 +55,38 @@
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Hours</h4>
-                    <ul class="space-y-2 text-[#1f1f1f]">
+                    <ul class="space-y-2 text-gray-400">
                         <li>Mon-Fri: 10am - 6pm</li>
                         <li>Saturday: 10am - 2pm</li>
                         <li>Sunday: Closed</li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8">
-                <div class="">
-                    <p class="text-center text-[#1f1f1f]">
+            <div class="border-t border-gray-800 mt-8 pt-8 pb-20">
+                <div class="space-y-4">
+                    <p class="text-center text-gray-400">
                         &copy; 2024 Hampshire Pharmacy. All rights reserved.
                     </p>
-                    <div class="text-sm text-[#1f1f1f] text-center">
+                    <div class="text-sm text-gray-500 text-center">
                         Built by the
                         <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
-                            class="text-[#0d3d4f] underline" to="https://thewebagency.app">
+                            class="text-pharmaBlue-400 underline" to="https://thewebagency.app">
                             TheWebAgency
                         </NuxtLink>
                     </div>
                 </div>
             </div>
         </div>
-
     </footer>
 </template>
 
 <script setup>
+const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
+
 const footerLinks = [
     { text: 'Home', url: '/' },
     { text: 'About Us', url: '/about' },
-    { text: 'Mens Healh', url: '/mens-health' },
     { text: 'Privacy Policy', url: '/privacy' },
     { text: 'FAQs', url: '/faq' }
 ]
-const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
-
-onMounted(() => {
-    const ctctScript = document.createElement('script');
-    ctctScript.src = '//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js';
-    ctctScript.id = 'signupScript';
-    ctctScript.async = true;
-    ctctScript.defer = true;
-
-    const initScript = document.createElement('script');
-    initScript.innerHTML = 'var _ctct_m = "889d6d8085ba7c40e586c28952e58660";';
-
-    document.head.appendChild(initScript);
-    document.head.appendChild(ctctScript);
-})
 </script>

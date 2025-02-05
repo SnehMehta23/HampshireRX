@@ -20,7 +20,6 @@
     display: inline-block;
     overflow: hidden;
     margin-bottom: -7px;
-    /* Adjust this value as needed */
 }
 
 .underline-animation::after {
@@ -62,11 +61,6 @@
                     <span class="underline-animation">no insurance needed!</span>
                 </p>
             </div>
-            <!-- <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
-            <span
-              class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
-              started in three easy steps</span>
-          </div> -->
             <div class="max-w-4xl px-12 mx-auto">
                 <SearchBar @search="(n) => handleSubmit(n)" />
             </div>
@@ -86,7 +80,6 @@
         <div id="searchResults"
             class="mt-20 w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
-            <!-- Dropdown for genericFor -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Generic</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.genericFor">
@@ -97,7 +90,6 @@
                 </select>
             </div>
 
-            <!-- Dropdown for count -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Count</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
@@ -108,7 +100,6 @@
                 </select>
             </div>
 
-            <!-- Dropdown for countUnit -->
             <div class="flex flex-col justify-start items-center">
                 <label for="">Type</label>
                 <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.countUnit">
@@ -145,16 +136,15 @@
     <div class="mt-2">
         <Accordion />
     </div>
-
     <AppFooter />
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { gql } from "graphql-tag";
 import AppHeader from '../components/layout/appHeader.vue'
 import SearchBar from '../components/searchBar.vue'
 import AppFooter from '~/components/layout/appFooter.vue';
-import { gql } from "graphql-tag";
 
 useHead({
     title: 'Frequently Asked Questions | Hampshire Pharmacy',
@@ -190,18 +180,16 @@ useHead({
 
 const isVisible = ref(false);
 const heroRef = ref(null);
-
 let observer = null;
 
 onMounted(() => {
-    // Delay the animation start by 1 second
     setTimeout(() => {
         observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 isVisible.value = true;
-                observer.disconnect();  // Stop observing once visible
+                observer.disconnect();
             }
-        }, { threshold: 0.1 });  // Trigger when 10% of the element is visible
+        }, { threshold: 0.1 });
 
         if (heroRef.value) {
             observer.observe(heroRef.value);
@@ -215,10 +203,8 @@ onUnmounted(() => {
     }
 });
 
-const medData = ref([]); // Initialize as an empty array
-
+const medData = ref([]);
 const errorText = ref('')
-
 const query = gql`
   query getMeds($searchTerm: String) {
     meds(searchTerm: $searchTerm) {
@@ -236,10 +222,7 @@ const query = gql`
 async function handleSubmit(searchTerm) {
     errorText.value = '';
     selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
-
     const variables = { searchTerm: searchTerm };
-    //   console.log(variables);
-
     const { data } = await useAsyncQuery(query, variables);
 
     if (data.value.meds.length === 0) {
@@ -249,7 +232,6 @@ async function handleSubmit(searchTerm) {
     }
 
     medData.value = data.value.meds;
-
     nextTick(() => {
         const resultsElement = document.getElementById('searchResults');
         if (resultsElement) {
@@ -266,7 +248,6 @@ const selectedFilters = ref({
     size: ""
 });
 
-// Get unique options for each dropdown, filtered by selected filters
 const filteredOptions = computed(() => {
     const options = {
         genericFor: new Set(),
