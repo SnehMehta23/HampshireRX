@@ -67,6 +67,9 @@
 
         <HomeContentSection />
         <SocialProofContainer />
+        <div class="p-8 border-2 border-red-500">
+          <GoogleReviewsWidget />
+        </div>
       </div>
     </main>
     <LayoutAppFooter />
