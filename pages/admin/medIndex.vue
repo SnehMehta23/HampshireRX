@@ -7,14 +7,11 @@ definePageMeta({
 const count = ref(0)
 const medData = ref<any[]>([])
 
-const {data} = await useFetch('/api/meds/all', {
-  server: false,
-})
 
-watch(data, async (newData) => {
-  console.log(data)
-  medData.value = data.value
-})
+const res = await $fetch('/api/meds/all', { method: 'GET' })
+medData.value = res
+
+
 
 
 
@@ -61,7 +58,7 @@ function reloadData() {
 
 <template>
   <AddMedModal v-if="showModal" @submit="reloadData" @modal-close="showModal = false" />
-  <div :key="medData.length" class="flex flex-col justify-center items-center gap-2 mt-10">
+  <div  class="flex flex-col justify-center items-center gap-2 mt-10">
     <div class="w-full flex justify-center items-center gap-2">
       <div class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded">
         <input class="p-2" placeholder="Medication Name..." v-model="filterText" type="text" />

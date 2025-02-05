@@ -52,7 +52,7 @@ async function trylog() {
     })
     console.log(res)
     if(res.loggedIn){
-      navigateTo('/admin/medIndex')
+      return navigateTo('/admin/medIndex')
     }
   } catch (e) {
     errorMessage.value = 'Wrong Username and Password combination'
