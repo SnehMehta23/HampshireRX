@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
     runtimeConfig: {
-        jwtSecret: '' // Make sure this is set via env or directly here
+        jwtSecret: process.env.JWT_SECRET // Make sure this is set via env or directly here
     },
     app: {
         head: {
