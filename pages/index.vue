@@ -67,7 +67,7 @@
 
         <HomeContentSection />
         <SocialProofContainer />
-        <div class="p-8 border-2 border-red-500">
+        <div class="p-8 bg-gradient-to-r from-orange-400 to-pharmaBlue-400">
           <GoogleReviewsWidget />
         </div>
       </div>
