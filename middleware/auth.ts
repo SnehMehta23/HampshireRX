@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
         try {
             const {data} = await useFetch('/api/auth/check')
-            console.log(data.value)
+            //@ts-ignore
             if(!data.value?.email) {
                 return navigateTo('/admin/login')
             }

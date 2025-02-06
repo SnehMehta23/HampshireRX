@@ -3,7 +3,7 @@ import {medSchema} from "~/server/models/med.schema";
 export default defineEventHandler(async (event) => {
         try{
             const {id} = await readBody(event)
-            const deletedMed = await medSchema.findOneAndUpdate({ _id: id }, {})
+            const deletedMed = await medSchema.findOneAndDelete({ _id: id }, {})
             return{
                 statusCode: 200,
                 body: deletedMed,

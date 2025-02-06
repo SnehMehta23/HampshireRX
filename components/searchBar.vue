@@ -74,7 +74,7 @@ watch(searchValue, async (newValue, oldValue) => {
 const temp = ref([])
 
 
-const {data} = useFetch('/api/meds/all', {server: false})
+const {data} = await useFetch('/api/meds/all', {server: false, key: 'meds'})
 
 watch(data, async (newValue, oldValue) => {
   medList.value = processMedData(data)

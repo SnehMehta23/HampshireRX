@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
 
     try {
         const payload = await requireAuth(event)
+        //@ts-ignore
         if (payload === 408){
             return false
         }
