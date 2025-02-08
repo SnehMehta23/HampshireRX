@@ -1,8 +1,4 @@
 <template>
-    <div class="max-w-7xl mx-auto px-8 py-16 rounded-lg">
-        <div class="ctct-inline-form w-full" data-form-id="2554ab37-4cb2-4dcf-8d35-3fc99da11655"></div>
-    </div>
-
     <footer class="bg-orange-400 text-[#1f1f1f] py-12">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-5 gap-8">
@@ -66,6 +62,9 @@
                         <li>Sunday: Closed</li>
                     </ul>
                 </div>
+                <div>
+                    <ConstantContactForm />
+                </div>
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8">
@@ -83,11 +82,70 @@
                 </div>
             </div>
         </div>
-
     </footer>
 </template>
 
+<style>
+/* Constant Contact form styles */
+.ctct-form-container,
+.ctct-form-defaults,
+.ctct-form-custom,
+.ctct-form-success,
+.ctct-form-error {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fe9601 !important;
+}
+
+.ctct-form-header {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.ctct-form-text {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.2 !important;
+}
+
+.ctct-form-field {
+    margin-bottom: 0.5rem !important;
+}
+
+.ctct-form-element {
+    padding: 0.25rem 0.5rem !important;
+    height: 2rem !important;
+}
+
+.ctct-form-button {
+    padding: 0.25rem !important;
+    height: 2rem !important;
+}
+
+.ctct-gdpr-text {
+    font-size: 0.625rem !important;
+    line-height: 1.2 !important;
+    display: none !important;
+    margin-top: 0.5rem !important;
+}
+
+.ctct-form-footer {
+    display: none !important;
+}
+
+/* Add these new selectors to target any remaining white backgrounds */
+#gdpr_text {
+    background: #fe9601 !important;
+}
+
+.ctct-inline-form .ctct-form-defaults {
+    background: #fe9601 !important;
+}
+</style>
+
 <script setup>
+import ConstantContactForm from '~/components/constantContactForm.vue';
 const footerLinks = [
     { text: 'Home', url: '/' },
     { text: 'About Us', url: '/about' },
@@ -96,18 +154,4 @@ const footerLinks = [
     { text: 'FAQs', url: '/faq' }
 ]
 const legitScriptTag = '<script src="https://static.legitscript.com/seals/316843.js"><\/script>'
-
-onMounted(() => {
-    const ctctScript = document.createElement('script');
-    ctctScript.src = '//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js';
-    ctctScript.id = 'signupScript';
-    ctctScript.async = true;
-    ctctScript.defer = true;
-
-    const initScript = document.createElement('script');
-    initScript.innerHTML = 'var _ctct_m = "889d6d8085ba7c40e586c28952e58660";';
-
-    document.head.appendChild(initScript);
-    document.head.appendChild(ctctScript);
-})
 </script>
