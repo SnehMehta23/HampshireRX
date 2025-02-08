@@ -1,40 +1,69 @@
 <template>
-  <div class="w-full flex flex-col">
-    <form @submit.prevent="handleSearch" class="flex overflow-hidden rounded-full border border-gray-300 shadow-inner">
-      <div class="w-full flex flex-col">
-        <input v-model="searchValue" type="text" placeholder="Look up prescription cash prices"
-          class="w-full px-6 py-4 border-none rounded-l-full focus:outline-none focus:ring-2 focus:ring-pharmaBlue-400 shadow-lg" />
-      </div>
+  <div class="w-full flex flex-col max-w-4xl mx-auto">
+    <form @submit.prevent="handleSearch" class="flex items-center rounded-full bg-white shadow-lg overflow-hidden">
+      <!-- Search Input -->
+      <input v-model="searchValue" type="text" placeholder="Look up prescription cash prices"
+        class="flex-1 px-6 py-4 border-none focus:outline-none text-gray-700 placeholder-gray-400" />
+
+      <!-- Desktop Button -->
       <button type="submit"
-        class="w-1/3 text-black xl:text-sm bg-orange-400 whitespace-nowrap font-semibold py-4 rounded-r-full">
-        <span class="hidden sm:inline text-black">Save on prescriptions</span>
-        <span class="text-black sm:hidden">Search</span>
+        class="hidden sm:flex px-8 text-black bg-orange-400 hover:bg-orange-500 transition-colors duration-200 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px]">
+        Save on prescriptions
+      </button>
+
+      <!-- Mobile Search Button -->
+      <button type="submit"
+        class="sm:hidden flex items-center justify-center transition-colors duration-200 h-full px-5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
       </button>
     </form>
-    <template>
-      <div class="relative">
-        <div
-          class="suggestions-container p-3 mt-2 shadow-2xl shadow-slate-600 z-[9999] bg-white rounded absolute top-full left-0 w-full"
-          v-if="medSuggestions.length > 0">
-          <span class="px-1">Suggestions based on: {{ searchValue }} - {{ medSuggestions.length }} {{
-            medSuggestions.length === 1 ? 'match' : 'matches' }}</span>
-          <div @click="handleSearch(med.name)"
-            class="text-md font-semibold w-full py-2 hover:bg-zinc-200 cursor-pointer px-2 flex justify-start items-center gap-2 my-4 mx-1 rounded"
-            v-for="med in medSuggestions" :key="med.id">
-            <img src="/images/svg/prescription.svg" alt="">
-            {{ med.name }} - ({{ med.genericFor }})
+
+    <!-- Suggestions Dropdown -->
+    <div class="relative">
+      <div v-if="medSuggestions.length > 0"
+        class="suggestions-container p-3 mt-2 shadow-xl border border-gray-100 z-[9999] bg-white rounded-2xl absolute top-full left-0 w-full">
+        <div class="px-3 py-2 text-sm text-gray-500 border-b border-gray-100">
+          Suggestions based on: <span class="font-medium text-gray-700">{{ searchValue }}</span>
+          <span class="ml-1 text-gray-400">({{ medSuggestions.length }} {{ medSuggestions.length === 1 ? 'match' :
+            'matches' }})</span>
+        </div>
+
+        <div v-for="med in medSuggestions" :key="med.id" @click="handleSearch(med.name)"
+          class="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 cursor-pointer rounded-lg transition-colors duration-200">
+          <img src="/images/svg/prescription.svg" alt="" class="w-5 h-5">
+          <div>
+            <div class="font-medium text-gray-900">{{ med.name }}</div>
+            <div class="text-sm text-gray-500">Generic for {{ med.genericFor }}</div>
           </div>
         </div>
       </div>
-    </template>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .suggestions-container {
-  max-height: 300px;
-  /* Adjust as needed */
+  max-height: 400px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+.suggestions-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.suggestions-container::-webkit-scrollbar-thumb {
+  background-color: #CBD5E1;
+  border-radius: 3px;
 }
 </style>
 

@@ -34,6 +34,7 @@
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
             v-if="filteredMedData.length > 0">
 
+            <!-- TODO: this is no longer needed - we should remove the filtering logic and filter markdown -->
             <div class="flex flex-col justify-start items-center">
               <label for="">Count</label>
               <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
@@ -65,9 +66,10 @@
           </div>
         </div>
 
+        <!-- <ShopBy /> -->
         <HomeContentSection />
         <SocialProofContainer />
-        <div class="p-8 bg-gradient-to-r from-orange-400 to-pharmaBlue-400">
+        <div class="p-8">
           <GoogleReviewsWidget />
         </div>
       </div>
@@ -84,6 +86,7 @@ import CurvedArrow from '~/components/CurvedArrow.vue';
 import { nextTick } from 'vue'
 import SocialProofContainer from '~/components/layout/socialProofContainer.vue';
 import HomeContentSection from '~/components/layout/homeContentSection.vue';
+// import ShopBy from '~/components/shopBy.vue';
 
 const errorText = ref('')
 const medData = ref([]);
