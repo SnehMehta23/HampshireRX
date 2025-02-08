@@ -39,8 +39,7 @@
           <div
             id="searchResults"
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            v-if="filteredMedData.length > 0"
-          >
+            v-if="filteredMedData.length > 0">
             <div class="flex flex-col justify-start items-center">
               <label for="">Count</label>
               <select
@@ -95,9 +94,10 @@
           </div>
         </div>
 
+        <!-- <ShopBy /> -->
         <HomeContentSection />
         <SocialProofContainer />
-        <div class="p-8 bg-gradient-to-r from-orange-400 to-pharmaBlue-400">
+        <div class="p-8">
           <GoogleReviewsWidget />
         </div>
       </div>
@@ -112,6 +112,7 @@ import CurvedArrow from "~/components/CurvedArrow.vue";
 import { nextTick } from "vue";
 import SocialProofContainer from "~/components/layout/socialProofContainer.vue";
 import HomeContentSection from "~/components/layout/homeContentSection.vue";
+// import ShopBy from '~/components/shopBy.vue';
 
 const errorText = ref("");
 const medData = ref([]); // Initialize as an empty array
