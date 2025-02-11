@@ -106,7 +106,9 @@ const gtm = useGTM();
 const medList = ref([]);
 const medSuggestions = ref([]);
 
-const { dataLayer } = useScriptGoogleTagManager({});
+const { dataLayer } = useScriptGoogleTagManager({
+  id: "GTM-M5V8CDX2",
+});
 
 // noop in development, ssr
 // // just works in production, client
