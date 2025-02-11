@@ -26,7 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "nuxt": "^3.15.4",
     "nuxt-graphql-server": "^3.1.4",
-    "vue": "latest"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.14",
