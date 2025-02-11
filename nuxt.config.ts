@@ -11,6 +11,14 @@ export default defineNuxtConfig({
   runtimeConfig: {
     jwtSecret: process.env.JWT_SECRET, // Make sure this is set via env or directly here
   },
+  //@ts-ignore
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: "GTM-M5V8CDX2",
+      },
+    },
+  },
   app: {
     head: {
       title: metaConfig.title,
@@ -25,7 +33,7 @@ export default defineNuxtConfig({
       noscript: [...metaPixelConfig.noscript],
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-mongoose", "./modules/auth.module"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-mongoose", "./modules/auth.module", "@nuxt/scripts"],
   nitro: {
     experimental: {
       websocket: true,

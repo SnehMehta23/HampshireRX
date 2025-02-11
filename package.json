@@ -13,8 +13,10 @@
     "@apollo/server": "^4.11.0",
     "@as-integrations/h3": "^1.2.1",
     "@gtm-support/vue-gtm": "^3.1.0",
+    "@nuxt/scripts": "0.10.1",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@unhead/vue": "^1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "graphql": "^16.9.0",
@@ -32,5 +34,6 @@
     "@types/bcryptjs": "^2",
     "@types/jsonwebtoken": "^9.0.8",
     "nuxt-mongoose": "^1.0.6"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
