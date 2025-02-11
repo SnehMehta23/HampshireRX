@@ -184,6 +184,11 @@ const handleSearch = (n) => {
     value: searchValue.value,
     text: "test",
   });
+  dataLayer.push({
+    event: "test",
+    value: searchValue.value,
+    text: "test",
+  });
   // sendConversion();
 
   // Handle the search logic here
