@@ -1,7 +1,6 @@
 <template>
     <div class="xl:px-36 px-4" :class="{ 'overflow-hidden': isOpen }">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
             <div class="bg-white rounded-lg shadow-md p-6 space-y-2">
                 <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
@@ -19,7 +18,6 @@
                 </a>
             </div>
 
-            <!-- Card 2 -->
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="bg-green-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none"
@@ -33,7 +31,6 @@
                     any questions.</p>
             </div>
 
-            <!-- Card 3 -->
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="bg-red-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24"
