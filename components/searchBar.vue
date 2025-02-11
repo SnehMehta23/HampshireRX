@@ -106,16 +106,15 @@ const gtm = useGTM();
 const medList = ref([]);
 const medSuggestions = ref([]);
 
-const { dataLayer } = useScriptGoogleTagManager({
+const { proxy } = useScriptGoogleTagManager({
   id: "GTM-M5V8CDX2",
 });
 
-// noop in development, ssr
-// // just works in production, client
-// dataLayer.push({ event: "conversion-step", value: 1 });
-// function sendConversion() {
-//   dataLayer.push({ event: "search_bar_input_query", value: 1 });
-// }
+// just works in production, client
+proxy.dataLayer.push({ event: "conversion-step", value: 1 });
+function sendConversion() {
+  proxy.dataLayer.push({ event: "search_bar_input_query", value: 1 });
+}
 
 const trackSearchQuery = (searchQuery) => {
   gtm.trackEvent({
@@ -181,12 +180,12 @@ const handleSearch = (n) => {
   }
 
   // trackSearchQuery(searchValue.value);
-  dataLayer.push({
+  proxy.dataLayer.push({
     event: "search_bar_input_query",
     value: searchValue.value,
     text: "test",
   });
-  dataLayer.push({
+  proxy.dataLayer.push({
     event: "test",
     value: searchValue.value,
     text: "test",
