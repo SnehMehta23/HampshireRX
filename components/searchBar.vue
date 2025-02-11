@@ -106,7 +106,7 @@ const gtm = useGTM();
 const medList = ref([]);
 const medSuggestions = ref([]);
 
-// const { dataLayer } = useScriptGoogleTagManager({});
+const { dataLayer } = useScriptGoogleTagManager({});
 
 // noop in development, ssr
 // // just works in production, client
@@ -179,11 +179,11 @@ const handleSearch = (n) => {
   }
 
   // trackSearchQuery(searchValue.value);
-  // dataLayer.push({
-  //   event: "search_bar_input_query",
-  //   value: searchValue.value,
-  //   text: "test",
-  // });
+  dataLayer.push({
+    event: "search_bar_input_query",
+    value: searchValue.value,
+    text: "test",
+  });
   // sendConversion();
 
   // Handle the search logic here
