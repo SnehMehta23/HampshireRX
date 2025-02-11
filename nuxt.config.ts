@@ -12,13 +12,13 @@ export default defineNuxtConfig({
     jwtSecret: process.env.JWT_SECRET, // Make sure this is set via env or directly here
   },
   //@ts-ignore
-  // scripts: {
-  //   registry: {
-  //     googleTagManager: {
-  //       id: "GTM-M5V8CDX2",
-  //     },
-  //   },
-  // },
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: "GTM-M5V8CDX2",
+      },
+    },
+  },
   app: {
     head: {
       title: metaConfig.title,
