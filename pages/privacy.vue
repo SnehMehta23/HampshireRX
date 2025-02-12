@@ -1,10 +1,7 @@
 <template>
     <AppHeader />
     <div class="relative" ref="heroRef">
-        <div :class="[
-            'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
-            'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
-        ]">
+        <div class="mx-auto px-4 bg-[#F7F7F5] mt-4 rounded-bl-3xl rounded-br-3xl pb-16">
             <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
                 <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
                 <p class="text-2xl mb-4">
@@ -13,12 +10,8 @@
                 </p>
             </div>
 
-            <div :class="[
-                'absolute left-1/2 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl xl:rounded-bl-full xl:rounded-br-full py-6 transform -translate-x-1/2 mt-2 xl:mt-6 w-full max-w-4xl px-12',
-                'transition-all duration-1000 ease-out delay-500 shadow-md shadow-pharmaBlue-400',
-                isVisible ? 'xl:opacity-100 xl:translate-y-0' : 'xl:opacity-0 xl:-translate-y-10'
-            ]">
-                <SearchBar @search="args => handleSubmit(args)" />
+            <div class="max-w-4xl px-12 mx-auto">
+                <SearchBar @search="(n) => handleSubmit(n)" />
             </div>
         </div>
     </div>
@@ -82,7 +75,7 @@
         </template>
     </div>
 
-    <div class="flex flex-col items-center my-8 xl:px-0 px-8">
+    <div class="flex flex-col items-center xl:px-0 px-8">
         <div class="w-full md:w-3/4 mx-auto">
             <div class="container mx-auto">
                 <h1 class="text-3xl font-bold mb-4">PRIVACY POLICY</h1>
@@ -128,7 +121,7 @@
                 <div class="container mx-auto">
                     <div class="text-sm mb-4">
                         <h6 class="text-lg font-semibold">TABLE OF CONTENTS</h6>
-                        <ol class="list-none pl-0">
+                        <ol class="list-none pl-0 text-lg">
                             <li><a href="#section1" class="text-blue-500 hover:underline">Collecting Your Information
                                 </a></li>
                             <li><a href="#section9" class="text-blue-500 hover:underline">Using Your Information

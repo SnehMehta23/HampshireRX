@@ -6,7 +6,7 @@ const emit = defineEmits(['medSelected'])
 
 <template>
   <div class="max-w-4xl px-12 mx-auto mt-4 md:pl-32">
-    <div class="flex flex-col md:flex-row md:items-center gap-2 text-white">
+    <div class="flex flex-col md:flex-row md:items-center gap-2 text-black">
       <span class="text-md font-bold">Popular searches:</span>
       <div class="flex flex-row flex-wrap gap-x-4">
         <a v-for="medication in TOP_FIVE_MEDICATIONS" :key="medication" @click="emit('medSelected', medication)"

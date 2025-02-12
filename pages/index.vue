@@ -1,12 +1,9 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-cream-100">
+  <div class="flex flex-col min-h-screen bg-[#F7F7F5]">
     <LayoutAppHeader />
-    <main class="flex-grow bg-cream-100">
+    <main class="flex-grow bg-[#F7F7F5]">
       <div class="relative" ref="heroRef">
-        <div :class="[
-          'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
-          'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
-        ]">
+        <div class="mx-auto px-4 bg-[#F7F7F5] mt-4 rounded-bl-3xl rounded-br-3xl pb-16">
           <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
             <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
             <p class="text-2xl mb-4 relative">

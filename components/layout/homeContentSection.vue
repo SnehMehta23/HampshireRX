@@ -13,7 +13,7 @@
                 <!-- Card Overlay -->
                 <div class="relative z-10 h-full flex items-center justify-end px-8">
                     <div
-                        class="max-w-lg w-full bg-white/95 backdrop-blur flex flex-col border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 p-6 space-y-4">
+                        class="max-w-lg w-full bg-[#F8FAFC] backdrop-blur flex flex-col border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 p-6 space-y-4">
                         <span class="opacity-75 font-semibold">Who are we?</span>
                         <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
                         <p class="font-medium">
@@ -25,7 +25,7 @@
                         </p>
                         <div>
                             <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                                class="inline-block bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-500 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 font-bold text-white">
+                                class="inline-block bg-orange-500 hover:bg-orange-400 px-4 py-2 rounded-lg font-bold text-black">
                                 View Our FAQs
                             </NuxtLink>
                         </div>
@@ -38,12 +38,12 @@
         <div class="relative">
             <div class="relative h-[300px] rounded-3xl overflow-hidden">
                 <!-- Orange Background -->
-                <div class="absolute inset-0 bg-orange-50"></div>
+                <div class="absolute inset-0 bg-[#F7F7F5]"></div>
 
                 <!-- Content -->
                 <div class="relative z-10 h-full flex items-center">
                     <div
-                        class="max-w-lg w-full bg-white/95 backdrop-blur flex flex-col border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 p-6 space-y-4">
+                        class="max-w-lg w-full bg-[#F7F7F5] backdrop-blur flex flex-col border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 p-6 space-y-4">
                         <span class="block opacity-75 font-semibold mb-2">Convenience</span>
                         <h3 class="text-3xl font-bold mb-4">Generic Prescription Lookup Tool</h3>
                         <p class="font-medium">
