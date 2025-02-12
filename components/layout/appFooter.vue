@@ -152,6 +152,16 @@
     color: #fff !important;
 }
 
+/* Add this to make the email label white */
+.ctct-form-label {
+    color: #fff !important;
+}
+
+/* Also ensure the asterisk is white */
+.ctct-form-required {
+    color: #fff !important;
+}
+
 .ctct-form-field {
     margin-bottom: 0.5rem !important;
 }
