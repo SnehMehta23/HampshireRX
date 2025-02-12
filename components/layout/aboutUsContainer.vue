@@ -1,8 +1,8 @@
 <template>
-    <div class="flex justify-center max-w-7xl mx-auto">
+    <div class="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="w-full md:w-10/12">
             <div class="flex flex-wrap items-center">
-                <div class="w-full md:w-1/2 pr-4">
+                <div class="w-full md:w-1/2 pr-4 py-6">
                     <strong class="block text-lg font-bold mb-2">Our Mission</strong>
                     <h2 class="text-2xl font-semibold mb-4">
                         Empowering Affordable Healthcare: Your Trusted Online Pharmacy
@@ -20,7 +20,7 @@
                             Pharmacy open Monday through Friday from 10:00 am to 6:00 pm.</span>
                     </p>
                 </div>
-                <div class="w-full md:w-1/2 flex justify-center">
+                <div class="w-full md:w-1/2 flex justify-center py-6">
                     <img src="/images/Tiny_pharmacists_with_prescription_drugs_for_patients-removebg-preview.png"
                         alt="Pharmacists with prescription drugs" class="w-full h-auto object-contain" />
                 </div>
@@ -28,6 +28,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-</script>

@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen bg-[#F7F7F5]">
     <LayoutAppHeader />
     <main class="flex-grow bg-[#F7F7F5]">
-      <div class="relative" ref="heroRef">
+      <div class="relative">
         <div class="mx-auto px-4 bg-[#F7F7F5] mt-4 rounded-bl-3xl rounded-br-3xl pb-16">
           <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
             <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
@@ -28,37 +28,15 @@
             <ErrorMessage v-if="errorText" :text="errorText" />
           </div>
           <div id="searchResults"
-            class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            v-if="filteredMedData.length > 0">
-
-            <!-- TODO: this is no longer needed - we should remove the filtering logic and filter markdown -->
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Count</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.count" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Strength</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.size" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div>
+            class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center">
           </div>
         </div>
-        <div class="mt-10 p-4 w-full">
+        <div class="mt-2 p-4 w-full">
           <div v-if="medData" :class="[
             'flex flex-wrap justify-center gap-4',
-            filteredMedData.length > 3 ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center' : ''
+            medData.length > 3 ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center' : ''
           ]">
-            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med"
+            <ResultCard v-for="med in medData" :key="med.id" :data="med"
               class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0" />
           </div>
         </div>
@@ -77,7 +55,7 @@
 
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref } from 'vue';
 import { gql } from "graphql-tag";
 import CurvedArrow from '~/components/CurvedArrow.vue';
 import { nextTick } from 'vue'
@@ -103,7 +81,6 @@ const query = gql`
 
 async function handleSubmit(searchTerm) {
   errorText.value = '';
-  selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
   const variables = { searchTerm: searchTerm };
   const { data } = await useLazyAsyncQuery(query, variables);
 
@@ -131,78 +108,4 @@ const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => 
     ...additionalData
   })
 }
-
-const isVisible = ref(false);
-const heroRef = ref(null);
-
-let observer = null;
-onMounted(() => {
-  // Delay the animation start by 1 second
-  setTimeout(() => {
-    observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        isVisible.value = true;
-        observer.disconnect();  // Stop observing once visible
-      }
-    }, { threshold: 0.1 });  // Trigger when 10% of the element is visible
-
-    if (heroRef.value) {
-      observer.observe(heroRef.value);
-    }
-  }, 250);
-});
-
-onUnmounted(() => {
-  if (observer) {
-    observer.disconnect();
-  }
-});
-
-const selectedFilters = ref({
-  genericFor: "",
-  count: "",
-  countUnit: "",
-  size: ""
-});
-
-const filteredOptions = computed(() => {
-  const options = {
-    genericFor: new Set(),
-    count: new Set(),
-    countUnit: new Set(),
-    size: new Set()
-  };
-
-  medData.value.forEach(med => {
-    if (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    ) {
-      options.genericFor.add(med.genericFor);
-      options.count.add(med.count);
-      options.countUnit.add(med.countUnit);
-      options.size.add(med.size);
-    }
-  });
-
-  return {
-    genericFor: Array.from(options.genericFor),
-    count: Array.from(options.count),
-    countUnit: Array.from(options.countUnit),
-    size: Array.from(options.size)
-  };
-});
-
-const filteredMedData = computed(() => {
-  return medData.value.filter(med => {
-    return (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    );
-  });
-});
 </script>
