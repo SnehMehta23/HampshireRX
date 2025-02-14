@@ -1,6 +1,6 @@
-<!-- pages/transfer-prescription.vue -->
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import GoogleReviewsWidget from '~/components/googleReviewsWidget.vue';
 const scriptTag = '<script src="https://form.jotform.com/jsform/250128695343156"><\/script>'
 onMounted(async () => {
     const script = document.createElement('script')
@@ -9,9 +9,9 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen bg-cream-100">
+    <div class="flex flex-col min-h-screen bg-white/95">
         <LayoutAppHeader />
-        <main class="flex-grow bg-cream-100">
+        <main class="flex-grow bg-white/95">
             <div class="relative" ref="heroRef">
                 <div :class="[
                     'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
@@ -19,16 +19,11 @@ onMounted(async () => {
                 ]">
                 </div>
                 <div v-html="scriptTag">
-
                 </div>
 
-<!--                <div v-if="isLoading" class="flex justify-center items-center h-64">-->
-<!--                    <div class="spinner"></div>-->
-<!--                </div>-->
-
-<!--                <div ref="form" class="w-full outline-none border-none mt-4" :class="{ 'hidden': isLoading }">-->
-<!--                    &lt;!&ndash; Dynamically injected form will appear here &ndash;&gt;-->
-<!--                </div>-->
+                <div class="p-8">
+                    <GoogleReviewsWidget />
+                </div>
             </div>
         </main>
     </div>

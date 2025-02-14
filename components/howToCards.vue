@@ -1,8 +1,7 @@
 <template>
     <div class="xl:px-36 px-4" :class="{ 'overflow-hidden': isOpen }">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-lg shadow-md p-6 space-y-2">
+            <div class="bg-[#F8FAFC] rounded-lg shadow-md p-6 space-y-2">
                 <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -14,13 +13,12 @@
                 <p class="text-center text-gray-600">Easily transfer your prescription online or have your doctor send
                     it directly to us.</p>
                 <a href="/transfer-prescription"
-                    class="block w-full bg-orange-400 text-center cursor-pointer p-2 rounded-lg hover:bg-orange-600 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 xl:mt-0 mt-2">
+                    class="block w-full bg-orange-500 text-center p-2 rounded-lg transition-colors duration-300 hover:bg-orange-400">
                     Transfer my prescription
                 </a>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-[#F8FAFC] rounded-lg shadow-md p-6">
                 <div class="bg-green-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -33,8 +31,7 @@
                     any questions.</p>
             </div>
 
-            <!-- Card 3 -->
-            <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-[#F8FAFC] rounded-lg shadow-md p-6">
                 <div class="bg-red-100 rounded-full w-16 h-16 flex items-center mx-auto justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
