@@ -39,8 +39,7 @@
           <div
             id="searchResults"
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            >
-          </div>
+          ></div>
         </div>
         <div class="mt-2 p-4 w-full">
           <div
@@ -133,7 +132,8 @@ const trackButtonInteraction = (
     buttonName: buttonName,
     actionType: actionType,
     ...additionalData,
-  };
+  }
+)
 
 const isVisible = ref(false);
 const heroRef = ref(null);
