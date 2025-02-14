@@ -50,7 +50,7 @@
           >
             <ResultCard
               v-for="med in medData"
-              :key="med.id"
+              :key="med.name"
               :data="med"
               class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0"
             />
@@ -115,14 +115,8 @@ async function handleSubmit(searchTerm) {
   }
 
   errorText.value = "";
-  selectedFilters.value = {
-    genericFor: "",
-    count: "",
-    countUnit: "",
-    size: "",
-  };
 
-  const res = await $fetch("/api/meds/findMed", {
+  const res = await $fetch("/api/medications/findMed", {
     query: { searchTerm },
     method: "GET",
   });
@@ -183,59 +177,5 @@ onUnmounted(() => {
   if (observer) {
     observer.disconnect();
   }
-});
-
-const selectedFilters = ref({
-  genericFor: "",
-  count: "",
-  countUnit: "",
-  size: "",
-});
-
-const filteredOptions = computed(() => {
-  const options = {
-    genericFor: new Set(),
-    count: new Set(),
-    countUnit: new Set(),
-    size: new Set(),
-  };
-
-  medData.value.forEach((med) => {
-    if (
-      (!selectedFilters.value.genericFor ||
-        med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count ||
-        med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit ||
-        med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    ) {
-      options.genericFor.add(med.genericFor);
-      options.count.add(med.count);
-      options.countUnit.add(med.countUnit);
-      options.size.add(med.size);
-    }
-  });
-
-  return {
-    genericFor: Array.from(options.genericFor),
-    count: Array.from(options.count),
-    countUnit: Array.from(options.countUnit),
-    size: Array.from(options.size),
-  };
-});
-
-const filteredMedData = computed(() => {
-  return medData.value.filter((med) => {
-    return (
-      (!selectedFilters.value.genericFor ||
-        med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count ||
-        med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit ||
-        med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    );
-  });
 });
 </script>

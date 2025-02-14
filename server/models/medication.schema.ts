@@ -1,7 +1,7 @@
 import { defineMongooseModel } from "#nuxt/mongoose";
 
-export const medSchema = defineMongooseModel({
-  name: "Med",
+export const medicationSchema = defineMongooseModel({
+  name: "Medication",
   schema: {
     name: "string",
     options: [
