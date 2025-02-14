@@ -16,8 +16,6 @@ const selectedCount = ref(count)
       <div class="text-sm text-gray-600">
         Generic For: <span class="font-medium text-gray-800">{{ genericFor }}</span>
       </div>
-    </div>
-
     <!-- Selection Section -->
     <div class="p-4">
       <div class="flex items-center justify-between gap-3 mb-4">
@@ -39,6 +37,8 @@ const selectedCount = ref(count)
             <option :value="count">{{ count }} {{ countUnit }}</option>
             <!-- Parent component should pass available quantities -->
           </select>
+        </div>
+      </div>
         </div>
       </div>
 

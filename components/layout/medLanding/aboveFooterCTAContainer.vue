@@ -6,7 +6,7 @@
                 Join hundreds of satisfied customers who trust Hampshire Pharmacy
             </p>
             <a href="/transfer-prescription">
-                <button class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-cream-100 transition">
+                <button class="bg-white text-gray-800 px-8 py-4 rounded-md hover:bg-white/95 transition">
                     Transfer Your Prescription Now
                 </button>
             </a>

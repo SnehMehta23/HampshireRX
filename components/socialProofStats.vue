@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-cols-2 gap-4">
-        <div v-for="stat in stats" :key="stat.title" class="bg-white p-6 rounded-lg shadow-sm text-center">
+        <div v-for="stat in stats" :key="stat.title" class="bg-[#F7F7F5] p-6 rounded-lg shadow-sm text-center">
             <div class="text-3xl font-bold text-pharmaBlue-400">{{ stat.value }}</div>
             <div class="text-sm text-gray-600">{{ stat.title }}</div>
         </div>

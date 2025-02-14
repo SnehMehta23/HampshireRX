@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-cream-100">
+  <div class="flex flex-col min-h-screen bg-[#F7F7F5]">
     <LayoutAppHeader />
     <main class="flex-grow bg-cream-100">
       <div class="relative" ref="heroRef">
@@ -39,54 +39,21 @@
           <div
             id="searchResults"
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            v-if="filteredMedData.length > 0">
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Count</label>
-              <select
-                class="p-1 bg-gray-300 rounded-md w-[8rem]"
-                v-model="selectedFilters.count"
-              >
-                <option value="">All</option>
-                <option
-                  v-for="option in filteredOptions.count"
-                  :key="option"
-                  :value="option"
-                >
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Strength</label>
-              <select
-                class="p-1 bg-gray-300 rounded-md w-[8rem]"
-                v-model="selectedFilters.size"
-              >
-                <option value="">All</option>
-                <option
-                  v-for="option in filteredOptions.size"
-                  :key="option"
-                  :value="option"
-                >
-                  {{ option }}
-                </option>
-              </select>
-            </div>
+            >
           </div>
         </div>
-        <div class="mt-10 p-4 w-full">
+        <div class="mt-2 p-4 w-full">
           <div
             v-if="medData"
             :class="[
               'flex flex-wrap justify-center gap-4',
-              filteredMedData.length > 3
+              medData.length > 3
                 ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center'
                 : '',
             ]"
           >
             <ResultCard
-              v-for="med in filteredMedData"
+              v-for="med in medData"
               :key="med.id"
               :data="med"
               class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0"
@@ -107,11 +74,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 import CurvedArrow from "~/components/CurvedArrow.vue";
 import { nextTick } from "vue";
 import SocialProofContainer from "~/components/layout/socialProofContainer.vue";
 import HomeContentSection from "~/components/layout/homeContentSection.vue";
+// import ShopBy from '~/components/shopBy.vue';
 // import ShopBy from '~/components/shopBy.vue';
 
 const errorText = ref("");
@@ -130,6 +98,9 @@ async function handleSubmit(searchTerm) {
     countUnit: "",
     size: "",
   };
+
+  const variables = { searchTerm: searchTerm };
+  const { data } = await useLazyAsyncQuery(query, variables);
 
   const res = await $fetch("/api/meds/findMed", {
     query: { searchTerm },
@@ -162,8 +133,7 @@ const trackButtonInteraction = (
     buttonName: buttonName,
     actionType: actionType,
     ...additionalData,
-  });
-};
+  };
 
 const isVisible = ref(false);
 const heroRef = ref(null);

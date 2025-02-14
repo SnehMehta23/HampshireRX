@@ -7,7 +7,7 @@
 
       <!-- Desktop Button -->
       <button type="submit"
-        class="hidden sm:flex px-8 text-black bg-orange-400 hover:bg-orange-500 transition-colors duration-200 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px]">
+        class="hidden sm:flex px-8 text-black bg-orange-500 hover:bg-orange-400 transition-colors duration-200 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px] focus:outline-none">
         Save on prescriptions
       </button>
 
