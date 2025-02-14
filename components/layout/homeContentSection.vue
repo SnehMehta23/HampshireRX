@@ -1,183 +1,118 @@
 <template>
-    <div class="space-y-16 max-w-7xl mx-auto px-4 mb-8">
+    <div class="space-y-8 sm:space-y-12 max-w-7xl mx-auto px-4 mb-8"">
         <!-- First Banner Section -->
-        <div class="relative">
-            <div class="relative h-[400px] rounded-3xl overflow-hidden">
-                <img src="/public/images/pharmacist-handshake.jpg" alt="Pharmacist shaking hands"
-                    class="absolute inset-0 w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-black/30"></div>
-                <div class="relative z-10 h-full flex items-center justify-end px-8">
-                    <div
-                        class="max-w-lg w-full bg-[#F8FAFC] backdrop-blur flex flex-col border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 p-6 space-y-4">
-                        <span class="opacity-75 font-semibold">Who are we?</span>
-                        <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
-                        <p class="font-medium">
-                            As a trusted community pharmacy for over 10 years we are fed up with the current
-                            state of healthcare. We're on a mission to change the game. Unlike anonymous assembly lines,
-                            we're
-                            your neighbors, and you'll always know who's behind your prescription.
-                        </p>
-                        <div>
-                            <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                                class="inline-block bg-orange-500 hover:bg-orange-400 px-4 py-2 rounded-lg font-bold text-black">
-                                View Our FAQs
-                            </NuxtLink>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class=" relative">
+        <div class="relative h-[500px] sm:h-[400px] rounded-3xl overflow-hidden">
+            <!-- Image with responsive positioning -->
+            <img src="/public/images/pharmacist-handshake.jpg" alt="Pharmacist shaking hands"
+                class="absolute inset-0 w-full h-full object-cover"
+                style="object-position: center var(--image-y-position, 40%)" :class="[
+                    'sm:object-center',
+                    'mobile-image-position'
+                ]" />
+            <div class="absolute inset-0 bg-black/30"></div>
 
-        <!-- Second Section - Keeping original styling -->
-        <div class="relative">
-            <div class="relative h-[300px] rounded-3xl overflow-hidden">
-                <div class="absolute inset-0 bg-[#F7F7F5]"></div>
-                <div class="relative z-10 h-full flex items-center">
-                    <div
-                        class="max-w-lg w-full bg-[#F7F7F5] backdrop-blur flex flex-col border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 p-6 space-y-4">
-                        <span class="block opacity-75 font-semibold mb-2">Convenience</span>
-                        <h3 class="text-3xl font-bold mb-4">Generic Prescription Lookup Tool</h3>
-                        <p class="font-medium">
-                            Enjoy the flexibility to pick up multiple months' worth of generic medications
-                            without long wait times. With efficient service and a streamlined process, you can easily
-                            manage
-                            your prescriptions, saving time and hassle while prioritizing your health needs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="absolute right-0 top-0 h-full w-1/3 bg-orange-400/20 rounded-l-full"></div>
-        </div>
-
-        <!-- Third Section - Delivery Card -->
-        <div class="content-card">
-            <div class="content-wrapper">
-                <div class="text-content">
-                    <h3 class="title">Fast, Discreet Delivery</h3>
-                    <p class="description">
-                        Bringing quality service right to your door. Our professional delivery
-                        covers all locations with the privacy and reliability you need.
+            <!-- Content container -->
+            <div class="relative z-10 h-full flex flex-col sm:flex-row sm:items-center sm:justify-end p-4 sm:px-8">
+                <div class="max-w-lg w-full bg-[#F8FAFC]/95 backdrop-blur flex flex-col border border-pharmaBlue-400 
+                      shadow-lg rounded-3xl shadow-pharmaBlue-400 p-6 space-y-4
+                      mb-auto sm:mb-0">
+                    <span class="opacity-75 font-semibold">Who are we?</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold">Trusted Community Pharmacy</h3>
+                    <p class="font-medium text-sm sm:text-base">
+                        As a trusted community pharmacy for over 10 years we are fed up with the current
+                        state of healthcare. We're on a mission to change the game. Unlike anonymous assembly lines,
+                        we're your neighbors, and you'll always know who's behind your prescription.
                     </p>
-                    <ul class="features">
-                        <li>
-                            <span class="icon">🔒</span>
-                            Secure Packaging
-                        </li>
-                        <li>
-                            <span class="icon">📍</span>
-                            Service throughout Illinois
-                        </li>
-                        <li>
-                            <span class="icon">💬</span>
-                            Direct communication with pharmacy
-                        </li>
-                    </ul>
-                    <button class="cta-button">Transfer Prescription</button>
-                </div>
-                <div class="image-content">
-                    <img src="/public/images/illinoisSuburbs.jpg" alt="Illinois suburban area" class="content-image">
+                    <div>
+                        <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
+                            class="inline-block bg-orange-500 hover:bg-orange-400 px-4 py-2 rounded-lg font-bold text-black">
+                            View Our FAQs
+                        </NuxtLink>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Second Section - Keeping original styling -->
+    <div class="relative px-4 sm:px-0">
+        <div class="relative min-h-[350px] sm:h-[250px] rounded-3xl overflow-hidden">
+            <div class="absolute inset-0 bg-[#F7F7F5]"></div>
+            <div class="relative z-10 h-full flex items-center p-4 sm:p-0">
+                <div class="w-full bg-[#F7F7F5] backdrop-blur flex flex-col border border-orange-400 
+                      shadow-lg rounded-3xl shadow-orange-400 p-6 space-y-4">
+                    <span class="block opacity-75 font-semibold">Convenience</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold">Generic Prescription Lookup Tool</h3>
+                    <p class="font-medium text-sm sm:text-base leading-relaxed">
+                        Enjoy the flexibility to pick up multiple months' worth of generic medications
+                        without long wait times. With efficient service and a streamlined process, you can easily
+                        manage your prescriptions, saving time and hassle while prioritizing your health needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smaller decorative element -->
+        <div class="hidden sm:block absolute right-0 top-0 h-full w-1/4 bg-orange-400/20 rounded-l-full"></div>
+    </div>
+    <!-- Third Section - Delivery Card -->
+    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-white">
+        <!-- Content wrapper -->
+        <div class="flex flex-col sm:flex-row min-h-[700px] sm:min-h-[400px]">
+            <!-- Text content -->
+            <div class="w-full sm:w-1/2 p-6 sm:p-8 flex flex-col justify-center space-y-6 bg-white">
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                    Fast, Discreet Delivery
+                </h3>
+
+                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                    Bringing quality service right to your door. Our professional delivery
+                    covers all locations with the privacy and reliability you need.
+                </p>
+
+                <!-- Features list -->
+                <ul class="space-y-4">
+                    <li class="flex items-center text-base sm:text-lg text-gray-800">
+                        <span class="mr-3 text-xl">🔒</span>
+                        Secure Packaging
+                    </li>
+                    <li class="flex items-center text-base sm:text-lg text-gray-800">
+                        <span class="mr-3 text-xl">📍</span>
+                        Service throughout Illinois
+                    </li>
+                    <li class="flex items-center text-base sm:text-lg text-gray-800">
+                        <span class="mr-3 text-xl">💬</span>
+                        Direct communication with pharmacy
+                    </li>
+                </ul>
+
+                <button class="mt-4 w-full sm:w-auto px-6 py-3 bg-pharmaBlue-400/90 hover:bg-pharmaBlue-400
+                     text-white font-semibold rounded-lg transition-colors">
+                    Transfer Prescription
+                </button>
+            </div>
+
+            <!-- Image section -->
+            <div class="w-full sm:w-1/2 relative h-[300px] sm:h-auto">
+                <img src="/public/images/illinoisSuburbs.jpg" alt="Illinois suburban area"
+                    class="absolute inset-0 w-full h-full object-cover" />
+            </div>
+        </div>
+    </div>
+    </div>
 </template>
 
 <style scoped>
-/* Keep your original CSS for the content-card */
-.content-card {
-    max-width: 1200px;
-    margin: 2rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.mobile-image-position {
+    --image-y-position: 60%;
+    /* Adjust this value to move image down (higher percentage) or up (lower percentage) */
 }
 
-.content-wrapper {
-    display: flex;
-    min-height: 400px;
-}
-
-.text-content {
-    flex: 1;
-    padding: 2.5rem;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.image-content {
-    flex: 1;
-    position: relative;
-}
-
-.content-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.description {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin-bottom: 1.5rem;
-}
-
-.features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-}
-
-.features li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    font-size: 1.125rem;
-    color: #2a2a2a;
-}
-
-.icon {
-    margin-right: 0.75rem;
-}
-
-.cta-button {
-    align-self: flex-start;
-    padding: 0.75rem 1.5rem;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #2980b9;
-}
-
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .image-content {
-        min-height: 300px;
-    }
-
-    .text-content {
-        padding: 2rem;
+@media (min-width: 640px) {
+    .mobile-image-position {
+        --image-y-position: center;
+        /* Reset for desktop */
     }
 }
 </style>
