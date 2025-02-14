@@ -25,7 +25,7 @@ const selectedCount = ref(count)
         <div class="flex-1">
           <div class="text-xs text-gray-500 mb-1.5">Strength</div>
           <select v-model="selectedSize"
-            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white cursor-pointer hover:border-gray-400 focus:outline-none focus:border-pharmaBlue-400 focus:ring-1 focus:ring-pharmaBlue-400">
+            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white cursor-pointer hover:border-gray-400">
             <option :value="size">{{ size }}</option>
             <!-- Parent component should pass available sizes -->
           </select>
@@ -35,7 +35,7 @@ const selectedCount = ref(count)
         <div class="flex-1">
           <div class="text-xs text-gray-500 mb-1.5">Quantity</div>
           <select v-model="selectedCount"
-            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white cursor-pointer hover:border-gray-400 focus:outline-none focus:border-pharmaBlue-400 focus:ring-1 focus:ring-pharmaBlue-400">
+            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md bg-white cursor-pointer hover:border-gray-400">
             <option :value="count">{{ count }} {{ countUnit }}</option>
             <!-- Parent component should pass available quantities -->
           </select>

@@ -1,84 +1,125 @@
 <template>
-    <footer class="bg-orange-400 text-[#1f1f1f] py-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-5 gap-8">
-                <div>
-                    <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy small white logo"
-                        class="h-8 mb-4" />
-                    <p class="text-[#1f1f1f] mb-4">Your trusted community pharmacy since 2014</p>
+    <footer class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="/public/images/logos/smallLogoWhite.png" alt="Hampshire Pharmacy small white logo"
+                            class="h-8">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Hampshire Pharmacy</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Your trusted community pharmacy since 2014
+                    </p>
                     <div v-html="legitScriptTag"></div>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
+
+                <!-- Quick Links Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Quick Links</h3>
+                    </div>
                     <ul class="space-y-2">
                         <li v-for="link in footerLinks" :key="link.text">
-                            <NuxtLink :to="link.url" class="text-[#1f1f1f] hover:text-white">
+                            <NuxtLink :to="link.url"
+                                class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                                 {{ link.text }}
                             </NuxtLink>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-[#1f1f1f]">
+
+                <!-- Contact Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Contact</h3>
+                    </div>
+                    <ul class="space-y-2">
                         <li>
-                            <a href="tel:+18476832244" class="flex items-center gap-2 hover:text-white">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
+                            <a href="tel:+18476832244"
+                                class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                                 (847) 683-2244
                             </a>
                         </li>
                         <li>
                             <a href="mailto:hampshirepharmacy@gmail.com"
-                                class="flex items-center gap-2 hover:text-white">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
+                                class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                                 hampshirepharmacy@gmail.com
                             </a>
                         </li>
                         <li>
                             <a href="https://maps.google.com/?q=262+N+State+St,+Hampshire,+IL" target="_blank"
-                                rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
+                                rel="noopener noreferrer"
+                                class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                                 262 N State St, Hampshire, IL
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold mb-4">Hours</h4>
-                    <ul class="space-y-2 text-[#1f1f1f]">
-                        <li>Mon-Fri: 10am - 6pm</li>
-                        <li>Saturday: 10am - 2pm</li>
-                        <li>Sunday: Closed</li>
+
+                <!-- Hours Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Hours</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                        <li class="flex justify-between">
+                            <span>Mon-Fri</span>
+                            <span>10am - 6pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>10am - 2pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </li>
                     </ul>
                 </div>
-                <div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Stay Connected</h3>
+                    </div>
                     <ConstantContactForm />
                 </div>
+
             </div>
 
-            <div class="border-t border-gray-800 mt-8 pt-8">
-                <div class="">
-                    <p class="text-center text-[#1f1f1f]">
-                        &copy; 2024 Hampshire Pharmacy. All rights reserved.
-                    </p>
-                    <div class="text-sm text-[#1f1f1f] text-center">
-                        Built by the
-                        <NuxtLink @click="handleNavClick('AgencyClickout', 'TheWebAgencyWebsite')"
-                            class="text-[#0d3d4f] underline" to="https://thewebagency.app">
-                            TheWebAgency
-                        </NuxtLink>
-                    </div>
+            <!-- Bottom Bar -->
+            <div class="pt-8 mt-8 border-t border-gray-200 dark:border-gray-700">
+                <p class="text-center text-gray-500 dark:text-gray-400 text-sm">
+                    © {{ new Date().getFullYear() }} Hampshire Pharmacy. All rights reserved.
+                </p>
+                <div class="text-sm text-gray-500 dark:text-gray-400 text-center">
+                    Built by the
+                    <NuxtLink class="text-orange-600 dark:text-orange-400 hover:underline"
+                        to="https://thewebagency.app">
+                        TheWebAgency
+                    </NuxtLink>
                 </div>
             </div>
         </div>
@@ -95,18 +136,30 @@
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    background: #fe9601 !important;
+    background: transparent !important;
 }
 
 .ctct-form-header {
     font-size: 1rem !important;
     margin-bottom: 0.5rem !important;
+    color: #fff !important;
 }
 
 .ctct-form-text {
     font-size: 0.75rem !important;
     margin-bottom: 0.5rem !important;
     line-height: 1.2 !important;
+    color: #fff !important;
+}
+
+/* Add this to make the email label white */
+.ctct-form-label {
+    color: #fff !important;
+}
+
+/* Also ensure the asterisk is white */
+.ctct-form-required {
+    color: #fff !important;
 }
 
 .ctct-form-field {
@@ -116,11 +169,21 @@
 .ctct-form-element {
     padding: 0.25rem 0.5rem !important;
     height: 2rem !important;
+    background: #fff !important;
+    /* Changed to white */
+    border: 1px solid #e5e7eb !important;
+    color: #1f2937 !important;
+    /* Dark text for contrast */
+    border-radius: 0.375rem !important;
+    /* Optional: adds rounded corners */
 }
 
 .ctct-form-button {
     padding: 0.25rem !important;
     height: 2rem !important;
+    background: #fe9601 !important;
+    color: #fff !important;
+    border-radius: 0.375rem !important;
 }
 
 .ctct-gdpr-text {
@@ -134,13 +197,25 @@
     display: none !important;
 }
 
-/* Add these new selectors to target any remaining white backgrounds */
 #gdpr_text {
-    background: #fe9601 !important;
+    background: transparent !important;
 }
 
 .ctct-inline-form .ctct-form-defaults {
-    background: #fe9601 !important;
+    background: transparent !important;
+}
+
+/* Focus state */
+.ctct-form-element:focus {
+    outline: none !important;
+    border-color: #fe9601 !important;
+    box-shadow: 0 0 0 2px rgba(254, 150, 1, 0.2) !important;
+}
+
+/* Placeholder color */
+.ctct-form-element::placeholder {
+    color: #6b7280 !important;
+    /* Changed to a gray color for better contrast with white background */
 }
 </style>
 

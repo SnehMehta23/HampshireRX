@@ -9,9 +9,9 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen bg-cream-100">
+    <div class="flex flex-col min-h-screen bg-white/95">
         <LayoutAppHeader />
-        <main class="flex-grow bg-cream-100">
+        <main class="flex-grow bg-white/95">
             <div class="relative" ref="heroRef">
                 <div :class="[
                     'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',

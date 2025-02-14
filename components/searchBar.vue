@@ -7,7 +7,7 @@
 
       <!-- Desktop Button -->
       <button type="submit"
-        class="hidden sm:flex px-8 text-black bg-orange-400 hover:bg-orange-500 transition-colors duration-200 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px]">
+        class="hidden sm:flex px-8 text-black bg-orange-500 hover:bg-orange-400 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px] focus:outline-none">
         Save on prescriptions
       </button>
 
@@ -100,24 +100,49 @@ watch(searchValue, async (newValue, oldValue) => {
 
 })
 
+const query = gql`
+  query getMeds($searchTerm: String) {
+    meds(searchTerm: $searchTerm) {
+      name
+      genericFor
+    }
+  }
+`;
+
+// Bro I was about to increase our cost tenfold with this jesus christ.
+// watch(searchValue, async (value) => {
+//   if (value.length >= 3) {
+//     const variables = {searchTerm: value};
+//     const {data} = await useAsyncQuery(query, variables);
+//     
+//   }
+// })
+const allQuery = gql`
+  query{
+    allMeds {
+    name
+    genericFor
+    }
+}
+`
+
 const temp = ref([])
 
 
-const {data} = await useFetch('/api/meds/all', {server: false, key: 'meds'})
 
-watch(data, async (newValue, oldValue) => {
-  medList.value = processMedData(data)
+const { data } = await useLazyAsyncQuery(allQuery)
+
+onMounted(async () => {
+  medList.value = await processMedData(data)
 })
-
-
-
 
 
 
 function processMedData(data) {
 
   // Ensure we're working with the array of medications
-  const allMeds = data.value;
+  const allMeds = Object.values(data.value)[0];
+
   // Use a Set to keep track of unique combinations
   const uniqueCombos = new Set();
 
