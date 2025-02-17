@@ -80,14 +80,13 @@
           >
             <div
               class="flex justify-center"
-              v-for="medicine in medicines"
-              :key="medicine.id"
+              v-for="medicine in topMeds.body[0].topMedications"
+              :key="medicine.index"
             >
               <FeaturedCards
                 class="w-[360px] sm:w-full"
                 :name="medicine.name"
-                :price="medicine.price"
-                :code="medicine.code"
+                :price="medicine.startingAt"
               />
             </div>
           </div>
@@ -119,6 +118,20 @@ const medicines = [
   { id: 4, name: "Atorvastatin", price: 7.5, code: "" },
   { id: 5, name: "Levothyroxine", price: 9.99, code: "" },
 ];
+
+const topMeds = ref("");
+
+const { data: topFiveCache } = useNuxtData("topFive");
+
+if (topFiveCache) {
+  topMeds.value = topFiveCache.value;
+}
+
+const { data: topFive } = await useFetch("/api/medications/getTopFive", {
+  key: "topFive",
+});
+
+topMeds.value = topFive.value;
 
 const errorText = ref("");
 const medData = ref([]); // Initialize as an empty array

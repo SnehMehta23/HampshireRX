@@ -7,6 +7,7 @@ export const settingsSchema = defineMongooseModel({
       {
         name: "string",
         index: "number",
+        startingAt: "number",
       },
     ],
   },
