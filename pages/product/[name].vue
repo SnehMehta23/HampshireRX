@@ -223,9 +223,8 @@ const { data: FETCHED_DATA } = await useFetch("/api/medications/findMed", {
   query: { searchTerm: route.params.name, exact: true },
   key: `FETCHED_DATA_${route.params.name}`,
 });
-if (!CACHED_DATA) {
-  PAGE_CONTENT.value = FETCHED_DATA.value;
-}
+
+PAGE_CONTENT.value = FETCHED_DATA.value;
 
 console.log(PAGE_CONTENT.value);
 
