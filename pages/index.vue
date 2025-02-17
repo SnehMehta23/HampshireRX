@@ -61,19 +61,34 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-12">
           <!-- Header section -->
           <div class="mb-8">
-            <h2 class="text-2xl sm:text-3xl font-medium text-center sm:text-left text-gray-900">
+            <h2
+              class="text-2xl sm:text-3xl font-medium text-center sm:text-left text-gray-900"
+            >
               Savings on Popular Medications
             </h2>
-            <p class="mt-2 text-gray-600 text-sm sm:text-base text-center sm:text-left">
-              Transfer your prescriptions and start saving today with our competitive pricing
+            <p
+              class="mt-2 text-gray-600 text-sm sm:text-base text-center sm:text-left"
+            >
+              Transfer your prescriptions and start saving today with our
+              competitive pricing
             </p>
           </div>
 
           <!-- Cards grid with adjusted widths -->
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            <div class="flex justify-center" v-for="medicine in medicines" :key="medicine.id">
-              <FeaturedCards class="w-[360px] sm:w-full" :name="medicine.name" :price="medicine.price"
-                :code="medicine.code" />
+          <div
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+          >
+            <div
+              class="flex justify-center"
+              v-for="medicine in medicines"
+              :key="medicine.id"
+            >
+              <FeaturedCards
+                class="w-[360px] sm:w-full"
+                :name="medicine.name"
+                :price="medicine.price"
+                :code="medicine.code"
+              />
             </div>
           </div>
         </div>
@@ -95,15 +110,15 @@ import { nextTick } from "vue";
 import SocialProofContainer from "~/components/layout/socialProofContainer.vue";
 import HomeContentSection from "~/components/layout/homeContentSection.vue";
 // import ShopBy from '~/components/shopBy.vue';
-import FeaturedCards from '~/components/featuredCards.vue';
+import FeaturedCards from "~/components/featuredCards.vue";
 
 const medicines = [
-  { id: 1, name: 'Tadalafil (Viagra)', price: 11.06, code: '' },
-  { id: 2, name: 'Omeprazole', price: 8.99, code: '' },
-  { id: 3, name: 'Metformin', price: 4.99, code: '' },
-  { id: 4, name: 'Atorvastatin', price: 7.50, code: '' },
-  { id: 5, name: 'Levothyroxine', price: 9.99, code: '' }
-]
+  { id: 1, name: "Tadalafil (Viagra)", price: 11.06, code: "" },
+  { id: 2, name: "Omeprazole", price: 8.99, code: "" },
+  { id: 3, name: "Metformin", price: 4.99, code: "" },
+  { id: 4, name: "Atorvastatin", price: 7.5, code: "" },
+  { id: 5, name: "Levothyroxine", price: 9.99, code: "" },
+];
 
 const errorText = ref("");
 const medData = ref([]); // Initialize as an empty array

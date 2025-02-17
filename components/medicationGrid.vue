@@ -1,7 +1,29 @@
 <script setup lang="ts">
-const TOP_FIVE_MEDICATIONS = ['Omeprazole', 'Metformin', 'Tadalafil', 'Atorvastatin', 'Levothyroxine']
+import { ref } from "vue";
 
-const emit = defineEmits(['medSelected'])
+const TOP_FIVE_MEDICATIONS = [
+  "Omeprazole",
+  "Metformin",
+  "Tadalafil",
+  "Atorvastatin",
+  "Levothyroxine",
+];
+
+const emit = defineEmits(["medSelected"]);
+
+const topMeds = ref("");
+
+const { data: topFiveCache } = useNuxtData("topFive");
+
+if (topFiveCache) {
+  topMeds.value = topFiveCache;
+}
+
+const { data: topFive } = await useFetch("/api/medications/getTopFive", {
+  key: "topFive",
+});
+
+topMeds.value = topFive.value;
 </script>
 
 <template>
@@ -9,15 +31,18 @@ const emit = defineEmits(['medSelected'])
     <div class="flex flex-col md:flex-row md:items-center gap-2 text-black">
       <span class="text-md font-bold">Popular searches:</span>
       <div class="flex flex-row flex-wrap gap-x-4">
-        <a v-for="medication in TOP_FIVE_MEDICATIONS" :key="medication" @click="emit('medSelected', medication)"
-          class="font-semibold text-md cursor-pointer medication-link">
-          {{ medication }}
+        <a
+          v-for="medication in topMeds.body[0].topMedications"
+          :key="medication"
+          @click="emit('medSelected', medication)"
+          class="font-semibold text-md cursor-pointer medication-link"
+        >
+          {{ medication.name }}
         </a>
       </div>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .medication-link {
