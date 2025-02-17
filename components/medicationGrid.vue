@@ -34,7 +34,7 @@ topMeds.value = topFive.value;
         <a
           v-for="medication in topMeds.body[0].topMedications"
           :key="medication"
-          @click="emit('medSelected', medication)"
+          @click="emit('medSelected', medication.name)"
           class="font-semibold text-md cursor-pointer medication-link"
         >
           {{ medication.name }}
