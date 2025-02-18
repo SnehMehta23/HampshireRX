@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import GoogleReviewsWidget from '~/components/googleReviewsWidget.vue';
+// import GoogleReviewsWidget from '~/components/googleReviewsWidget.vue';
 const scriptTag = '<script src="https://form.jotform.com/jsform/250128695343156"><\/script>'
 onMounted(async () => {
     const script = document.createElement('script')
@@ -21,9 +21,9 @@ onMounted(async () => {
                 <div v-html="scriptTag">
                 </div>
 
-                <div class="p-8">
+                <!-- <div class="p-8">
                     <GoogleReviewsWidget />
-                </div>
+                </div> -->
             </div>
         </main>
     </div>

@@ -1,3 +1,19 @@
+<!-- ElfsightReviews.vue -->
+<template>
+    <div class="relative">
+        <!-- Loading state -->
+        <div v-if="!isLoaded" class="min-h-[200px] flex items-center justify-center">
+            <div class="text-gray-500">
+                Loading reviews...
+            </div>
+        </div>
+
+        <!-- Widget container -->
+        <div :class="['elfsight-app-c793700b-bf3a-4527-a556-7c86f6c6d935',
+            { 'opacity-0': !isLoaded }]"></div>
+    </div>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue'
 
@@ -5,26 +21,16 @@ const isLoaded = ref(false)
 const ELFSIGHT_URL = 'https://static.elfsight.com/platform/platform.js'
 
 onMounted(() => {
-    const widget = document.querySelector('.elfsight-app-c793700b-bf3a-4527-a556-7c86f6c6d935')
+    // Check if script is already loaded
+    const existingScript = document.querySelector(`script[src="${ELFSIGHT_URL}"]`)
 
-    if (widget) {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                loadElfsightScript()
-                observer.disconnect()
-            }
-        }, { threshold: 0.1 })
-
-        observer.observe(widget)
-    }
-})
-
-function loadElfsightScript() {
-    if (document.querySelector(`script[src="${ELFSIGHT_URL}"]`)) {
+    if (existingScript) {
+        // If script exists, wait for platform to be ready
         waitForElfsight()
         return
     }
 
+    // Load script if not already present
     const script = document.createElement('script')
     script.src = ELFSIGHT_URL
     script.async = true
@@ -35,14 +41,16 @@ function loadElfsightScript() {
     }
 
     document.head.appendChild(script)
-}
+})
 
 function waitForElfsight() {
+    // Check if Elfsight platform is ready
     if (window.elfsight && window.elfsight.isInitialized) {
-        isLoaded.value = true
+        isLoaded.ref(true)
         return
     }
 
+    // If not ready, wait for platform initialization
     const observer = new MutationObserver((mutations, obs) => {
         const widget = document.querySelector('.elfsight-app-c793700b-bf3a-4527-a556-7c86f6c6d935')
         if (widget && widget.children.length > 0) {
@@ -51,19 +59,15 @@ function waitForElfsight() {
         }
     })
 
-    observer.observe(document, { childList: true, subtree: true })
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    })
 }
 </script>
 
-<template>
-    <div class="relative min-h-[200px]">
-        <!-- Loading state -->
-        <div v-if="!isLoaded" class="flex items-center justify-center text-gray-500">
-            Loading reviews...
-        </div>
-
-        <!-- Widget container -->
-        <div :class="['elfsight-app-c793700b-bf3a-4527-a556-7c86f6c6d935', { 'opacity-0': !isLoaded }]"
-            data-elfsight-app-lazy></div>
-    </div>
-</template>
+<style scoped>
+.opacity-0 {
+    opacity: 0;
+}
+</style>
