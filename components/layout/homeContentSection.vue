@@ -4,7 +4,7 @@
         <div class=" relative">
         <div class="relative h-[500px] sm:h-[400px] rounded-3xl overflow-hidden">
             <!-- Image with responsive positioning -->
-            <img src="/public/images/pharmacist-handshake.jpg" alt="Pharmacist shaking hands"
+            <img src="/public/images/pharmacist-handshake.webp" alt="Pharmacist shaking hands"
                 class="absolute inset-0 w-full h-full object-cover"
                 style="object-position: center var(--image-y-position, 40%)" :class="[
                     'sm:object-center',
@@ -95,7 +95,7 @@
 
             <!-- Image section -->
             <div class="w-full sm:w-1/2 relative h-[300px] sm:h-auto">
-                <img src="/public/images/illinoisSuburbs.jpg" alt="Illinois suburban area"
+                <img src="/public/images/illinoisSuburbs.webp" alt="Illinois suburban area"
                     class="absolute inset-0 w-full h-full object-cover" />
             </div>
         </div>

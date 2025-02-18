@@ -26,10 +26,8 @@
         </p>
       </div>
 
-      <button
-        class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400"
-      >
-        Transfer Prescription
+      <button class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400">
+        Get Prescription
       </button>
     </div>
   </div>
