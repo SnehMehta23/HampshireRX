@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  background-color: #fff5ea !important;
+  background-color: #F7F7F5 !important;
 }
 
 .content {

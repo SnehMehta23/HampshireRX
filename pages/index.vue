@@ -1,24 +1,22 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-cream-100">
+  <div class="flex flex-col min-h-screen bg-[#F7F7F5]">
     <LayoutAppHeader />
-    <main class="flex-grow bg-cream-100">
-      <div class="relative" ref="heroRef">
-        <div :class="[
-          'mx-auto px-4 bg-pharmaBlue-400 rounded-bl-3xl rounded-br-3xl pb-16',
-          'transition-all duration-1000 ease-out shadow-md shadow-pharmaBlue-400'
-        ]">
-          <div class="flex flex-col items-center text-center xl:px-0 px-6 justify-center">
-            <h1 class="text-5xl font-bold mb-4">Affordable Medications, Trusted Service</h1>
+    <main class="flex-grow bg-[#F7F7F5]">
+      <div class="relative">
+        <div
+          class="mx-auto px-4 bg-[#F7F7F5] mt-4 rounded-bl-3xl rounded-br-3xl pb-16"
+        >
+          <div
+            class="flex flex-col items-center text-center xl:px-0 px-6 justify-center"
+          >
+            <h1 class="text-5xl font-bold mb-4">
+              Affordable Medications, Trusted Service
+            </h1>
             <p class="text-2xl mb-4 relative">
               Compare our prices to your copays
               <CurvedArrow />
             </p>
           </div>
-          <!-- <div class="flex flex-col items-center justify-center mb-4 2xl:mb-6 text-dark-charcoal">
-            <span
-                class="animate-fade-in-left text-md 2xl:text-5xl dark:text-white bg-white/20 p-2 border border-white/40 shadow-lg backdrop-blur-lg rounded-full xl:mb-0 mb-2">Getting
-              started in three easy steps</span>
-          </div> -->
           <div class="max-w-4xl px-12 mx-auto">
             <SearchBar @search="(n) => handleSubmit(n)" />
           </div>
@@ -35,235 +33,155 @@
           <div class="w-full text-center mt-10">
             <ErrorMessage v-if="errorText" :text="errorText" />
           </div>
-          <div id="searchResults"
+          <div
+            id="searchResults"
             class="w-full flex flex-wrap justify-center items-start gap-4 sm:flex-col sm:items-stretch md:flex-row md:items-center"
-            v-if="filteredMedData.length > 0">
-
-            <!-- Dropdown for count -->
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Count</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.count">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.count" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-
-            <!-- Dropdown for size -->
-            <div class="flex flex-col justify-start items-center">
-              <label for="">Strength</label>
-              <select class="p-1 bg-gray-300 rounded-md w-[8rem]" v-model="selectedFilters.size">
-                <option value="">All</option>
-                <option v-for="option in filteredOptions.size" :key="option" :value="option">
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-          </div>
+          ></div>
         </div>
-        <div class="mt-10 p-4 w-full">
-          <div v-if="medData" :class="[
-            'flex flex-wrap justify-center gap-4',
-            filteredMedData.length > 3 ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center' : ''
-          ]">
-            <ResultCard v-for="med in filteredMedData" :key="med.id" :data="med"
-              class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0" />
-          </div>
-        </div>
-
-        <div
-          class="mt-10 grid grid-cols-1 gap-6 place-content-center lg:grid-cols-2 px-4 max-w-7xl mx-auto items-center mb-12">
-          <!-- Who are we container -->
+        <div class="mt-2 p-4 w-full">
           <div
-            class="flex flex-col mx-auto border border-pharmaBlue-400 shadow-lg rounded-3xl shadow-pharmaBlue-400 bg-pharmaBlue-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
-            <span class="opacity-75 font-semibold">Who are we?</span>
-            <h3 class="text-3xl font-bold">Trusted Community Pharmacy</h3>
-            <p class="font-medium">As a trusted community pharmacy for over 10 years we are fed up with the current
-              state of
-              healthcare. We're on a mission to change the game. Unlike anonymous assembly lines, we're your neighbors,
-              and
-              you'll always know who's behind your prescription.</p>
-            <div class="flex items-center justify-between">
-              <NuxtLink to="/faq" @click="trackNuxtLinkInteraction('View Our FAQs', 'click')"
-                class="bg-orange-400 cursor-pointer p-2 px-4 rounded-lg hover:bg-orange-500 transition duration-300 shadow-inner drop-shadow-lg border-2 border-orange-400 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 font-bold text-white">
-                View Our FAQs
-              </NuxtLink>
-            </div>
+            v-if="medData"
+            :class="[
+              'flex flex-wrap justify-center gap-4',
+              medData.length > 3
+                ? 'sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center items-center place-items-center'
+                : '',
+            ]"
+          >
+            <ResultCard
+              v-for="med in medData"
+              :key="med.name"
+              :data="med"
+              class="w-full sm:w-auto sm:max-w-[300px] flex-grow-0"
+            />
+          </div>
+        </div>
+
+        <!-- <ShopBy /> -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-12">
+          <!-- Header section -->
+          <div class="mb-8">
+            <h2
+              class="text-2xl sm:text-3xl font-medium text-center sm:text-left text-gray-900"
+            >
+              Savings on Popular Medications
+            </h2>
+            <p
+              class="mt-2 text-gray-600 text-sm sm:text-base text-center sm:text-left"
+            >
+              Transfer your prescriptions and start saving today with our
+              competitive pricing
+            </p>
           </div>
 
-          <!-- Convenience Container -->
+          <!-- Cards grid with adjusted widths -->
           <div
-            class="flex flex-col mx-auto border border-orange-400 shadow-lg rounded-3xl shadow-orange-400 bg-orange-400 bg-opacity-20 p-6 space-y-4 w-full max-w-lg">
-            <span class="opacity-75 font-semibold">Convenience</span>
-            <h3 class="text-3xl font-bold">Generic Prescription Lookup Tool</h3>
-            <p class="font-medium">Enjoy the flexibility to pick up multiple months' worth of generic medications
-              without long
-              wait times. With efficient service and a streamlined process, you can easily manage your prescriptions,
-              saving
-              time and hassle while prioritizing your health needs.</p>
-          </div>
-        </div>
-
-        <div class="bg-gray-900 py-20">
-          <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 class="text-3xl text-white font-bold mb-6">Your Trusted Community Pharmacy</h2>
-                <p class="text-gray-300 mb-8">
-                  As Hampshire's local pharmacy for over 10 years, we understand that managing your health
-                  shouldn't mean choosing between quality and affordability.
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                  <div v-for="benefit in benefits" :key="benefit.title" class="flex items-start gap-3">
-                    <div class="w-5 h-5 mt-1 text-pharmaBlue-400">
-                      <svg class="w-5 h-5 text-pharmaBlue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 class="font-bold text-white">{{ benefit.title }}</h4>
-                      <p class="text-sm text-gray-300">{{ benefit.description }}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div v-for="stat in stats" :key="stat.title" class="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <div class="text-3xl font-bold text-pharmaBlue-400">{{ stat.value }}</div>
-                  <div class="text-sm text-gray-600">{{ stat.title }}</div>
-                </div>
-              </div>
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+          >
+            <div
+              class="flex justify-center"
+              v-for="medicine in topMeds.body[0].topMedications"
+              :key="medicine.index"
+            >
+              <FeaturedCards
+                class="w-[360px] sm:w-full"
+                :name="medicine.name"
+                :price="medicine.startingAt"
+              />
             </div>
           </div>
         </div>
-
-
-        <!-- <div class="flex xl:flex-row flex-col items-center mx-auto max-w-5xl mt-12 mb-12 xl:mb-24 space-y-8">
-          <div class="xl:mb-0 mb-12">
-            <ParallaxCard />
-          </div>
-
-          <div class="p-2 text-center xl:px-0 px-4">
-            <p>At Hampshire Pharmacy, fostering healthier lives within our communities is more than a
-              mission—it's our unwavering commitment. With every service we offer, every medication we
-              dispense, and every interaction we have, trust is our cornerstone. We're dedicated to your
-              well-being, ensuring that every aspect of our care reflects our deep-rooted values of
-              integrity, compassion, and reliability. When you choose Hampshire Pharmacy, you're choosing
-              a partner in your journey to a healthier, happier life.</p>
-          </div>
-        </div> -->
+        <LayoutHomeContentSection />
+        <LayoutSocialProofContainer />
+        <div class="p-8">
+          <GoogleReviewsWidget />
+        </div>
       </div>
     </main>
     <LayoutAppFooter />
   </div>
 </template>
 
-
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { gql } from "graphql-tag";
-import CurvedArrow from '~/components/CurvedArrow.vue';
+import { ref, onMounted, onUnmounted } from "vue";
+import CurvedArrow from "~/components/CurvedArrow.vue";
+import { nextTick } from "vue";
 
-const benefits = [
-  {
-    title: 'No Insurance Needed',
-    description: 'Access affordable medications without insurance'
-  },
-  {
-    title: 'Licensed Pharmacy',
-    description: 'Full-service, state-licensed pharmacy'
-  },
-  {
-    title: 'Competitive Pricing',
-    description: 'Save up to 95% on generic medications'
-  },
-  {
-    title: 'Discreet Service',
-    description: 'Private consultations and discrete packaging'
-  }
-]
+const topMeds = ref("");
 
-const stats = [
-  { title: 'Satisfied Customers', value: '10,000+' },
-  { title: 'Years of Service', value: '14+' },
-  { title: 'Medications Available', value: '1000+' },
-  { title: 'Google Rating', value: '4.7★' }
-]
+const { data: topFiveCache } = useNuxtData("topFive");
 
-// import ParallaxCard from '~/components/parallaxCard.vue'
-import { nextTick } from 'vue'
+if (topFiveCache) {
+  topMeds.value = topFiveCache.value;
+}
 
-const errorText = ref('')
+const { data: topFive } = await useFetch("/api/medications/getTopFive", {
+  key: "topFive",
+});
 
+topMeds.value = topFive.value;
+
+const errorText = ref("");
 const medData = ref([]); // Initialize as an empty array
 
-// Define the query to fetch meds
-const query = gql`
-  query getMeds($searchTerm: String) {
-    meds(searchTerm: $searchTerm) {
-      id
-      name
-      size
-      count
-      countUnit
-      genericFor
-      price
-    }
-  }
-`;
-
 async function handleSubmit(searchTerm) {
-  errorText.value = '';
-  selectedFilters.value = { genericFor: "", count: "", countUnit: "", size: "" };
-
-  const variables = { searchTerm: searchTerm };
-  // console.log(variables);
-
-  const { data } = await useLazyAsyncQuery(query, variables);
-
-  if (data.value.meds.length === 0) {
-    console.log('lol')
-    errorText.value = "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
-    medData.value = [];
+  if (searchTerm.length < 3) {
+    errorText.value = "Please input at least 3 characters";
     return;
   }
 
-  medData.value = data.value.meds;
+  errorText.value = "";
 
+  const res = await $fetch("/api/medications/findMed", {
+    query: { searchTerm },
+    method: "GET",
+  });
+
+  if (res.length === 0) {
+    errorText.value =
+      "Sorry, we couldn't find your medication, please call us at (847)-683-2244";
+    medData.value = [];
+    return;
+  }
+  medData.value = res;
   nextTick(() => {
-    const resultsElement = document.getElementById('searchResults');
+    const resultsElement = document.getElementById("searchResults");
     if (resultsElement) {
-      resultsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      resultsElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 }
 
-const gtm = useGTM()
-
-const trackButtonInteraction = (buttonName, actionType, additionalData = {}) => {
+const gtm = useGTM();
+const trackButtonInteraction = (
+  buttonName,
+  actionType,
+  additionalData = {},
+) => {
   gtm.trackEvent({
-    event: 'button_interaction',
+    event: "button_interaction",
     buttonName: buttonName,
     actionType: actionType,
-    ...additionalData
-  })
-}
+    ...additionalData,
+  });
+};
 
 const isVisible = ref(false);
 const heroRef = ref(null);
 
 let observer = null;
-
 onMounted(() => {
   // Delay the animation start by 1 second
   setTimeout(() => {
-    observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        isVisible.value = true;
-        observer.disconnect();  // Stop observing once visible
-      }
-    }, { threshold: 0.1 });  // Trigger when 10% of the element is visible
+    observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          isVisible.value = true;
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.1 },
+    ); // Trigger when 10% of the element is visible
 
     if (heroRef.value) {
       observer.observe(heroRef.value);
@@ -275,54 +193,5 @@ onUnmounted(() => {
   if (observer) {
     observer.disconnect();
   }
-});
-
-const selectedFilters = ref({
-  genericFor: "",
-  count: "",
-  countUnit: "",
-  size: ""
-});
-
-// Get unique options for each dropdown, filtered by selected filters
-const filteredOptions = computed(() => {
-  const options = {
-    genericFor: new Set(),
-    count: new Set(),
-    countUnit: new Set(),
-    size: new Set()
-  };
-
-  medData.value.forEach(med => {
-    if (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    ) {
-      options.genericFor.add(med.genericFor);
-      options.count.add(med.count);
-      options.countUnit.add(med.countUnit);
-      options.size.add(med.size);
-    }
-  });
-
-  return {
-    genericFor: Array.from(options.genericFor),
-    count: Array.from(options.count),
-    countUnit: Array.from(options.countUnit),
-    size: Array.from(options.size)
-  };
-});
-
-const filteredMedData = computed(() => {
-  return medData.value.filter(med => {
-    return (
-      (!selectedFilters.value.genericFor || med.genericFor === selectedFilters.value.genericFor) &&
-      (!selectedFilters.value.count || med.count == selectedFilters.value.count) &&
-      (!selectedFilters.value.countUnit || med.countUnit === selectedFilters.value.countUnit) &&
-      (!selectedFilters.value.size || med.size === selectedFilters.value.size)
-    );
-  });
 });
 </script>
