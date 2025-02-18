@@ -60,7 +60,7 @@
         <div
           v-for="med in medSuggestions"
           :key="med.id"
-          @click="handleSearch(med.name)"
+          @click="handleSearch(med.name.trim().split(' ')[0])"
           class="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 cursor-pointer rounded-lg transition-colors duration-200"
         >
           <img src="/images/svg/prescription.svg" alt="" class="w-5 h-5" />
