@@ -20,13 +20,17 @@
     <!-- Text content - now stacked -->
     <div class="mt-3 flex flex-col gap-3">
       <div>
-        <h2 class="text-lg font-semibold text-gray-900">{{ name }}</h2>
+        <h2 class="text-lg font-semibold capitalize">
+          {{ name }}
+        </h2>
         <p class="text-sm text-gray-600">
           Starting from ${{ price.toFixed(2) }}
         </p>
       </div>
 
-      <button class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400">
+      <button
+        class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400"
+      >
         Get Prescription
       </button>
     </div>
