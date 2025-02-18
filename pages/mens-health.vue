@@ -48,11 +48,11 @@
                 <div class="text-center">
                   <div class="font-bold">25mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (data.meds.find(item => item.size == '25 mg')).price }}
+                    ${{(data.meds.find(item => item.size == '25 mg')).price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (data.meds.find(item => item.size == '25 mg')).count }}
-                    {{ (data.meds.find(item => item.size == '25 mg')).countUnit }}
+                    {{(data.meds.find(item => item.size == '25 mg')).count}}
+                    {{(data.meds.find(item => item.size == '25 mg')).countUnit}}
                   </div>
                 </div>
               </div>
@@ -63,11 +63,11 @@
                 <div class="text-center">
                   <div class="font-bold">50mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (data.meds.find(item => item.size == '50 mg')).price }}
+                    ${{(data.meds.find(item => item.size == '50 mg')).price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (data.meds.find(item => item.size == '50 mg')).count }}
-                    {{ (data.meds.find(item => item.size == '50 mg')).countUnit }}
+                    {{(data.meds.find(item => item.size == '50 mg')).count}}
+                    {{(data.meds.find(item => item.size == '50 mg')).countUnit}}
                   </div>
                 </div>
               </div>
@@ -78,11 +78,11 @@
                 <div class="text-center">
                   <div class="font-bold">100mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (data.meds.find(item => item.size == '100 mg')).price }}
+                    ${{(data.meds.find(item => item.size == '100 mg')).price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (data.meds.find(item => item.size == '100 mg')).count }}
-                    {{ (data.meds.find(item => item.size == '100 mg')).countUnit }}
+                    {{(data.meds.find(item => item.size == '100 mg')).count}}
+                    {{(data.meds.find(item => item.size == '100 mg')).countUnit}}
                   </div>
                 </div>
               </div>
@@ -120,11 +120,11 @@
                 <div class="text-center">
                   <div class="font-bold">5mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (med2.meds.find(item => item.size == '5 mg'))?.price }}
+                    ${{(med2.meds.find(item => item.size == '5 mg'))?.price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (med2.meds.find(item => item.size == '5 mg'))?.count }}
-                    {{ (med2.meds.find(item => item.size == '5 mg'))?.countUnit }}
+                    {{(med2.meds.find(item => item.size == '5 mg'))?.count}}
+                    {{(med2.meds.find(item => item.size == '5 mg'))?.countUnit}}
                   </div>
                 </div>
               </div>
@@ -134,11 +134,11 @@
                 <div class="text-center">
                   <div class="font-bold">10mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (med2.meds.find(item => item.size == '10 mg'))?.price }}
+                    ${{(med2.meds.find(item => item.size == '10 mg'))?.price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (med2.meds.find(item => item.size == '10 mg'))?.count }}
-                    {{ (med2.meds.find(item => item.size == '10 mg'))?.countUnit }}
+                    {{(med2.meds.find(item => item.size == '10 mg'))?.count}}
+                    {{(med2.meds.find(item => item.size == '10 mg'))?.countUnit}}
                   </div>
                 </div>
               </div>
@@ -148,11 +148,11 @@
                 <div class="text-center">
                   <div class="font-bold">20mg</div>
                   <div class="text-sm font-bold">
-                    ${{ (med2.meds.find(item => item.size == '20 mg'))?.price }}
+                    ${{(med2.meds.find(item => item.size == '20 mg'))?.price}}
                   </div>
                   <div class="text-xs text-gray-500 mt-1">
-                    {{ (med2.meds.find(item => item.size == '20 mg'))?.count }}
-                    {{ (med2.meds.find(item => item.size == '20 mg'))?.countUnit }}
+                    {{(med2.meds.find(item => item.size == '20 mg'))?.count}}
+                    {{(med2.meds.find(item => item.size == '20 mg'))?.countUnit}}
                   </div>
                 </div>
               </div>

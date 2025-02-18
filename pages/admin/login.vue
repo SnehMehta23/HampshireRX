@@ -45,13 +45,13 @@ async function trylog() {
   try {
     const res = await $fetch('/api/auth/login', {
       method: 'POST',
-      body:{
+      body: {
         email: email.value,
         password: password.value,
       }
     })
-    console.log(res)
-    if(res.loggedIn){
+    // console.log(res)
+    if (res.loggedIn) {
       return navigateTo('/admin/medIndex')
     }
   } catch (e) {

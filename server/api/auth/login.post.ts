@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
         if(!user){
             throw new Error("User not found")
         }
-        console.log(user.password)
+        // console.log(user.password)
         const matches = bcrypt.compareSync(password, user.password)
         if(!matches){
             throw new Error("Password is incorrect")

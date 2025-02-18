@@ -28,7 +28,7 @@ export default defineNuxtModule<ModuleOptions>({
         const secret = options.secret || sha256(`${Date.now()}${Math.random()}`.slice(0, 32))
         if(!options.secret){
             //TODO: find out why this can trigger.
-            console.log('You triggered the false options.secret')
+            // console.log('You triggered the false options.secret')
         }
         config.auth = defu(config.auth || {}, {
             mongo: {

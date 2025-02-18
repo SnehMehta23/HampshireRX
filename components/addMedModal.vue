@@ -16,12 +16,12 @@ const medData = reactive({
 })
 
 
-const {data: genericData} = useNuxtData('meds')
-console.log(genericData.value)
+const { data: genericData } = useNuxtData('meds')
+// console.log(genericData.value)
 
 
 if (!genericData) {
-  const {data} = await useFetch('/api/meds/all', {key: 'meds'})
+  const { data } = await useFetch('/api/meds/all', { key: 'meds' })
   //@ts-ignore
   generics.value = [...new Set(data.value?.map(item => item.genericFor))];
   const filteredList = computed(() => {
@@ -31,7 +31,7 @@ if (!genericData) {
     }
 
     return generics.value.filter(item =>
-        item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
+      item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
     );
   })
 }
@@ -44,7 +44,7 @@ const filteredList = computed(() => {
   }
 
   return generics.value.filter(item =>
-      item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
+    item.toLowerCase().includes(medData.genericFor.toString().toLowerCase())
   );
 })
 
@@ -54,7 +54,7 @@ async function saveMed() {
   try {
     const res = await $fetch('/api/meds/add', {
       method: 'POST',
-      body: {...medData, count: parseInt(medData.count)},
+      body: { ...medData, count: parseInt(medData.count) },
     })
     console.log(res)
     if (res.status === 200) {
@@ -90,15 +90,15 @@ const selectGeneric = (med) => {
               <div>
                 <input class="bg-slate-100" v-model="medData.genericFor" type="text">
                 <ul v-if="showDropDown"
-                    class="border border-gray-400 shadow-md shadow-black overflow-auto max-h-40 absolute bg-slate-100 m-1 p-1 rounded">
+                  class="border border-gray-400 shadow-md shadow-black overflow-auto max-h-40 absolute bg-slate-100 m-1 p-1 rounded">
                   <li @click="selectGeneric(med)" class="cursor-pointer hover:bg-gray-200" v-for="med in filteredList">
                     {{ med }}
                   </li>
                 </ul>
                 <span @click="showDropDown = !showDropDown"
-                      class=" cursor-pointer text-xs bg-blue-500 px-2 py-0.5 rounded text-white shadow-md">{{
+                  class=" cursor-pointer text-xs bg-blue-500 px-2 py-0.5 rounded text-white shadow-md">{{
                     showDropDown ?
-                        "Hide" : "List"
+                      "Hide" : "List"
                   }}</span>
               </div>
             </div>
@@ -110,22 +110,21 @@ const selectGeneric = (med) => {
           <div class="flex gap-2 justify-between items-center">
             <label for="">Count:</label>
             <input v-model="medData.count" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
-                   type="text">
+              type="text">
           </div>
           <div class="flex gap-2 justify-between items-center">
             <label for="">Count Unit:</label>
             <input v-model="medData.countUnit" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
-                   type="text">
+              type="text">
           </div>
           <div class="flex gap-2 justify-between items-center">
             <label for="">Price:</label>
             <input v-model="medData.price" class="bg-slate-100 p-1 border border-gray-400 rounded shadow-md"
-                   type="text">
+              type="text">
           </div>
         </div>
         <div class="flex mt-3 justify-end gap-2 items-center">
-          <button @click="$emit('modalClose')"
-                  class="bg-red-500 text-white px-2 py-0.5 rounded shadow-md">Cancel
+          <button @click="$emit('modalClose')" class="bg-red-500 text-white px-2 py-0.5 rounded shadow-md">Cancel
           </button>
           <button @click.prevent="saveMed" class="bg-blue-500 text-white px-2 py-0.5 rounded shadow-md">Save</button>
         </div>

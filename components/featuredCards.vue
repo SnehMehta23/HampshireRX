@@ -28,18 +28,23 @@
         </p>
       </div>
 
-      <button
-        class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400"
-      >
+      <NuxtLink :to="`/product/${name.toLowerCase()}`"
+        class="w-full rounded-full bg-pharmaBlue-400/90 px-4 py-2 text-sm text-white hover:bg-pharmaBlue-400 text-center">
         Get Prescription
-      </button>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  name: String,
-  price: Number,
+  name: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
 });
 </script>
