@@ -91,8 +91,8 @@
             </div>
           </div>
         </div>
-        <HomeContentSection />
-        <SocialProofContainer />
+        <LayoutHomeContentSection />
+        <LayoutSocialProofContainer />
         <div class="p-8">
           <GoogleReviewsWidget />
         </div>
@@ -106,18 +106,6 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import CurvedArrow from "~/components/CurvedArrow.vue";
 import { nextTick } from "vue";
-import SocialProofContainer from "~/components/layout/socialProofContainer.vue";
-import HomeContentSection from "~/components/layout/homeContentSection.vue";
-// import ShopBy from '~/components/shopBy.vue';
-import FeaturedCards from "~/components/featuredCards.vue";
-
-const medicines = [
-  { id: 1, name: "Tadalafil (Viagra)", price: 11.06, code: "" },
-  { id: 2, name: "Omeprazole", price: 8.99, code: "" },
-  { id: 3, name: "Metformin", price: 4.99, code: "" },
-  { id: 4, name: "Atorvastatin", price: 7.5, code: "" },
-  { id: 5, name: "Levothyroxine", price: 9.99, code: "" },
-];
 
 const topMeds = ref("");
 
