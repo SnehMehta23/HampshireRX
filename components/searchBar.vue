@@ -3,7 +3,7 @@
     <form @submit.prevent="handleSearch" class="flex items-center rounded-full bg-white shadow-lg overflow-hidden">
       <!-- Search Input -->
       <input v-model="searchValue" type="text" placeholder="Look up prescription cash prices"
-        class="flex-1 px-6 py-4 border-none focus:outline-none text-gray-700 placeholder-gray-400" />
+        class="flex-1 px-6 py-4 border-none focus:outline-none text-gray-700 placeholder-gray-400 placeholder:text-sm sm:placeholder:text-base" />
 
       <!-- Desktop Button -->
       <button type="submit"

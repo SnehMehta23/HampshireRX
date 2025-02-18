@@ -1,27 +1,11 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-[#F7F7F5] text-black p-4">
-      <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-        <div class="flex items-center">
-          <NuxtLink to="/">
-            <img src="~/public/images/logos/primaryWideLogo.webp" alt="Hampshire Pharmacy Logo" class="w-48 sm:w-64" />
-          </NuxtLink>
-        </div>
-        <div class="flex items-center flex-wrap justify-center gap-4 sm:space-x-6">
-          <NuxtLink to="/" class="">Home</NuxtLink>
-          <NuxtLink to="/about" class="">About Us</NuxtLink>
-          <NuxtLink to="/faq" class="">FAQ</NuxtLink>
-          <NuxtLink to="/transfer-prescription" class="">
-            Prescription Transfer
-          </NuxtLink>
-        </div>
-      </div>
-    </nav>
+    <LayoutAppHeader />
 
     <!-- Free shipping banner -->
     <div class="bg-pharmaBlue-400 text-white text-center py-2 px-4 text-sm sm:text-base">
-      Save money on your prescription medications with Hampshire Pharmacy
+      Save money on your prescriptions with Hampshire Pharmacy
     </div>
 
     <!-- Breadcrumb -->
@@ -29,8 +13,8 @@
       <div class="flex items-center space-x-2 text-sm">
         <NuxtLink to="/" class="text-blue-500">Home</NuxtLink>
         <span>/</span>
-        <NuxtLink to="/sildenafil" class="text-blue-500">
-          {{ PAGE_CONTENT[0].name }}
+        <NuxtLink :to="`/product/${route.params.name}`" class="text-blue-500">
+          {{ PAGE_CONTENT?.[0]?.name || route.params.name }}
         </NuxtLink>
       </div>
     </div>
