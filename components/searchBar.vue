@@ -1,22 +1,42 @@
 <template>
   <div class="w-full flex flex-col max-w-4xl mx-auto">
-    <form @submit.prevent="handleSearch" class="flex items-center rounded-full bg-white shadow-lg overflow-hidden">
+    <form
+      @submit.prevent="handleSearch"
+      class="flex items-center rounded-full bg-white shadow-lg overflow-hidden"
+    >
       <!-- Search Input -->
-      <input v-model="searchValue" type="text" placeholder="Look up prescription cash prices"
-        class="flex-1 px-6 py-4 border-none focus:outline-none text-gray-700 placeholder-gray-400 placeholder:text-sm sm:placeholder:text-base" />
+      <input
+        v-model="searchValue"
+        type="text"
+        placeholder="Look up prescription cash prices"
+        class="flex-1 px-6 py-4 border-none focus:outline-none text-gray-700 placeholder-gray-400 placeholder:text-sm sm:placeholder:text-base"
+      />
 
       <!-- Desktop Button -->
-      <button type="submit"
-        class="hidden sm:flex px-8 text-black bg-orange-500 hover:bg-orange-400 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px] focus:outline-none">
+      <button
+        type="submit"
+        class="hidden sm:flex px-8 text-black bg-orange-500 hover:bg-orange-400 whitespace-nowrap font-semibold py-4 items-center justify-center gap-2 min-w-[180px] focus:outline-none"
+      >
         Save on prescriptions
       </button>
 
       <div class="sm:hidden relative w-12 h-12">
-        <button type="submit" class="absolute inset-0 flex items-center justify-center w-full h-full focus:outline-none"
-          aria-label="Search">
+        <button
+          type="submit"
+          class="absolute inset-0 flex items-center justify-center w-full h-full focus:outline-none"
+          aria-label="Search"
+        >
           <!-- Search Icon with Safe Viewport Box -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 text-black transform scale-90"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="w-6 h-6 text-black transform scale-90"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </button>
@@ -25,23 +45,28 @@
 
     <!-- Suggestions Dropdown -->
     <div class="relative">
-      <div v-if="medSuggestions.length > 0"
-        class="suggestions-container p-3 mt-2 shadow-xl border border-gray-100 z-[9999] bg-white rounded-2xl absolute top-full left-0 w-full">
+      <div
+        v-if="medSuggestions.length > 0"
+        class="suggestions-container p-3 mt-2 shadow-xl border border-gray-100 z-[9999] bg-white rounded-2xl absolute top-full left-0 w-full"
+      >
         <div class="px-3 py-2 text-sm text-gray-500 border-b border-gray-100">
           Suggestions based on:
           <span class="font-medium text-gray-700">{{ searchValue }}</span>
-          <span class="ml-1 text-gray-400">({{ medSuggestions.length }}
-            {{ medSuggestions.length === 1 ? "match" : "matches" }})</span>
+          <span class="ml-1 text-gray-400"
+            >({{ medSuggestions.length }}
+            {{ medSuggestions.length === 1 ? "match" : "matches" }})</span
+          >
         </div>
 
-        <div v-for="med in medSuggestions" :key="med.id" @click="handleSearch(med.name.trim().split(' ')[0])"
-          class="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 cursor-pointer rounded-lg transition-colors duration-200">
+        <div
+          v-for="med in medSuggestions"
+          :key="med.name"
+          @click="handleSearch(med.name.trim().split(' ')[0])"
+          class="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 cursor-pointer rounded-lg transition-colors duration-200"
+        >
           <img src="/images/svg/prescription.svg" alt="" class="w-5 h-5" />
           <div>
             <div class="font-medium text-gray-900">{{ med.name }}</div>
-            <div class="text-sm text-gray-500">
-              Generic for {{ med.genericFor }}
-            </div>
           </div>
         </div>
       </div>
@@ -90,10 +115,8 @@ const searchValue = ref("");
 
 watch(searchValue, async (newValue, oldValue) => {
   if (newValue.length >= 3) {
-    medSuggestions.value = medList.value.filter(
-      (med) =>
-        med.name.toLowerCase().includes(newValue.toLowerCase()) ||
-        med.genericFor.toLowerCase().includes(newValue.toLowerCase()),
+    medSuggestions.value = medList.value.filter((med) =>
+      med.name.toLowerCase().includes(newValue.toLowerCase()),
     );
     // console.log(medSuggestions.value);
   } else {
@@ -103,37 +126,15 @@ watch(searchValue, async (newValue, oldValue) => {
 
 const temp = ref([]);
 
-const { data } = await useFetch("/api/meds/all", {
+const { data } = await useFetch("/api/medications/listNames", {
   server: false,
   key: "meds",
 });
 
 watch(data, async (newValue, oldValue) => {
-  medList.value = processMedData(data);
+  console.log(data.value.body);
+  medList.value = data.value.body;
 });
-
-function processMedData(data) {
-  // Ensure we're working with the array of medications
-  const allMeds = data.value;
-  // Use a Set to keep track of unique combinations
-  const uniqueCombos = new Set();
-
-  // Use map to create a new array with only name and genericFor
-  // Then filter to keep only unique combinations
-  return allMeds
-    .map((med) => ({
-      name: med.name,
-      genericFor: med.genericFor,
-    }))
-    .filter((med) => {
-      const combo = `${med.name}|${med.genericFor}`;
-      if (!uniqueCombos.has(combo)) {
-        uniqueCombos.add(combo);
-        return true;
-      }
-      return false;
-    });
-}
 
 const handleSearch = (n) => {
   // Track the search query

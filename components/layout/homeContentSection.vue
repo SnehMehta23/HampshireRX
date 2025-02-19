@@ -107,11 +107,12 @@
             </li>
           </ul>
 
-          <button
+          <NuxtLink
+            to="/transfer-prescription"
             class="mt-4 w-full sm:w-auto px-6 py-3 bg-pharmaBlue-400/90 hover:bg-pharmaBlue-400 text-white font-semibold rounded-lg transition-colors"
           >
             Transfer Prescription
-          </button>
+          </NuxtLink>
         </div>
 
         <!-- Image section -->

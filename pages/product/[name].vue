@@ -4,7 +4,9 @@
     <LayoutAppHeader />
 
     <!-- Free shipping banner -->
-    <div class="bg-pharmaBlue-400 text-white text-center py-2 px-4 text-sm sm:text-base">
+    <div
+      class="bg-pharmaBlue-400 text-white text-center py-2 px-4 text-sm sm:text-base"
+    >
       Save money on your prescriptions with Hampshire Pharmacy
     </div>
 
@@ -20,20 +22,35 @@
     </div>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6 sm:py-8" v-if="PAGE_CONTENT && PAGE_CONTENT.length">
+    <main
+      class="container mx-auto px-4 py-6 sm:py-8"
+      v-if="PAGE_CONTENT && PAGE_CONTENT.length"
+    >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
         <!-- Left Column - Product Image and Info -->
         <div>
           <div class="bg-blue-50 p-4 sm:p-8 rounded-lg mb-6 sm:mb-8">
-            <img src="/public/images/prescriptionHRXBottle.png" alt="Medicine Bottle"
-              class="mx-auto h-32 w-32 sm:h-48 sm:w-48" />
+            <img
+              src="/public/images/prescriptionHRXBottle.png"
+              alt="Medicine Bottle"
+              class="mx-auto h-32 w-32 sm:h-48 sm:w-48"
+            />
           </div>
           <div class="space-y-4 sm:space-y-6">
             <div class="flex items-center space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
               </svg>
               <span>Prescription Required</span>
             </div>
@@ -65,10 +82,16 @@
                 FORM
               </label>
               <div class="flex flex-wrap gap-3">
-                <button v-for="form in forms" :key="form" :class="form === selectedForm
-                  ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
-                  : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'"
-                  @click="selectedForm = form">
+                <button
+                  v-for="form in forms"
+                  :key="form"
+                  :class="
+                    form === selectedForm
+                      ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
+                      : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'
+                  "
+                  @click="selectedForm = form"
+                >
                   {{ form }}
                 </button>
               </div>
@@ -80,10 +103,16 @@
                 STRENGTH
               </label>
               <div class="flex flex-wrap gap-3">
-                <button v-for="strength in strengths" :key="strength" :class="strength === selectedStrength
-                  ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
-                  : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'"
-                  @click="selectedStrength = strength">
+                <button
+                  v-for="strength in strengths"
+                  :key="strength"
+                  :class="
+                    strength === selectedStrength
+                      ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
+                      : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'
+                  "
+                  @click="selectedStrength = strength"
+                >
                   {{ strength }}
                 </button>
               </div>
@@ -95,20 +124,29 @@
                 PACKAGE SIZE
               </label>
               <div class="flex flex-wrap gap-3">
-                <button v-for="pkg in packageSizes" :key="pkg" :class="pkg === selectedPackageSize
-                  ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
-                  : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'"
-                  @click="selectedPackageSize = pkg">
+                <button
+                  v-for="pkg in packageSizes"
+                  :key="pkg"
+                  :class="
+                    pkg === selectedPackageSize
+                      ? 'px-4 sm:px-6 py-2 bg-blue-100 text-blue-800 rounded-md text-sm sm:text-base'
+                      : 'px-4 sm:px-6 py-2 border border-gray-300 text-gray-700 rounded-md text-sm sm:text-base'
+                  "
+                  @click="selectedPackageSize = pkg"
+                >
                   {{ pkg }}
                 </button>
               </div>
             </div>
 
             <!-- Summary and Price -->
-            <div class="flex items-center justify-between border-t border-b py-4 my-6">
+            <div
+              class="flex items-center justify-between border-t border-b py-4 my-6"
+            >
               <div>
                 <p class="text-xs sm:text-sm text-gray-600">
-                  {{ selectedForm }} • {{ selectedStrength }} • {{ selectedPackageSize }}ct
+                  {{ selectedForm }} • {{ selectedStrength }} •
+                  {{ selectedPackageSize }}ct
                 </p>
               </div>
               <div class="text-right">
@@ -117,19 +155,33 @@
             </div>
 
             <!-- Transfer Button -->
-            <button
-              class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <NuxtLink
+              to="/transfer-prescription"
+              class="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
               </svg>
+
               <span>Transfer My Prescription</span>
-            </button>
+            </NuxtLink>
 
             <p class="text-center text-xs sm:text-sm text-gray-600 mt-4">
               Don't see your strength or quantity?
-              <a href="tel:+8476832244" class="text-blue-500 hover:underline">Call Support</a>
+              <a href="tel:+8476832244" class="text-blue-500 hover:underline"
+                >Call Support</a
+              >
             </p>
           </div>
         </div>
