@@ -153,14 +153,14 @@ const price = computed(() => {
     </div>
 
     <!-- Action Button - Full width with no side padding -->
-    <div class="px-0">
-      <NuxtLink
-        to="/transfer-prescription"
-        class="w-full bg-pharmaBlue-400 text-white py-3 font-medium hover:bg-pharmaBlue-500 transition-colors"
+
+    <NuxtLink to="/transfer-prescription">
+      <div
+        class="w-full text-center bg-pharmaBlue-400 text-white py-3 font-medium hover:bg-pharmaBlue-500 transition-colors"
       >
         Transfer Prescription
-      </NuxtLink>
-    </div>
+      </div>
+    </NuxtLink>
   </div>
 </template>
 
