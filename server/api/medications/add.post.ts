@@ -9,8 +9,8 @@ export default defineEventHandler(async (event) => {
     });
     await med.save();
     return {
-      status: 200,
-      body: med,
+      statusCode: 200,
+      med,
     };
   } catch (e: any) {
     return {

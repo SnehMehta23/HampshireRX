@@ -68,7 +68,7 @@ const newMedSubmitted = async () => {
   reloadNuxtApp();
 };
 
-const showModal = ref(false);
+const showModal = ref(true);
 </script>
 
 <template>

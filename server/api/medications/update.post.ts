@@ -8,6 +8,8 @@ export default defineEventHandler(async (event) => {
       updateArgs,
       { new: true },
     );
+    console.log(updateArgs);
+    console.log(updatedMed);
     return {
       statusCode: 200,
       body: updatedMed,

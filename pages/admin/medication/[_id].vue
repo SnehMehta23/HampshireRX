@@ -68,6 +68,7 @@ const populateEditedMedication = (option: Option) => {
 
 const UPDATE_MED = async () => {
   try {
+    console.log(medicationData.value);
     const RES = await $fetch("/api/medications/update", {
       method: "POST",
       body: {
@@ -77,7 +78,8 @@ const UPDATE_MED = async () => {
       },
     });
     console.log(RES);
-    reloadNuxtApp();
+    console.log(MEDICATION_DATA.value);
+    // reloadNuxtApp();
   } catch (err: any) {
     console.log(err);
   }
@@ -86,18 +88,23 @@ const UPDATE_MED = async () => {
 // CREATE A NEW EMPTY OPTION
 
 const CREATE_OPTION = () => {
+  if (!MEDICATION.value) return;
+  if (!MEDICATION.value.options) {
+    MEDICATION.value.options = [];
+  }
   const NEW_OPTION: Option = {
     size: "",
     count: 0,
     countUnit: "",
     price: 0.0,
     genericFor: "",
-    _id: crypto.randomUUID() as string,
+    _id: crypto.randomUUID(),
   };
-  medicationData.value.options.unshift(NEW_OPTION);
+  // Reassign the array to ensure reactivity updates are picked up
+  MEDICATION.value.options = [NEW_OPTION, ...MEDICATION.value.options];
   MED_EDITED_ID.value = NEW_OPTION._id;
+  EDITED_MEDICATION.value = NEW_OPTION;
 };
-
 //DELETE OPTION FROM LIST
 
 const DELETE_OPTION = (option: Option) => {
@@ -126,7 +133,7 @@ const DELETE_OPTION = (option: Option) => {
         >
       </div>
       <div
-        class="w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 justify-center place-items-center"
+        class="w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1- gap-4 justify-center place-items-center"
       >
         <div
           class="bg-white w-2/3 rounded shadow-lg px-4 py-2 text-lg flex flex-col gap-4"
@@ -208,8 +215,9 @@ const DELETE_OPTION = (option: Option) => {
               v-if="ARE_YOU_SURE.id !== option._id"
               class="bg-slate-100 px-3 rounded"
             >
-              Delete</button
-            ><button
+              Delete
+            </button>
+            <button
               @click="DELETE_OPTION(option)"
               v-if="ARE_YOU_SURE.id === option._id"
               class="bg-red-400 text-white px-3 rounded"
