@@ -72,44 +72,79 @@ const showModal = ref(false);
 </script>
 
 <template>
-  <AddMedModal @submit="newMedSubmitted" v-if="showModal" @modal-close="showModal = false" />
+  <AddMedModal
+    @submit="newMedSubmitted"
+    v-if="showModal"
+    @modal-close="showModal = false"
+  />
   <div class="flex flex-col justify-center items-center gap-2 mt-10">
-    <!-- Search & Add Button -->
-    <div class="w-full flex flex-col md:flex-row justify-center items-center gap-2">
+    <div class="text-2xl font-bold">Showcase medications</div>
+    <div
+      class="flex w-full flex-col md:grid-cols-2 md:grid px-10 lg:grid-cols-5 justify-center items-center gap-6 place-content-center"
+    >
       <div
-        class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded w-full md:w-auto">
-        <input class="p-2 w-full" placeholder="Medication Name..." v-model="filterText" type="text" />
-      </div>
-      <div @click="showModal = true"
-        class="bg-blue-500 text-white text-center px-3 py-2.5 rounded shadow-md cursor-pointer hover:bg-blue-600">
-        Add Medication
-      </div>
-    </div>
-
-    <!-- Results Count -->
-    <div v-if="filteredMeds.length">
-      Displaying {{ filteredMeds.length }} results
-    </div>
-
-    <div class="grid px-10 grid-cols-5 justify-center items-center gap-6 place-content-center">
-      <div class="flex flex-col justify-center items-start gap-2" v-for="(med, index) in topMeds.body[0].topMedications"
-        :key="index">
-        <select class="w-1/2 border-2 rounded-md py-2 px-4 border-blue-300 text-center" v-model="newMeds[index].name">
+        class="flex flex-col justify-center items-center gap-2"
+        v-for="(med, index) in topMeds.body[0].topMedications"
+        :key="index"
+      >
+        <select
+          class="w-1/2 border-2 rounded-md py-2 px-4 border-blue-300 text-center"
+          v-model="newMeds[index].name"
+        >
           <option>{{ med.name }}</option>
           <option v-for="m in medData" :value="m.name">
             {{ m.name }}
           </option>
         </select>
-        <button @click="submitTopMeds" v-if="newMeds[index].name !== med.name"
-          class="bg-blue-400 px-3 py-1 rounded text-white">
+        <button
+          @click="submitTopMeds"
+          v-if="newMeds[index].name !== med.name"
+          class="bg-blue-400 px-3 py-1 rounded text-white"
+        >
           save
         </button>
       </div>
     </div>
 
+    <!-- Search & Add Button -->
+    <div
+      class="w-full px-4 flex flex-col md:flex-row justify-center items-center gap-2"
+    >
+      <div
+        class="flex m-3 active:outline-0 justify-between items-center bg-blue-500 border-blue-500 border-2 rounded w-full md:w-auto"
+      >
+        <input
+          class="p-2 w-full"
+          placeholder="Medication Name..."
+          v-model="filterText"
+          type="text"
+        />
+      </div>
+      <div
+        @click="showModal = true"
+        class="bg-blue-500 text-white text-center px-3 py-2.5 rounded shadow-md cursor-pointer hover:bg-blue-600"
+      >
+        Add Medication
+      </div>
+    </div>
+
+    <div v-if="filteredMeds.length">
+      Displaying {{ filteredMeds.length }} results
+    </div>
+    <div class="italic text-gray-500">
+      click medication card to open Medication information
+    </div>
+
     <!-- Responsive Grid for MedCards -->
-    <div class="justify-center place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full px-4">
-      <MedCard @submit="newMedSubmitted" v-for="med in filteredMeds" :data="med" :key="med" />
+    <div
+      class="justify-center place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full px-4"
+    >
+      <MedCard
+        @submit="newMedSubmitted"
+        v-for="med in filteredMeds"
+        :data="med"
+        :key="med"
+      />
     </div>
   </div>
 </template>

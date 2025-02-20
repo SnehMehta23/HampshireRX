@@ -48,46 +48,21 @@ const deleteMed = async (id) => {
 </script>
 
 <template>
-  <div class="border border-blue-500 rounded shadow-md flex flex-col gap-2 w-full max-w-[25rem] justify-between">
+  <div
+    class="border border-blue-500 rounded shadow-md flex flex-col gap-2 w-full max-w-[25rem] justify-between"
+  >
     <!-- Header -->
-    <div class="text-xl font-semibold bg-blue-500 p-2 text-white text-center">
+    <div
+      @click="navigateTo(`/admin/medication/${data._id}`)"
+      class="text-xl font-semibold cursor-pointer bg-blue-400 hover:bg-white hover:text-blue-400 p-2 text-white text-center"
+    >
       <span v-if="!isBeingEdited">{{ data.name }}</span>
-      <input v-if="isBeingEdited" class="border text-black border-blue-500 rounded px-1 text-right w-full"
-        v-model="newMedData.name" type="text" />
-    </div>
-
-    <!-- Medication Details -->
-    <div class="text-center">{{ data.options.length }} variants available</div>
-
-    <!-- Action Buttons -->
-    <div class="p-2 bg-blue-500 flex flex-wrap items-center justify-end gap-1">
-      <div v-if="!isBeingEdited" class="text-xs text-blue-900">
-        Database ID: {{ _id }}
-      </div>
-      <div v-if="isBeingEdited === false" @click="isBeingEdited = !isBeingEdited"
-        class="bg-slate-100 border-2 border-blue-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">
-        Edit
-      </div>
-      <div v-if="isBeingEdited" @click="
-        () => {
-          isBeingEdited = false;
-          confirmDeletion = false;
-        }
-      " class="bg-slate-100 border-2 border-blue-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">
-        Cancel
-      </div>
-      <div v-if="isBeingEdited" @click="saveChanges"
-        class="bg-slate-100 border-2 border-blue-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">
-        Save
-      </div>
-      <div v-if="isBeingEdited && !confirmDeletion" @click="confirmDeletion = true"
-        class="text-white bg-red-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">
-        Delete
-      </div>
-      <div v-if="isBeingEdited && confirmDeletion" @click="deleteMed(_id)"
-        class="text-white bg-red-500 px-4 py-0.5 rounded-md hover:bg-slate-200 cursor-pointer">
-        Are you sure?
-      </div>
+      <input
+        v-if="isBeingEdited"
+        class="border text-black border-blue-500 rounded px-1 text-right w-full"
+        v-model="newMedData.name"
+        type="text"
+      />
     </div>
   </div>
 </template>
