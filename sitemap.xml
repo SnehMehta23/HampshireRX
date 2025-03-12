@@ -4,36 +4,51 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://hampshirepharmacy.com/</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://hampshirepharmacy.com/about</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://hampshirepharmacy.com/mens-health</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://hampshirepharmacy.com/privacy</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://hampshirepharmacy.com/faq</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://hampshirepharmacy.com/transfer-prescription</loc>
-  <lastmod>2024-12-12T02:18:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/product/omeprazole</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/product/metformin</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/product/tadalafil</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/product/atorvastatin</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/product/levothyroxine</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hampshirepharmacy.com/mens-health</loc>
   <priority>0.80</priority>
 </url>
 
